@@ -65,6 +65,36 @@ msgstr "Aktivitäts-Datenschutz"
 msgid "Подключённые приложения"
 msgstr "Verbundene Apps"
 
+msgid "Кастомизация"
+msgstr "Anpassen"
+
+msgid "Анимация появления сообщений"
+msgstr "Animation neuer Nachrichten"
+
+msgid "Как новое сообщение появляется в чате."
+msgstr "Wie eine neue Nachricht im Chat erscheint."
+
+msgid "Сбоку"
+msgstr "Seitlich"
+
+msgid "Выезжает с левого края."
+msgstr "Gleitet vom linken Rand herein."
+
+msgid "Глитч"
+msgstr "Glitch"
+
+msgid "Короткие помехи и дрожание."
+msgstr "Kurzes Rauschen und Zittern."
+
+msgid "Плавное появление и приближение"
+msgstr "Sanftes Einblenden und Zoomen"
+
+msgid "Мягко проявляется и приближается."
+msgstr "Blendet sanft ein und zoomt heran."
+
+msgid "Анимация не показывается, пока включено пониженное движение."
+msgstr "Die Animation wird nicht angezeigt, solange „Reduzierte Bewegung“ aktiv ist."
+
 msgid "О программе"
 msgstr "Über"
 

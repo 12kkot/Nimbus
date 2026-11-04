@@ -212,7 +212,7 @@ pub fn ogg_opus(packets: &[Vec<u8>], samples: u64) -> Vec<u8> {
         page.push(packet);
         segments += lacing_len(packet);
         done += PACKET_SAMPLES as u64;
-        let next = packets.get(i + 1).map_or(usize::MAX, |p| lacing_len(p));
+        let next = packets.get(i + 1).map_or(0, |p| lacing_len(p));
         // About a second to a page, never more than its 255 lacing values.
         if page.len() == 50 || segments + next > 255 || i + 1 == packets.len() {
             let last = i + 1 == packets.len();

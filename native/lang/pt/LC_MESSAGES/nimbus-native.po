@@ -65,6 +65,36 @@ msgstr "Privacidade da atividade"
 msgid "Подключённые приложения"
 msgstr "Aplicativos conectados"
 
+msgid "Кастомизация"
+msgstr "Personalizar"
+
+msgid "Анимация появления сообщений"
+msgstr "Animação de entrada das mensagens"
+
+msgid "Как новое сообщение появляется в чате."
+msgstr "Como uma nova mensagem aparece no chat."
+
+msgid "Сбоку"
+msgstr "Lateral"
+
+msgid "Выезжает с левого края."
+msgstr "Desliza a partir da borda esquerda."
+
+msgid "Глитч"
+msgstr "Glitch"
+
+msgid "Короткие помехи и дрожание."
+msgstr "Interferência e tremor breves."
+
+msgid "Плавное появление и приближение"
+msgstr "Fade e zoom suaves"
+
+msgid "Мягко проявляется и приближается."
+msgstr "Surge suavemente e se aproxima."
+
+msgid "Анимация не показывается, пока включено пониженное движение."
+msgstr "A animação não é exibida enquanto Movimento reduzido estiver ativado."
+
 msgid "О программе"
 msgstr "Sobre"
 
