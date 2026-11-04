@@ -10,6 +10,7 @@ const MAX_PAGES: usize = 40;
 /// The chats remembered between runs, as ids only (never their messages).
 const MAX_RECENT: usize = 10;
 const RECENT_KEY: &str = "recent_chats";
+const LAST_KEY: &str = "last_chats";
 
 /// A chat as (server, channel).
 pub type Place = (String, String);
@@ -41,9 +42,26 @@ pub fn note_recent(guild: &str, channel: &str) {
     crate::prefs::write(RECENT_KEY, json!(list.iter().map(|p| [p.0.as_str(), p.1.as_str()]).collect::<Vec<_>>()));
 }
 
+/// The chat left open in a server, or on the DM side.
+pub fn last_in(guild: &str) -> Option<String> {
+    crate::prefs::read()[LAST_KEY][guild].as_str().map(String::from)
+}
+
+pub fn note_last(guild: &str, channel: &str) {
+    let mut all = crate::prefs::read()[LAST_KEY].clone();
+    if !all.is_object() {
+        all = json!({});
+    }
+    if all[guild].as_str() != Some(channel) {
+        all[guild] = json!(channel);
+        crate::prefs::write(LAST_KEY, all);
+    }
+}
+
 /// Signing out: another account must not start with this one's chats.
 pub fn forget_recent() {
     crate::prefs::write(RECENT_KEY, json!([]));
+    crate::prefs::write(LAST_KEY, json!({}));
 }
 
 #[derive(Default)]

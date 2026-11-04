@@ -163,11 +163,20 @@ pub(crate) const H264_PT: u8 = 101;
 pub(crate) const RTX_PT: u8 = 102;
 pub(crate) const OPUS_PT: u8 = 120;
 
-/// Whose stream is heard, of those being watched.
-static SOUND_FROM: std::sync::Mutex<String> = std::sync::Mutex::new(String::new());
+/// The streams turned silent with their sound button; all the others being watched are heard together.
+static SOUND_OFF: std::sync::LazyLock<std::sync::Mutex<std::collections::HashSet<String>>> = std::sync::LazyLock::new(Default::default);
 
-pub fn set_sound_from(streamer: &str) {
-    *SOUND_FROM.lock().unwrap() = streamer.to_string();
+pub fn stream_sound_off(streamer: &str) -> bool {
+    SOUND_OFF.lock().unwrap().contains(streamer)
+}
+
+pub fn set_stream_sound_off(streamer: &str, off: bool) {
+    let mut silent = SOUND_OFF.lock().unwrap();
+    if off {
+        silent.insert(streamer.to_string());
+    } else {
+        silent.remove(streamer);
+    }
 }
 
 type OpusDecoder = songbird::driver::opus::Decoder;
@@ -656,8 +665,8 @@ impl State {
             Ok(mut pcm) => {
                 self.sound.played += 1;
                 // The slider of the stream view; at 0 nothing is played.
-                let chosen = self.link.volume_key.strip_prefix("stream:").is_some_and(|id| *SOUND_FROM.lock().unwrap() == id);
-                if chosen && crate::audio::apply_user_volume(&self.link.volume_key, &mut pcm) {
+                let silent = self.link.volume_key.strip_prefix("stream:").is_some_and(stream_sound_off);
+                if !silent && crate::audio::apply_user_volume(&self.link.volume_key, &mut pcm) {
                     self.link.sound.push(&self.link.volume_key, &pcm);
                 }
             }

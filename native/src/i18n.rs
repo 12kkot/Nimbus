@@ -3,7 +3,9 @@
 //! language is Russian, like everywhere else; with English chosen, a text in the table is swapped,
 //! one that isn't stays Russian until it is added.
 
-use std::sync::atomic::{AtomicBool, Ordering};
+use std::collections::HashMap;
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
+use std::sync::LazyLock;
 
 // Tests check the source (Russian) texts, so they start without the swap.
 static ENGLISH: AtomicBool = AtomicBool::new(!cfg!(test));
@@ -138,6 +140,7 @@ const TABLE: &[(&str, &str)] = &[
     ("[ссылка] {}", "[link] {}"),
     ("в ответ {}: {}", "replying to {}: {}"),
     ("добавил(а) участника в группу", "added someone to the group"),
+    ("покинул(а) группу", "left the group"),
     ("добавил(а) {} в группу", "added {} to the group"),
     ("убрал(а) {} из группы", "removed {} from the group"),
     ("Владелец", "Owner"),
@@ -342,13 +345,69 @@ fn fill(template: &str, args: &[&dyn std::fmt::Display]) -> String {
 }
 
 /// The text in the chosen language.
+/// The texts in the other languages, by their English: English, then one column per language of `OTHERS`.
+/// What isn't here stays English.
+const OTHERS: [&str; 7] = ["uk", "es", "de", "fr", "pt", "pl", "tr"];
+const TRANSLATIONS: &str = include_str!("../lang/translations.txt");
+/// Which column of the translations is in use; 0: none.
+static COLUMN: AtomicUsize = AtomicUsize::new(0);
+
+/// Chooses the language; other than Russian, everything starts from the English text.
+pub fn set_language(code: &str) {
+    // Ukrainian counts as Russian does, so it has the same three forms of a number's word.
+    set_english(!matches!(code, "ru" | "uk"));
+    COLUMN.store(OTHERS.iter().position(|c| *c == code).map_or(0, |at| at + 1), Ordering::Relaxed);
+}
+
+
+fn in_column(en: &str, column: usize) -> &str {
+    if column == 0 {
+        return en;
+    }
+    static ROWS: LazyLock<HashMap<&'static str, Vec<&'static str>>> = LazyLock::new(|| {
+        TRANSLATIONS
+            .lines()
+            .filter_map(|line| {
+                let cells: Vec<&str> = line.split('|').collect();
+                Some((*cells.first()?, cells))
+            })
+            .collect()
+    });
+    ROWS.get(en).and_then(|cells| cells.get(column)).copied().unwrap_or(en)
+}
+
+/// The texts made in Rust in the other languages, by their Russian: one tab-separated column per language of `OTHERS`.
+const RUST_TEXTS: &str = include_str!("../lang/rust.tsv");
+
+fn rust_text(ru: &str, column: usize) -> Option<&'static str> {
+    static ROWS: LazyLock<HashMap<&'static str, Vec<&'static str>>> = LazyLock::new(|| {
+        RUST_TEXTS
+            .lines()
+            .filter_map(|line| {
+                let cells: Vec<&str> = line.split('\t').collect();
+                Some((*cells.first()?, cells))
+            })
+            .collect()
+    });
+    ROWS.get(ru).and_then(|cells| cells.get(column)).copied()
+}
+
+fn shown(ru: &str) -> &str {
+    let column = COLUMN.load(Ordering::Relaxed);
+    if column == 0 {
+        return lookup(ru, english());
+    }
+    // A text newer than the translations goes through its English.
+    rust_text(ru, column).unwrap_or_else(|| in_column(lookup(ru, true), column))
+}
+
 pub fn t(ru: &str) -> String {
-    lookup(ru, english()).to_string()
+    shown(ru).to_string()
 }
 
 /// A text with `{}` holes ("Не удалось войти: {}"): the template is translated, then filled.
 pub fn tf(ru: &str, args: &[&dyn std::fmt::Display]) -> String {
-    fill(lookup(ru, english()), args)
+    fill(shown(ru), args)
 }
 
 #[cfg(test)]
@@ -369,6 +428,36 @@ mod tests {
         assert_eq!(lookup("Друзья", true), "Friends");
         assert_eq!(lookup("что-то новое", true), "что-то новое");
         assert_eq!(lookup("Друзья", false), "Друзья");
+    }
+
+    #[test]
+    fn every_translation_has_all_its_columns_and_holes() {
+        for line in TRANSLATIONS.lines() {
+            let cells: Vec<&str> = line.split('|').collect();
+            assert_eq!(cells.len(), OTHERS.len() + 1, "{line}");
+            for cell in &cells {
+                assert!(!cell.trim().is_empty(), "{line}");
+                assert_eq!(cell.matches("{}").count(), cells[0].matches("{}").count(), "{line}");
+            }
+        }
+        assert_eq!(in_column("Friends", 1), "Друзі");
+        assert_eq!(in_column("Friends", 7), "Arkadaşlar");
+        assert_eq!(in_column("Something else", 1), "Something else", "stays English");
+        assert_eq!(in_column("Friends", 0), "Friends");
+    }
+
+    #[test]
+    fn rust_texts_line_up_with_the_table() {
+        for line in RUST_TEXTS.lines() {
+            let cells: Vec<&str> = line.split('\t').collect();
+            assert_eq!(cells.len(), OTHERS.len() + 1, "{line}");
+            for cell in &cells {
+                assert_eq!(cell.matches("{}").count(), cells[0].matches("{}").count(), "{line}");
+            }
+        }
+        assert_eq!(rust_text("Друзья", 1), Some("Друзі"));
+        assert_eq!(rust_text("Друзья", 7), Some("Arkadaşlar"));
+        assert_eq!(rust_text("нет такого текста", 1), None);
     }
 
     #[test]

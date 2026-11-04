@@ -1,0 +1,1801 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Устройства не найдены"
+msgstr "Cihaz bulunamadı"
+
+msgid "Настройки пользователя"
+msgstr "Kullanıcı ayarları"
+
+msgid "Моя учётная запись"
+msgstr "Hesabım"
+
+msgid "Данные и конфиденциальность"
+msgstr "Veri ve gizlilik"
+
+msgid "Разрешения для сообщений"
+msgstr "Mesaj izinleri"
+
+msgid "Уведомления"
+msgstr "Bildirimler"
+
+msgid "Выставление счетов"
+msgstr "Faturalandırma"
+
+msgid "Подписки и счета"
+msgstr "Abonelikler ve faturalandırma"
+
+msgid "Взаимодействие"
+msgstr "Etkileşim"
+
+msgid "Голос и видео"
+msgstr "Ses ve görüntü"
+
+msgid "Стриминг"
+msgstr "Yayın"
+
+msgid "Звуки"
+msgstr "Sesler"
+
+msgid "Внешний вид"
+msgstr "Görünüm"
+
+msgid "Специальные возможности"
+msgstr "Erişilebilirlik"
+
+msgid "Система"
+msgstr "Sistem"
+
+msgid "Язык и время"
+msgstr "Dil ve saat"
+
+msgid "Игры и приложения"
+msgstr "Oyunlar ve uygulamalar"
+
+msgid "Зарегистрированные игры"
+msgstr "Kayıtlı oyunlar"
+
+msgid "Конфиденциальность активности"
+msgstr "Etkinlik gizliliği"
+
+msgid "Подключённые приложения"
+msgstr "Bağlı uygulamalar"
+
+msgid "О программе"
+msgstr "Hakkında"
+
+msgid "Кто может добавлять тебя в друзья, фильтр личных сообщений, выгрузка и удаление данных. Это настройки самого аккаунта: Nimbus их не меняет, чтобы ничего не нарушить."
+msgstr "Seni kimlerin arkadaş ekleyebileceği, özel mesaj filtresi, veri dışa aktarma ve silme. Bunlar hesap ayarlarıdır: Nimbus bunları değiştirmez, bu yüzden hiçbir şey bozulmaz."
+
+msgid "Кто может писать тебе в личные сообщения с серверов. Хранится в аккаунте: меняется в Discord."
+msgstr "Sunuculardan sana kimlerin yazabileceği. Hesabında saklanır: Discord'da değiştir."
+
+msgid "Nitro и его возможности привязаны к аккаунту и оплате. Управлять подпиской нужно в самом Discord."
+msgstr "Nitro ve avantajları hesabına ve faturalandırmana aittir. Aboneliği Discord'un kendisinde yönet."
+
+msgid "Подписки, платежи и склад подарков. Nimbus не работает с оплатой: всё это делается на сайте Discord."
+msgstr "Abonelikler, ödemeler ve hediye envanteri. Nimbus ödeme işlemez: bunların hepsi Discord web sitesinde yapılır."
+
+msgid "Игры, которые Discord показывает в твоём статусе. Их список ведёт официальное приложение."
+msgstr "Discord'un durumunda gösterdiği oyunlar. Bu listeyi resmî uygulama tutar."
+
+msgid "Что видят другие: твой статус и игра. Настройка хранится в аккаунте, меняется в Discord."
+msgstr "Başkalarının gördükleri: durumun ve oyunun. Hesabında saklanır, Discord'da değiştir."
+
+msgid "Приложения и боты, которым ты дал доступ к аккаунту. Отозвать доступ можно только на сайте Discord."
+msgstr "Hesabına erişim verdiğin uygulamalar ve botlar. Erişim yalnızca Discord web sitesinden kaldırılabilir."
+
+msgid "Этих настроек в Nimbus пока нет. Они хранятся в твоём аккаунте Discord и меняются там: в официальном приложении или на сайте."
+msgstr "Nimbus'ta henüz bu ayarlar yok. Discord hesabında saklanır ve orada değiştirilir: resmî uygulamada veya web sitesinde."
+
+msgid "Имя пользователя"
+msgstr "Kullanıcı adı"
+
+msgid "Электронная почта"
+msgstr "E-posta"
+
+msgid "Номер телефона"
+msgstr "Telefon numarası"
+
+msgid "не указан"
+msgstr "ayarlanmadı"
+
+msgid "Двухфакторная аутентификация"
+msgstr "İki faktörlü kimlik doğrulama"
+
+msgid "Включена"
+msgstr "Etkin"
+
+msgid "Выключена"
+msgstr "Devre dışı"
+
+msgid "Копировать мой ID"
+msgstr "ID'mi kopyala"
+
+msgid "Скрыть почту и телефон"
+msgstr "E-posta ve telefonu gizle"
+
+msgid "Показать почту и телефон"
+msgstr "E-posta ve telefonu göster"
+
+msgid "Имя, почту, пароль и телефон меняй в Discord. Nimbus такие изменения не отправляет."
+msgstr "Adını, e-postanı, parolanı ve telefonunu Discord'da değiştir. Nimbus bu değişiklikleri göndermez."
+
+msgid "Открыть Discord в браузере"
+msgstr "Discord'u tarayıcıda aç"
+
+msgid "Качество показа экрана"
+msgstr "Ekran paylaşımı kalitesi"
+
+msgid "Так начинается новый показ экрана; то же стоит в меню показа."
+msgstr "Yeni bir ekran paylaşımı böyle başlar; aynı ayar paylaşım menüsünde de var."
+
+msgid "Разрешение"
+msgstr "Çözünürlük"
+
+msgid "Как у источника"
+msgstr "Kaynakla aynı"
+
+msgid "Кадров в секунду"
+msgstr "Saniyedeki kare"
+
+msgid "Звук приложения"
+msgstr "Uygulama sesi"
+
+msgid "Передавать звук показываемого окна или всего экрана."
+msgstr "Paylaşılan pencerenin veya tüm ekranın sesini gönder."
+
+msgid "Размер текста сообщений"
+msgstr "Mesaj metni boyutu"
+
+msgid "Меняется сразу и запоминается."
+msgstr "Hemen uygulanır ve hatırlanır."
+
+msgid "Мелкий (90%)"
+msgstr "Küçük (%90)"
+
+msgid "Обычный (100%)"
+msgstr "Normal (%100)"
+
+msgid "Крупный (115%)"
+msgstr "Büyük (%115)"
+
+msgid "Очень крупный (130%)"
+msgstr "Çok büyük (%130)"
+
+msgid "Компактный режим"
+msgstr "Sıkışık mod"
+
+msgid "Сообщения разных авторов стоят ближе друг к другу."
+msgstr "Farklı yazarların mesajları birbirine daha yakın durur."
+
+msgid "Показывать время у автора"
+msgstr "Saati yazarın yanında göster"
+
+msgid "Время сообщения рядом с именем."
+msgstr "Mesaj saati adın yanında."
+
+msgid "Алекс"
+msgstr "Mark"
+
+msgid "Сегодня, 21:52"
+msgstr "Bugün, 21:52"
+
+msgid "Так выглядит текст сообщения."
+msgstr "Mesaj metni böyle görünür."
+
+msgid "Сегодня, 21:53"
+msgstr "Bugün, 21:53"
+
+msgid "А это ответ на него."
+msgstr "Bu da ona bir yanıt."
+
+msgid "Уведомления о новых сообщениях"
+msgstr "Yeni mesaj bildirimleri"
+
+msgid "Небольшое окно в углу экрана, пока Nimbus не в фокусе: для личных сообщений и упоминаний. Заглушённые каналы и серверы молчат."
+msgstr "Nimbus odakta değilken ekranın köşesinde küçük bir pencere: özel mesajlar ve bahsetmeler için. Sessize alınan kanallar ve sunucular rahatsız etmez."
+
+msgid "Звук уведомления"
+msgstr "Bildirim sesi"
+
+msgid "Собственный короткий звук Nimbus."
+msgstr "Nimbus'un kendi kısa sesi."
+
+msgid "Показывать текст сообщения"
+msgstr "Mesaj metnini göster"
+
+msgid "Выключи, чтобы в уведомлении было только «Новое сообщение»."
+msgstr "Bildirimde yalnızca \"Yeni mesaj\" göstermek için kapat."
+
+msgid "@everyone и @here"
+msgstr "@everyone ve @here"
+
+msgid "Считать их упоминанием."
+msgstr "Bahsetme olarak say."
+
+msgid "Сворачивать в трей при закрытии"
+msgstr "Kapatınca sistem tepsisine küçült"
+
+msgid "Крестик прячет окно, а Nimbus продолжает работать в трее. Чтобы закрыть совсем, используй меню значка."
+msgstr "X pencereyi gizler, Nimbus tepside çalışmaya devam eder. Çıkmak için tepsi simgesi menüsünü kullan."
+
+msgid "Запускать вместе с Windows"
+msgstr "Windows ile başlat"
+
+msgid "Выключено по умолчанию. Включится, только если ты сам нажмёшь переключатель."
+msgstr "Varsayılan olarak kapalı. Yalnızca düğmeyi kendin açarsan etkinleşir."
+
+msgid "Забыть решения о голосовых серверах"
+msgstr "Ses sunucusu kararlarını unut"
+
+msgid "Запускается только одна копия Nimbus. Второй запуск ничего не откроет."
+msgstr "Nimbus'un yalnızca bir kopyası çalışır. İkinci başlatma hiçbir şey açmaz."
+
+msgid "Уменьшить анимации"
+msgstr "Animasyonları azalt"
+
+msgid "Без скольжения и плавных переходов в меню и на кнопках."
+msgstr "Menülerde ve düğmelerde kayma veya yumuşak geçiş olmaz."
+
+msgid "Повышенная контрастность"
+msgstr "Yüksek karşıtlık"
+
+msgid "Светлее текст и заметнее границы."
+msgstr "Daha açık metin ve daha belirgin kenarlar."
+
+msgid "Остальные настройки доступности хранятся в аккаунте Discord."
+msgstr "Diğer erişilebilirlik ayarları Discord hesabında saklanır."
+
+msgid "Язык"
+msgstr "Dil"
+
+msgid "Язык интерфейса Nimbus."
+msgstr "Nimbus arayüzünün dilini seç."
+
+msgid "Формат времени"
+msgstr "Saat biçimi"
+
+msgid "Применяется к сообщениям, открытым после выбора (открой канал заново)."
+msgstr "Seçimden sonra açılan mesajlara uygulanır (kanalı yeniden aç)."
+
+msgid "24 часа"
+msgstr "24 saat"
+
+msgid "12 часов (AM/PM)"
+msgstr "12 saat (AM/PM)"
+
+msgid "Формат даты"
+msgstr "Tarih biçimi"
+
+msgid "Звуки звонка"
+msgstr "Arama sesleri"
+
+msgid "Вход и выход, мут и размут, приход и уход других. Свои звуки: положи WAV-файлы в папку со звуками, они заменят встроенные."
+msgstr "Katılma ve ayrılma, sessize alma ve açma, başkalarının gelip gitmesi. Kendi seslerin: WAV dosyalarını sesler klasörüne koy, yerleşik seslerin yerini alır."
+
+msgid "Открыть папку со звуками"
+msgstr "Sesler klasörünü aç"
+
+msgid "Неофициальный открытый клиент Discord. Не связан с Discord Inc. и не выдаёт себя за официальное приложение."
+msgstr "Resmî olmayan, açık kaynaklı bir Discord istemcisi. Discord Inc. ile bağlantısı yoktur ve resmî uygulama gibi davranmaz."
+
+msgid "Показ экрана идёт через твой собственный сервер LiveKit, не через Nitro. Вход в голос Discord выполняется от твоего аккаунта на твой риск."
+msgstr "Ekran paylaşımı Nitro üzerinden değil, kendi LiveKit sunucun üzerinden yapılır. Discord sesine katılma hesabından, riski sana ait olarak yapılır."
+
+msgid "Микрофон"
+msgstr "Mikrofon"
+
+msgid "УСТРОЙСТВО ВВОДА"
+msgstr "GİRİŞ CİHAZI"
+
+msgid "Громкость микрофона · "
+msgstr "Mikrofon sesi · "
+
+msgid "Динамик"
+msgstr "Hoparlör"
+
+msgid "УСТРОЙСТВО ВЫВОДА"
+msgstr "ÇIKIŞ CİHAZI"
+
+msgid "Громкость динамика · "
+msgstr "Hoparlör sesi · "
+
+msgid "Остановить проверку"
+msgstr "Testi durdur"
+
+msgid "Проверка микрофона"
+msgstr "Mikrofon testi"
+
+msgid "Говори, и услышишь себя так, как тебя слышат другие."
+msgstr "Konuş, kendini başkalarının duyduğu gibi duyacaksın."
+
+msgid "Проверка включает микрофон и проигрывает твой голос тебе же."
+msgstr "Test mikrofonu açar ve sesini sana geri çalar."
+
+msgid "Режим голоса"
+msgstr "Ses modu"
+
+msgid "В режиме рации микрофон открыт, только пока зажата клавиша. Клавиша работает и когда окно Nimbus не в фокусе."
+msgstr "Bas-konuş modunda mikrofon yalnızca tuş basılıyken açıktır. Tuş, Nimbus penceresi odakta değilken de çalışır."
+
+msgid "Активность голоса"
+msgstr "Ses etkinliği"
+
+msgid "Микрофон открыт, когда слышит речь"
+msgstr "Mikrofon konuşma duyunca açılır"
+
+msgid "Рация (Push to talk)"
+msgstr "Bas-konuş"
+
+msgid "Говоришь, только пока держишь клавишу"
+msgstr "Yalnızca tuşu basılı tutarken konuşursun"
+
+msgid "Нажмите клавишу…"
+msgstr "Bir tuşa bas…"
+
+msgid "Esc отменяет"
+msgstr "Esc iptal eder"
+
+msgid "Нажми на поле, чтобы сменить"
+msgstr "Değiştirmek için alana tıkla"
+
+msgid "Ctrl добавляется сам, если его не было: иначе клавиша сработает при наборе текста."
+msgstr "Ctrl yoksa otomatik eklenir: aksi hâlde tuş yazarken tetiklenirdi."
+
+msgid "Быстрые клавиши"
+msgstr "Kısayollar"
+
+msgid "Работают из любой программы. Delete или Backspace снимает клавишу. Без Ctrl/Shift/Alt добавляется Ctrl."
+msgstr "Her programdan çalışır. Delete veya Backspace tuşu temizler. Ctrl/Shift/Alt yoksa Ctrl eklenir."
+
+msgid "Выключить / включить микрофон"
+msgstr "Mikrofonu kapat / aç"
+
+msgid "Заглушить / вернуть звук"
+msgstr "Sesi kapat / aç"
+
+msgid "Профиль ввода"
+msgstr "Giriş profili"
+
+msgid "Изоляция голоса"
+msgstr "Ses yalıtımı"
+
+msgid "Только твой голос: усиленное шумоподавление убирает всё остальное"
+msgstr "Yalnızca senin sesin: güçlü gürültü engelleme geri kalan her şeyi kaldırır"
+
+msgid "Студия"
+msgstr "Stüdyo"
+
+msgid "Чистый звук: открытый микрофон без обработки"
+msgstr "Temiz ses: işlemsiz açık mikrofon"
+
+msgid "Пользовательский"
+msgstr "Özel"
+
+msgid "Все кнопки и переключатели ниже"
+msgstr "Aşağıdaki tüm düğmeler ve anahtarlar"
+
+msgid "Автоматически определять чувствительность ввода"
+msgstr "Giriş hassasiyetini otomatik algıla"
+
+msgid "Микрофон передаёт, только когда слышит речь. Выключи, чтобы задать порог вручную."
+msgstr "Mikrofon yalnızca konuşma duyunca iletir. Eşiği elle ayarlamak için kapat."
+
+msgid "Порог: "
+msgstr "Eşik: "
+
+msgid " дБ. Что тише, не передаётся"
+msgstr " dB. Daha sessiz olan gönderilmez"
+
+msgid "Шумоподавление"
+msgstr "Gürültü engelleme"
+
+msgid "Усиленное использует нейросеть RNNoise на этом компьютере и убирает клавиатуру, вентилятор и дыхание."
+msgstr "Güçlü mod bu bilgisayarda RNNoise sinir ağını kullanır; klavye, fan ve nefes seslerini kaldırır."
+
+msgid "Нет"
+msgstr "Yok"
+
+msgid "Стандартное"
+msgstr "Standart"
+
+msgid "Усиленное (RNNoise)"
+msgstr "Güçlü (RNNoise)"
+
+msgid "Сила подавления"
+msgstr "Engelleme gücü"
+
+msgid "Мягко"
+msgstr "Yumuşak"
+
+msgid "Средне"
+msgstr "Orta"
+
+msgid "Максимум"
+msgstr "En yüksek"
+
+msgid "Эхоподавление"
+msgstr "Yankı engelleme"
+
+msgid "Убирает из микрофона звук твоих динамиков."
+msgstr "Hoparlörlerinin sesini mikrofondan kaldırır."
+
+msgid "Автоматическая регулировка усиления"
+msgstr "Otomatik kazanç kontrolü"
+
+msgid "Выравнивает громкость: тихий голос громче, крик тише."
+msgstr "Sesi dengeler: kısık ses yükselir, bağırma kısılır."
+
+msgid "Написать сообщение"
+msgstr "Mesaj"
+
+msgid "Громкость пользователя · "
+msgstr "Kullanıcı sesi · "
+
+msgid "Заглушить"
+msgstr "Sessize al"
+
+msgid "Удалить из друзей"
+msgstr "Arkadaşlardan çıkar"
+
+msgid "ДОБАВИТЬ В ДРУЗЬЯ"
+msgstr "Arkadaş ekle"
+
+msgid "Откл. микрофон на сервере"
+msgstr "Sunucuda mikrofonu kapat"
+
+msgid "Сервер: откл. звук"
+msgstr "Sunucu: sesi kapat"
+
+msgid "Переместить в"
+msgstr "Şuraya taşı"
+
+msgid "Отключить"
+msgstr "Bağlantıyı kes"
+
+msgid "Выгнать "
+msgstr "At: "
+
+msgid "Забанить "
+msgstr "Yasakla: "
+
+msgid "Копировать ID пользователя"
+msgstr "Kullanıcı ID'sini kopyala"
+
+msgid "Подключиться к голосовому серверу?"
+msgstr "Ses sunucusuna bağlanılsın mı?"
+
+msgid "Удалить сообщение?"
+msgstr "Mesaj silinsin mi?"
+
+msgid "Сообщество использует голос на "
+msgstr "Topluluk şurada ses kullanıyor: "
+
+msgid ". Тот, кто держит этот сервер, увидит твой IP-адрес. Подключайся, только если доверяешь ему. Ответ запомнится."
+msgstr ". Bu sunucuyu işleten kişi IP adresini görecek. Yalnızca güveniyorsan bağlan. Yanıtın hatırlanacak."
+
+msgid "Сообщение исчезнет у всех. Вернуть его нельзя."
+msgstr "Mesaj herkes için kaybolur. Geri getirilemez."
+
+msgid "Он не сможет вернуться на сервер, пока бан не снимут."
+msgstr "Yasak kaldırılana kadar bu kişi sunucuya dönemez."
+
+msgid "Он сможет вернуться по новому приглашению."
+msgstr "Bu kişi yeni bir davetle geri dönebilir."
+
+msgid "Отмена"
+msgstr "İptal"
+
+msgid "Подключиться"
+msgstr "Bağlan"
+
+msgid "Удалить"
+msgstr "Sil"
+
+msgid "Забанить"
+msgstr "Yasakla"
+
+msgid "Выгнать"
+msgstr "At"
+
+msgid "Вход в Discord"
+msgstr "Discord'a giriş yap"
+
+msgid "Войти через discord.com"
+msgstr "discord.com ile giriş yap"
+
+msgid "Откроется страница входа Discord: пароль или QR-код с телефона, капча, если она понадобится. Токен сохранится только на этом компьютере."
+msgstr "Discord giriş sayfası açılır: parola veya telefondan QR kod, gerekirse captcha. Token yalnızca bu bilgisayarda saklanır."
+
+msgid "Или вставь токен аккаунта"
+msgstr "Veya hesap token'ı yapıştır"
+
+msgid "Войти по токену"
+msgstr "Token ile giriş yap"
+
+msgid "Неофициальный клиент, не связан с Discord Inc. Сторонние клиенты нарушают Условия использования Discord, аккаунт могут заблокировать. Токен даёт полный доступ к аккаунту, никому его не показывай."
+msgstr "Resmî olmayan istemci, Discord Inc. ile bağlantısı yok. Üçüncü taraf istemciler Discord Koşullarını ihlal eder ve hesap yasaklanabilir. Token hesaba tam erişim verir: kimseye gösterme."
+
+msgid " публикаций"
+msgstr " gönderi"
+
+msgid "КАЧЕСТВО"
+msgstr "KALİTE"
+
+msgid "Исходное"
+msgstr "Kaynak"
+
+msgid "60 к/с"
+msgstr "60 fps"
+
+msgid "30 к/с"
+msgstr "30 fps"
+
+msgid "Звук"
+msgstr "Ses"
+
+msgid "ЧТО ПОКАЗАТЬ"
+msgstr "NE PAYLAŞILSIN"
+
+msgid "Ищу экраны и окна…"
+msgstr "Ekranlar ve pencereler aranıyor…"
+
+msgid "Смотрите сейчас"
+msgstr "Şimdi izle"
+
+msgid "Смотреть стрим"
+msgstr "Yayını izle"
+
+msgid "Жду видео…"
+msgstr "Video bekleniyor…"
+
+msgid "В ЭФИРЕ"
+msgstr "CANLI"
+
+msgid "Выйти"
+msgstr "Ayrıl"
+
+msgid "Ничего не найдено"
+msgstr "Hiçbir şey bulunamadı"
+
+msgid "Найдено: "
+msgstr "Bulunan: "
+
+msgid "Куда отправимся?"
+msgstr "Nereye?"
+
+msgid "Начни вводить имя друга, переписки, сервера или канала"
+msgstr "Bir arkadaş, sohbet, sunucu veya kanal adı yazmaya başla"
+
+msgid "Ничего не нашлось"
+msgstr "Hiçbir şey bulunamadı"
+
+msgid "ЛС"
+msgstr "ÖM"
+
+msgid "Друг"
+msgstr "Arkadaş"
+
+msgid "Сервер"
+msgstr "Sunucu"
+
+msgid "Канал"
+msgstr "Kanal"
+
+msgid "↑ ↓ выбрать   ·   Enter открыть   ·   Esc закрыть   ·   имя друга, сервера или #канала"
+msgstr "↑ ↓ seç   ·   Enter aç   ·   Esc kapat   ·   arkadaş, sunucu veya #kanal adı"
+
+msgid "Друзья"
+msgstr "Arkadaşlar"
+
+msgid "Запросы общения"
+msgstr "Mesaj istekleri"
+
+msgid "В СЕТИ"
+msgstr "Çevrimiçi"
+
+msgid "Все"
+msgstr "Tümü"
+
+msgid "ОЖИДАНИЕ"
+msgstr "Bekliyor"
+
+msgid "Вы можете добавить друзей по их имени пользователя в Discord."
+msgstr "Arkadaşlarını Discord kullanıcı adlarıyla ekleyebilirsin."
+
+msgid "Отправить запрос дружбы"
+msgstr "Arkadaşlık isteği gönder"
+
+msgid "ВСЕ ДРУЗЬЯ"
+msgstr "TÜM ARKADAŞLAR"
+
+msgid "ЗАПРОСЫ"
+msgstr "İSTEKLER"
+
+msgid "Заявок в друзья нет"
+msgstr "Arkadaşlık isteği yok"
+
+msgid "Здесь пока никого"
+msgstr "Burada henüz kimse yok"
+
+msgid "Новых запросов нет"
+msgstr "Yeni istek yok"
+
+msgid "Входящая заявка в друзья"
+msgstr "Gelen arkadaşlık isteği"
+
+msgid "Исходящая заявка в друзья"
+msgstr "Giden arkadaşlık isteği"
+
+msgid "  ·  скачать"
+msgstr "  ·  indir"
+
+msgid "(изменено)"
+msgstr "(düzenlendi)"
+
+msgid "Подключение…"
+msgstr "Bağlanıyor…"
+
+msgid "Выбери канал или личную переписку слева"
+msgstr "Soldan bir kanal veya özel mesaj seç"
+
+msgid "Не задана"
+msgstr "Ayarlanmadı"
+
+msgid "Найти или начать беседу"
+msgstr "Sohbet bul veya başlat"
+
+msgid "Голос не работает"
+msgstr "Ses çalışmıyor"
+
+msgid "Поиск в переписке"
+msgstr "Bu sohbette ara"
+
+msgid "Искать на сервере"
+msgstr "Bu sunucuda ara"
+
+msgid "Редактирование сообщения · Esc отменяет"
+msgstr "Mesaj düzenleniyor · Esc iptal eder"
+
+msgid "Ответ на сообщение · Esc отменяет"
+msgstr "Mesaja yanıt veriliyor · Esc iptal eder"
+
+msgid "Вернуться к последним"
+msgstr "En yeniye git"
+
+msgid "Найти эмодзи по названию"
+msgstr "Adıyla emoji bul"
+
+msgid "Добавить реакцию"
+msgstr "Tepki ekle"
+
+msgid "Закрепить"
+msgstr "Sabitle"
+
+msgid "Открепить"
+msgstr "Sabitlemeyi kaldır"
+
+msgid "Ответить"
+msgstr "Yanıtla"
+
+msgid "Копировать текст"
+msgstr "Metni kopyala"
+
+msgid "Копировать ссылку"
+msgstr "Bağlantıyı kopyala"
+
+msgid "Копировать ID сообщения"
+msgstr "Mesaj ID'sini kopyala"
+
+msgid "Меню автора"
+msgstr "Yazar menüsü"
+
+msgid "Редактировать"
+msgstr "Düzenle"
+
+msgid "сообщение"
+msgstr "Mesaj"
+
+msgid "Приложения"
+msgstr "Uygulamalar"
+
+msgid "Весь экран"
+msgstr "Tüm ekran"
+
+msgid "Игры"
+msgstr "Oyunlar"
+
+msgid "Демонстрация экрана"
+msgstr "Ekran paylaşımı"
+
+msgid "Пользовательские"
+msgstr "Özel"
+
+msgid " к/с"
+msgstr " fps"
+
+msgid "Звук на стриме включён"
+msgstr "Yayın sesi açık"
+
+msgid "Звук на стриме заглушён"
+msgstr "Yayın sesi kapalı"
+
+msgid "Режим стрима"
+msgstr "Yayın modu"
+
+msgid "Более плавное видео (1440p, 60 к/с)"
+msgstr "Daha akıcı video (1440p, 60 fps)"
+
+msgid "Более чёткий текст (источник, 15 к/с)"
+msgstr "Daha net metin (kaynak, 15 fps)"
+
+msgid "Разрешение экрана"
+msgstr "Ekran çözünürlüğü"
+
+msgid "Источник"
+msgstr "Kaynak"
+
+msgid "Частота кадров"
+msgstr "Kare hızı"
+
+msgid "Передавать звук"
+msgstr "Sesi paylaş"
+
+msgid "Прекратить просмотр"
+msgstr "İzlemeyi bırak"
+
+msgid "Прекратить стрим"
+msgstr "Yayını durdur"
+
+msgid "Изменить источник"
+msgstr "Kaynağı değiştir"
+
+msgid "Поделиться звуком стрима"
+msgstr "Yayın sesini paylaş"
+
+
+msgid "Редактировать профиль"
+msgstr "Profili düzenle"
+
+msgid "Как используются мои данные"
+msgstr "Verilerim nasıl kullanılıyor"
+
+msgid "Что Discord собирает и для чего: настройка отбора данных и выгрузка архива."
+msgstr "Discord'un ne topladığı ve neden: veri seçimi ve arşiv indirme."
+
+msgid "Спонсируемый контент"
+msgstr "Sponsorlu içerik"
+
+msgid "Показывать ли рекламные материалы партнёров."
+msgstr "İş ortağı tanıtımlarının gösterilip gösterilmeyeceği."
+
+msgid "Приватность профиля"
+msgstr "Profil gizliliği"
+
+msgid "Кто видит твои подключения и активность на странице профиля."
+msgstr "Profilindeki bağlantıları ve etkinliği kimlerin göreceği."
+
+msgid "Шифрование голосовых чатов"
+msgstr "Sesli sohbet şifrelemesi"
+
+msgid "Голос и видео шифруются от края до края. Nimbus поддерживает такое шифрование."
+msgstr "Ses ve görüntü uçtan uca şifrelenir. Nimbus bu şifrelemeyi destekler."
+
+msgid "Фильтры содержимого"
+msgstr "İçerik filtreleri"
+
+msgid "Проверка картинок и вложений в личных сообщениях."
+msgstr "Özel mesajlardaki görsellerin ve eklerin denetimi."
+
+msgid "Защита от спама"
+msgstr "İstenmeyen ileti koruması"
+
+msgid "Отбор подозрительных сообщений и запросов."
+msgstr "Şüpheli mesaj ve isteklerin filtrelenmesi."
+
+msgid "Личные сообщения"
+msgstr "Özel mesajlar"
+
+msgid "Кто может писать тебе с общих серверов."
+msgstr "Ortak sunuculardan sana kimlerin yazabileceği."
+
+msgid "Запросы в друзья"
+msgstr "Arkadaşlık istekleri"
+
+msgid "Кто может отправлять тебе запросы."
+msgstr "Sana kimlerin istek gönderebileceği."
+
+msgid "Игнорирование и блокировка"
+msgstr "Yok sayma ve engelleme"
+
+msgid "Список людей, чьи сообщения скрыты или заблокированы."
+msgstr "Mesajları gizlenen veya engellenen kişiler."
+
+msgid "Подписка с расширенными возможностями: размер файлов, качество показа экрана, свои эмодзи."
+msgstr "Ek özellikli abonelik: dosya boyutu, ekran paylaşımı kalitesi, özel emojiler."
+
+msgid "Буст сервера"
+msgstr "Sunucu takviyesi"
+
+msgid "Улучшение серверов за счёт бустов."
+msgstr "Takviyelerle sunucuları geliştirme."
+
+msgid "Подписки"
+msgstr "Abonelikler"
+
+msgid "Твои действующие подписки и их продление."
+msgstr "Etkin aboneliklerin ve yenilemeleri."
+
+msgid "Склад подарков"
+msgstr "Hediye envanteri"
+
+msgid "Коды и купленные подарки."
+msgstr "Kodlar ve satın alınan hediyeler."
+
+msgid "Способы оплаты и история операций."
+msgstr "Ödeme yöntemleri ve işlem geçmişi."
+
+msgid "Текущая игра"
+msgstr "Geçerli oyun"
+
+msgid "Игра, которая сейчас показана в твоём статусе."
+msgstr "Şu anda durumunda gösterilen oyun."
+
+msgid "Добавленные игры"
+msgstr "Eklenen oyunlar"
+
+msgid "Игры, добавленные вручную, чтобы статус их показывал."
+msgstr "Durumda görünmesi için elle eklenen oyunlar."
+
+msgid "Какой активностью я делюсь"
+msgstr "Hangi etkinliği paylaşıyorum"
+
+msgid "Показывать ли игру и статус другим людям."
+msgstr "Oyununun ve durumunun başkalarına gösterilip gösterilmeyeceği."
+
+msgid "Где я публикую активность"
+msgstr "Etkinliği nerede gösteriyorum"
+
+msgid "На каких серверах видна твоя активность."
+msgstr "Etkinliğinin hangi sunucularda görüneceği."
+
+msgid "Присоединение к активности"
+msgstr "Etkinliğe katılma"
+
+msgid "Могут ли друзья присоединяться к тебе без запроса."
+msgstr "Arkadaşların sormadan sana katılıp katılamayacağı."
+
+msgid "Приложения и боты с доступом к аккаунту."
+msgstr "Hesaba erişimi olan uygulamalar ve botlar."
+
+msgid "Связанные настройки"
+msgstr "İlgili ayarlar"
+
+msgid "Голос"
+msgstr "Ses"
+
+msgid "Расширенные"
+msgstr "Gelişmiş"
+
+msgid "Сообщения"
+msgstr "Mesajlar"
+
+msgid "Цвет и контраст"
+msgstr "Renk ve karşıtlık"
+
+msgid "Пониженное движение"
+msgstr "Azaltılmış hareket"
+
+msgid "Основные"
+msgstr "Genel"
+
+msgid "Время и дата"
+msgstr "Saat ve tarih"
+
+msgid "Информация об учётной записи"
+msgstr "Hesap bilgileri"
+
+msgid "Уведомления на рабочем столе"
+msgstr "Masaüstü bildirimleri"
+
+msgid "Выйти из аккаунта"
+msgstr "Çıkış yap"
+
+msgid "Поиск"
+msgstr "Ara"
+
+msgid "Пароль и безопасность"
+msgstr "Parola ve güvenlik"
+
+msgid "Тема"
+msgstr "Tema"
+
+msgid "Значок приложения"
+msgstr "Uygulama simgesi"
+
+msgid "Режим стримера"
+msgstr "Yayıncı modu"
+
+msgid "Фон"
+msgstr "Arka plan"
+
+msgid "Цвет окон и панелей. Меняется сразу."
+msgstr "Pencerelerin ve panellerin rengi. Hemen değişir."
+
+msgid "Цвет акцента"
+msgstr "Vurgu rengi"
+
+msgid "Кнопки, переключатели и полоски выбора."
+msgstr "Düğmeler, anahtarlar ve seçim çubukları."
+
+msgid "Цвет значка"
+msgstr "Simge rengi"
+
+msgid "Значок в заголовке окна, на панели задач и в трее."
+msgstr "Başlık çubuğu, görev çubuğu ve tepsideki simge."
+
+msgid "Чёрная"
+msgstr "Siyah"
+
+msgid "Графит"
+msgstr "Grafit"
+
+msgid "Полночь"
+msgstr "Gece yarısı"
+
+msgid "Светлая"
+msgstr "Açık"
+
+msgid "Обычный"
+msgstr "Orijinal"
+
+msgid "Зелёный"
+msgstr "Yeşil"
+
+msgid "Розовый"
+msgstr "Pembe"
+
+msgid "Серый"
+msgstr "Gri"
+
+msgid "Включить режим стримера"
+msgstr "Yayıncı modunu aç"
+
+msgid "Прячет почту, телефон и номер аккаунта в настройках и отключает всплывающие уведомления и их звук."
+msgstr "Ayarlarda e-postayı, telefonu ve hesap numarasını gizler; bildirim pencerelerini ve seslerini kapatır."
+
+msgid "Включать сам при показе экрана"
+msgstr "Ekran paylaşılırken kendiliğinden aç"
+
+msgid "Пока ты показываешь экран, режим стримера включён. Когда показ закончится, он выключится."
+msgstr "Ekran paylaşırken yayıncı modu açıktır. Paylaşım bitince kapanır."
+
+msgid "Интерфейс Nimbus на английском"
+msgstr "İngilizce Nimbus arayüzü"
+
+msgid "Интерфейс Nimbus на русском"
+msgstr "Rusça Nimbus arayüzü"
+
+msgid "День, месяц, год"
+msgstr "Gün, ay, yıl"
+
+msgid "Год, месяц, день"
+msgstr "Yıl, ay, gün"
+
+msgid "Говори: услышишь себя. Пока идёт проверка, звонок тебя не слышит, а ты не слышишь звонок."
+msgstr "Konuş: kendini duyacaksın. Test sırasında arama seni duymaz, sen de aramayı duymazsın."
+
+msgid "Мелкий"
+msgstr "Küçük"
+
+msgid "Крупный"
+msgstr "Büyük"
+
+msgid "Очень крупный"
+msgstr "Çok büyük"
+
+msgid "Средний"
+msgstr "Orta"
+
+msgid "Фильтры контента"
+msgstr "İçerik filtreleri"
+
+msgid "Проверять картинки в личных сообщениях"
+msgstr "Özel mesajlardaki görselleri denetle"
+
+msgid "Discord размывает то, что считает неприемлемым. Меняется на аккаунте."
+msgstr "Discord uygunsuz bulduğunu bulanıklaştırır. Hesabı değiştirir."
+
+msgid "Не удалось получить настройки с Discord. Проверь соединение и открой окно заново."
+msgstr "Ayarlar Discord'dan alınamadı. Bağlantıyı kontrol et ve pencereyi yeniden aç."
+
+msgid "Проверять всё"
+msgstr "Her şeyi denetle"
+
+msgid "Сообщения от всех, включая друзей"
+msgstr "Arkadaşlar dâhil herkesten gelen mesajlar"
+
+msgid "Проверять от не друзей"
+msgstr "Arkadaş olmayanları denetle"
+
+msgid "Друзьям доверяем"
+msgstr "Arkadaşlara güvenilir"
+
+msgid "Не проверять"
+msgstr "Denetleme"
+
+msgid "Фильтры спама"
+msgstr "İstenmeyen ileti filtreleri"
+
+msgid "Фильтры спама можно изменить только на сайте Discord."
+msgstr "İstenmeyen ileti filtreleri yalnızca Discord web sitesinden değiştirilebilir."
+
+msgid "Личные сообщения от участников серверов настрой на сайте Discord."
+msgstr "Sunucu üyelerinden gelen özel mesajları Discord web sitesinden ayarla."
+
+msgid "Запросы дружбы"
+msgstr "Arkadaşlık istekleri"
+
+msgid "Кто может отправлять запросы в друзья"
+msgstr "Kimler arkadaşlık isteği gönderebilir"
+
+msgid "Меняется на аккаунте сразу."
+msgstr "Hesabı hemen değiştirir."
+
+msgid "Друзья друзей"
+msgstr "Arkadaşların arkadaşları"
+
+msgid "Участники общих серверов"
+msgstr "Ortak sunucu üyeleri"
+
+msgid "Подключённые игры"
+msgstr "Bağlı oyunlar"
+
+msgid "Подключённые игры и список заблокированных меняй на сайте Discord."
+msgstr "Bağlı oyunları ve engel listesini Discord web sitesinden değiştir."
+
+msgid "Игнорировать и заблокировать"
+msgstr "Yok sayma ve engelleme"
+
+msgid "Статус"
+msgstr "Durum"
+
+msgid "Как тебя видят другие. Меняется на аккаунте сразу."
+msgstr "Başkalarının seni nasıl gördüğü. Hesabı hemen değiştirir."
+
+msgid "В сети"
+msgstr "Çevrimiçi"
+
+msgid "Неактивен"
+msgstr "Boşta"
+
+msgid "Не беспокоить"
+msgstr "Rahatsız etmeyin"
+
+msgid "Уведомления отключены"
+msgstr "Bildirimler kapalı"
+
+msgid "Невидимый"
+msgstr "Görünmez"
+
+msgid "Ты в сети, но показываешься как не в сети"
+msgstr "Çevrimiçisin ama çevrimdışı görünüyorsun"
+
+msgid "Свой статус"
+msgstr "Özel durum"
+
+msgid "Строка под твоим именем; пустая убирает её."
+msgstr "Adının altındaki satır; boş bırakılırsa kaldırılır."
+
+msgid "Чем ты занят?"
+msgstr "Ne yapıyorsun?"
+
+msgid "Сохранить статус"
+msgstr "Durumu kaydet"
+
+msgid "О себе"
+msgstr "Hakkımda"
+
+msgid "Короткий текст в твоём профиле, до 190 знаков."
+msgstr "Profilinde kısa bir metin, en fazla 190 karakter."
+
+msgid "Расскажи о себе"
+msgstr "Kendinden bahset"
+
+msgid "Сохранить «О себе»"
+msgstr "\"Hakkımda\" kaydet"
+
+msgid "«О себе» сохранено"
+msgstr "\"Hakkımda\" kaydedildi"
+
+msgid "Показывать игру, в которую я играю"
+msgstr "Oynadığım oyunu göster"
+
+msgid "Другие видят её в твоём профиле и в списке. Меняется на аккаунте сразу."
+msgstr "Başkaları profilinde ve listede görür. Hesabı hemen değiştirir."
+
+msgid "Серверы, где видна активность, выбирай на сайте Discord."
+msgstr "Etkinliğini gösteren sunucuları Discord web sitesinden seç."
+
+msgid "Баннер"
+msgstr "Afiş"
+
+msgid "Картинка над профилем. Если Discord её не принимает (например, нужен Nitro), он ответит почему."
+msgstr "Profilinin üstündeki görsel. Discord kabul etmezse (örneğin Nitro gerekiyorsa) nedenini söyler."
+
+msgid "Загрузить"
+msgstr "Yükle"
+
+msgid "Убрать"
+msgstr "Kaldır"
+
+msgid "Аватар"
+msgstr "Avatar"
+
+msgid "PNG, JPEG, GIF или WebP, до 8 МБ."
+msgstr "PNG, JPEG, GIF veya WebP, en fazla 8 MB."
+
+msgid "Отображаемое имя"
+msgstr "Görünen ad"
+
+msgid "До 32 знаков. Пустое показывает имя пользователя."
+msgstr "En fazla 32 karakter. Boşsa kullanıcı adı gösterilir."
+
+msgid "Сохранить имя"
+msgstr "Adı kaydet"
+
+msgid "Местоимения"
+msgstr "Zamirler"
+
+msgid "До 40 знаков."
+msgstr "En fazla 40 karakter."
+
+msgid "Например, они/их"
+msgstr "Örneğin, they/them"
+
+msgid "Сохранить местоимения"
+msgstr "Zamirleri kaydet"
+
+msgid "До 190 знаков."
+msgstr "En fazla 190 karakter."
+
+msgid "Меняется в Discord"
+msgstr "Discord'da değiştirilir"
+
+msgid "Украшение аватара, эффект профиля, бейджик, стиль имени, виджеты"
+msgstr "Avatar süsü, profil efekti, rozet, ad stili, widget'lar"
+
+msgid "Так тебя увидят"
+msgstr "Başkaları seni nasıl görecek"
+
+msgid "Применить"
+msgstr "Uygula"
+
+msgid "Бейджик"
+msgstr "Rozet"
+
+msgid "Аватар и украшение"
+msgstr "Avatar ve süs"
+
+msgid "Стиль отображаемого имени"
+msgstr "Görünen ad stili"
+
+msgid "Тема и баннер"
+msgstr "Tema ve afiş"
+
+msgid "Эффект профиля"
+msgstr "Profil efekti"
+
+msgid "Присоединиться"
+msgstr "Katıl"
+
+msgid "Отклонить"
+msgstr "Reddet"
+
+msgid "Показ экрана в звонках ЛС пока недоступен"
+msgstr "Ekran paylaşımı özel mesaj aramalarında henüz kullanılamıyor"
+
+msgid "Опрос завершён"
+msgstr "Anket bitti"
+
+msgid "Можно выбрать несколько ответов"
+msgstr "Bir veya daha fazla yanıt seç"
+
+msgid "Выбери один ответ"
+msgstr "Bir yanıt seç"
+
+msgid "Голосов: "
+msgstr "Oylar: "
+
+msgid "Закончится: "
+msgstr "Bitiş: "
+
+msgid "Переслано"
+msgstr "İletildi"
+
+msgid "Заметка"
+msgstr "Not"
+
+msgid "Нажми, чтобы добавить заметку"
+msgstr "Not eklemek için tıkla"
+
+msgid "Искать в Tenor"
+msgstr "Tenor'da ara"
+
+msgid "Ищу GIF…"
+msgstr "GIF'ler aranıyor…"
+
+msgid "Переслать"
+msgstr "İlet"
+
+msgid "Как на сервере"
+msgstr "Sunucu varsayılanı"
+
+msgid "Все сообщения"
+msgstr "Tüm mesajlar"
+
+msgid "Только упоминания"
+msgstr "Yalnızca @bahsetmeler"
+
+msgid "Ничего"
+msgstr "Hiçbiri"
+
+msgid "Заглушить сервер"
+msgstr "Sunucuyu sessize al"
+
+msgid "Заглушить канал"
+msgstr "Kanalı sessize al"
+
+msgid "Переслать сообщение"
+msgstr "Mesajı ilet"
+
+msgid "Найти канал или беседу"
+msgstr "Kanal veya sohbet bul"
+
+msgid "Пригласить"
+msgstr "Davet et"
+
+msgid "Создать ветку"
+msgstr "Konu oluştur"
+
+msgid "ПРИГЛАШЕНИЕ НЕДЕЙСТВИТЕЛЬНО"
+msgstr "GEÇERSİZ DAVET"
+
+msgid "ВАС ПРИГЛАСИЛИ НА СЕРВЕР"
+msgstr "BİR SUNUCUYA DAVET EDİLDİN"
+
+msgid "Загрузка…"
+msgstr "Yükleniyor…"
+
+msgid "Попросите новое приглашение"
+msgstr "Yeni bir davet iste"
+
+msgid "Открыть"
+msgstr "Aç"
+
+msgid "Отправка голосового сообщения…"
+msgstr "Sesli mesaj gönderiliyor…"
+
+msgid "Запись длится 20 минут, это предел. Отправить?"
+msgstr "Kayıt 20 dakika sınırına ulaştı. Gönderilsin mi?"
+
+msgid "Запись голосового сообщения"
+msgstr "Sesli mesaj kaydediliyor"
+
+msgid "Новая публикация"
+msgstr "Yeni gönderi"
+
+msgid "Присоединиться к серверу"
+msgstr "Bir sunucuya katıl"
+
+msgid "Вставьте приглашение: .gg/invite."
+msgstr "Paste an invite: .gg/invite."
+
+msgid "Найти"
+msgstr "Bul"
+
+msgid "Спрашиваю Discord о приглашении…"
+msgstr "Discord'a davet soruluyor…"
+
+msgid "Вы присоединились к серверу"
+msgstr "Sunucuya katıldın"
+
+msgid "Вы уже на этом сервере"
+msgstr "Zaten bu sunucudasın"
+
+msgid "Закрыть"
+msgstr "Kapat"
+
+msgid "Присоединение…"
+msgstr "Katılınıyor…"
+
+msgid "Открыть сервер"
+msgstr "Sunucuyu aç"
+
+msgid "Пригласить друзей в "
+msgstr "Arkadaşları şuraya davet et: "
+
+msgid "Создаю приглашение…"
+msgstr "Davet oluşturuluyor…"
+
+msgid "Отправьте эту ссылку другу. Она действует 1 день, число использований не ограничено."
+msgstr "Bu bağlantıyı bir arkadaşına gönder. 1 gün geçerlidir, kullanım sınırı yoktur."
+
+msgid "Скопировано"
+msgstr "Kopyalandı"
+
+msgid "Копировать"
+msgstr "Kopyala"
+
+msgid "Готово"
+msgstr "Tamam"
+
+msgid "НАЗВАНИЕ ВЕТКИ"
+msgstr "KONU ADI"
+
+msgid "ЗАГОЛОВОК"
+msgstr "BAŞLIK"
+
+msgid "Новая ветка"
+msgstr "Yeni konu"
+
+msgid "О чём публикация?"
+msgstr "Gönderi ne hakkında?"
+
+msgid "ТЕКСТ"
+msgstr "METİN"
+
+msgid "Напишите первое сообщение публикации"
+msgstr "Gönderinin ilk mesajını yaz"
+
+msgid "Создание…"
+msgstr "Oluşturuluyor…"
+
+msgid "Опубликовать"
+msgstr "Yayınla"
+
+msgid "Ожидание"
+msgstr "Bekliyor"
+
+msgid "Добавить в друзья"
+msgstr "Arkadaş ekle"
+
+msgid "Где показывать"
+msgstr "Nerede gösterilsin"
+
+msgid "Комната Nimbus"
+msgstr "Nimbus odası"
+
+msgid "Оба"
+msgstr "İkisi de"
+
+msgid "На Discord качество ограничено подпиской: без Nitro 720p, 30 к/с; Nitro Classic 1080p, 60 к/с."
+msgstr "Discord'da kalite aboneliğe bağlıdır: Nitro olmadan 720p, 30 fps; Nitro Classic 1080p, 60 fps."
+
+msgid "Камера"
+msgstr "KAMERA"
+
+msgid "Включи камеру кнопкой в звонке. Nimbus отправит её в голос Discord в 720p и 30 кадров в секунду, если камера так умеет."
+msgstr "Kamerayı aramadaki düğmeyle aç. Kamera destekliyorsa Nimbus onu Discord sesine 720p ve saniyede 30 kare ile gönderir."
+
+msgid "КАМЕРА"
+msgstr "KAMERA"
+
+msgid "Камеры не найдены"
+msgstr "Kamera bulunamadı"
+
+msgid "Предпросмотр"
+msgstr "Önizleme"
+
+msgid "Показать здесь, что видит камера. Пока предпросмотр включён, камера работает."
+msgstr "Kameranın gördüğünü burada göster. Önizleme açıkken kamera çalışır."
+
+msgid "Включаю камеру…"
+msgstr "Kamera açılıyor…"
+
+msgid "Найдите идеальный звук"
+msgstr "Mükemmel sesi bul"
+
+msgid "Загружаю звуки…"
+msgstr "Sesler yükleniyor…"
+
+msgid "Звуков не нашлось"
+msgstr "Ses bulunamadı"
+
+msgid "Сделайте выбор"
+msgstr "Bir seçim yap"
+
+msgid "Только вы можете видеть это сообщение"
+msgstr "Bu mesajı yalnızca sen görebilirsin"
+
+msgid "Идёт сейчас"
+msgstr "Şu anda oluyor"
+
+msgid "Поделиться"
+msgstr "Paylaş"
+
+msgid "Интересно"
+msgstr "İlgileniyorum"
+
+msgid "Отменить мероприятие"
+msgstr "Etkinliği iptal et"
+
+msgid "Мероприятия"
+msgstr "Etkinlikler"
+
+msgid "Создать событие"
+msgstr "Etkinlik oluştur"
+
+msgid "Нет предстоящих событий."
+msgstr "Yaklaşan etkinlik yok."
+
+msgid "Планируйте мероприятия: созвоны, стримы, игры и встречи. Участники смогут отметить, что им интересно."
+msgstr "Etkinlik planla: aramalar, yayınlar, oyunlar ve buluşmalar. Üyeler ilgilendiklerini işaretleyebilir."
+
+msgid "Где"
+msgstr "Konum"
+
+msgid "Сведения"
+msgstr "Etkinlik bilgisi"
+
+msgid "Где пройдёт мероприятие?"
+msgstr "Etkinliğin nerede?"
+
+msgid "Чтобы никто не потерялся."
+msgstr "Kimse yolunu kaybetmesin diye."
+
+msgid "Трибуна"
+msgstr "Sahne kanalı"
+
+msgid "Выступайте перед слушателями в канале-трибуне"
+msgstr "Sahne kanalında bir dinleyici kitlesine konuş"
+
+msgid "Голосовой канал"
+msgstr "Ses kanalı"
+
+msgid "Общайтесь голосом и по видео, показывайте экран"
+msgstr "Ses ve görüntüyle konuş, ekranını paylaş"
+
+msgid "В другом месте"
+msgstr "Başka bir yer"
+
+msgid "Текстовый канал, внешняя ссылка или место встречи"
+msgstr "Metin kanalı, harici bağlantı veya fiziksel konum"
+
+msgid "ВЫБЕРИТЕ КАНАЛ"
+msgstr "BİR KANAL SEÇ"
+
+msgid "УКАЖИТЕ МЕСТО"
+msgstr "BİR KONUM GİR"
+
+msgid "Добавьте место, ссылку или что-то ещё."
+msgstr "Bir konum, bağlantı veya başka bir şey ekle."
+
+msgid "Расскажите о мероприятии"
+msgstr "Etkinliğin ne hakkında?"
+
+msgid "ТЕМА МЕРОПРИЯТИЯ"
+msgstr "ETKİNLİK KONUSU"
+
+msgid "О чём ваше мероприятие?"
+msgstr "Etkinliğin nedir?"
+
+msgid "ДАТА НАЧАЛА"
+msgstr "BAŞLANGIÇ TARİHİ"
+
+msgid "ВРЕМЯ НАЧАЛА"
+msgstr "BAŞLANGIÇ SAATİ"
+
+msgid "ДАТА ОКОНЧАНИЯ"
+msgstr "BİTİŞ TARİHİ"
+
+msgid "ВРЕМЯ ОКОНЧАНИЯ"
+msgstr "BİTİŞ SAATİ"
+
+msgid "дд.мм.гггг"
+msgstr "gg.aa.yyyy"
+
+msgid "чч:мм"
+msgstr "ss:dd"
+
+msgid "ЧАСТОТА"
+msgstr "ETKİNLİK SIKLIĞI"
+
+msgid "Не повторяется"
+msgstr "Tekrarlanmaz"
+
+msgid "ОПИСАНИЕ"
+msgstr "AÇIKLAMA"
+
+msgid "Расскажите подробнее. Можно использовать разметку и ссылки."
+msgstr "Etkinliğin hakkında biraz daha bilgi ver. Markdown ve bağlantılar desteklenir."
+
+msgid "Всё верно?"
+msgstr "İyi görünüyor mu?"
+
+msgid "Так участники сервера увидят ваше мероприятие."
+msgstr "Sunucu üyeleri etkinliğini böyle görecek."
+
+msgid "Назад"
+msgstr "Geri"
+
+msgid "Далее"
+msgstr "İleri"
+
+msgid "В числе участников с"
+msgstr "Üyelik başlangıcı"
+
+msgid "Сообщение для @{}"
+msgstr "@{} için mesaj"
+
+msgid "Полный профиль"
+msgstr "Tam profil"
+
+msgid "Искать «{}»"
+msgstr "\"{}\" içinde ara"
+
+msgid "Мягкий свет на фоне"
+msgstr "Yumuşak arka plan ışığı"
+
+msgid "Добавляет за окном едва заметный серый свет сверху."
+msgstr "Üstte, pencerenin arkasına hafif gri bir ışık ekler."
+
+msgid "Копировать ID сервера"
+msgstr "Sunucu ID'sini kopyala"
+
+msgid "Параметры уведомлений"
+msgstr "Bildirim ayarları"
+
+msgid "Пригласить на сервер"
+msgstr "Sunucuya davet et"
+
+msgid "Проверяю обновления"
+msgstr "Güncellemeler denetleniyor"
+
+msgid "Скачиваю обновление"
+msgstr "Güncelleme indiriliyor"
+
+msgid "Устанавливаю обновление"
+msgstr "Güncelleme yükleniyor"
+
+msgid "Запускаю Nimbus"
+msgstr "Nimbus başlatılıyor"
+
+msgid "Нет связи с сервером обновлений"
+msgstr "Güncelleme sunucusuna bağlantı yok"
+
+msgid "Пропустить"
+msgstr "Atla"
+
+msgid "или"
+msgstr "veya"
+
+msgid "Вставь токен аккаунта"
+msgstr "Hesap token'ı yapıştır"
+
+msgid "Скрывать Nimbus при показе экрана"
+msgstr "Ekran paylaşırken Nimbus'u gizle"
+
+msgid "Пока ты показываешь экран, окна Nimbus не будет ни в демонстрации, ни на скриншотах. Выключено: зрители видят твои чаты."
+msgstr "Ekranını paylaşırken Nimbus penceresi yayında ve ekran görüntülerinde görünmez. Kapalıyken izleyiciler sohbetlerini görebilir."
+
+msgid "Чёрный"
+msgstr "Siyah"
+
+msgid "Белый"
+msgstr "Beyaz"
+
+msgid "Тусклый"
+msgstr "Loş"
+
+msgid "Входим…"
+msgstr "Giriş yapılıyor…"
+
+msgid "Войдите на странице Discord паролем или QR-кодом. Если появится капча, пройдите её."
+msgstr "Discord sayfasında parolanla veya QR kodla giriş yap. Captcha çıkarsa tamamla."
+
+msgid "Nimbus не связан с Discord Inc. Условия Discord запрещают сторонние клиенты, поэтому Discord может заблокировать аккаунт."
+msgstr "Nimbus'un Discord Inc. ile bağlantısı yoktur. Discord koşulları üçüncü taraf istemcileri yasaklar, bu yüzden Discord hesabını yasaklayabilir."
+
+msgid "С возвращением, {}"
+msgstr "Tekrar hoş geldin, {}"
+
+msgid "С возвращением"
+msgstr "Tekrar hoş geldin"
+
+msgid "Загружаю серверы и сообщения"
+msgstr "Sunucular ve mesajlar yükleniyor"
+
+msgid "Голосовой чат был отключён, так как вы подключились из другого места."
+msgstr "Başka bir yerden bağlandığın için ses bağlantısı kesildi."
+
+msgid "Переподключиться"
+msgstr "Yeniden bağlan"
+
+msgid "Открыть в Discord"
+msgstr "Discord'da aç"
+
+msgid "Пометить как прочитанное"
+msgstr "Okundu olarak işaretle"
+
+msgid "Профиль"
+msgstr "Profil"
+
+msgid "Упомянуть"
+msgstr "Bahset"
+
+msgid "Начать звонок"
+msgstr "Arama başlat"
+
+msgid "Изменить никнейм друга"
+msgstr "Arkadaş takma adını değiştir"
+
+msgid "Добавить никнейм друга"
+msgstr "Arkadaş takma adı ekle"
+
+msgid "Заглушить звуковую панель"
+msgstr "Ses panelini sessize al"
+
+msgid "Отключить видео"
+msgstr "Videoyu kapat"
+
+msgid "Изменить никнейм"
+msgstr "Takma adı değiştir"
+
+msgid "Перестать игнорировать"
+msgstr "Yok saymayı bırak"
+
+msgid "Игнорировать"
+msgstr "Yok say"
+
+msgid "Разблокировать"
+msgstr "Engeli kaldır"
+
+msgid "Заблокировать"
+msgstr "Engelle"
+
+msgid "Роли"
+msgstr "Roller"
+
+msgid "Включить уведомления"
+msgstr "Sohbet sesini aç"
+
+msgid "Заглушить чат"
+msgstr "Sohbeti sessize al"
+
+msgid "Покинуть группу"
+msgstr "Gruptan ayrıl"
+
+msgid "Закрыть ЛС"
+msgstr "ÖM'yi kapat"
+
+msgid "Поделиться профилем"
+msgstr "Profili paylaş"
+
+msgid "Копировать ID канала"
+msgstr "Kanal ID'sini kopyala"
+
+msgid "Сохранить"
+msgstr "Kaydet"
+
+msgid "Заблокировать "
+msgstr "Engelle: "
+
+msgid "Удалить из друзей "
+msgstr "Arkadaşlardan çıkar: "
+
+msgid "Вы не увидите сообщений этого человека, а он не сможет вам писать."
+msgstr "Bu kişinin mesajlarını görmeyeceksin ve sana yazamayacak."
+
+msgid "Этот человек исчезнет из списка друзей."
+msgstr "Bu kişi arkadaş listenden çıkacak."
+
+msgid "Никнейм друга"
+msgstr "Arkadaş takma adı"
+
+msgid "Убрать из избранного"
+msgstr "Favorilerden çıkar"
+
+msgid "Добавить в избранное"
+msgstr "Favorilere ekle"
+
+msgid "Открыть в Spotify"
+msgstr "Spotify'da aç"
+
+msgid "Слушать вместе"
+msgstr "Birlikte dinle"
+
+msgid "Просмотреть код подтверждения"
+msgstr "Doğrulama kodunu gör"
+
+msgid "Открыть с доступом модератора"
+msgstr "Moderatör görünümünde aç"
+
+msgid "Открыть магазин"
+msgstr "Mağazayı aç"
+
+msgid "Пожаловаться на профиль"
+msgstr "Profili bildir"
+
+msgid "Тайм-аут"
+msgstr "Zaman aşımı"
+
+msgid "10 минут"
+msgstr "10 dakika"
+
+msgid "1 час"
+msgstr "1 saat"
+
+msgid "1 день"
+msgstr "1 gün"
+
+msgid "Снять"
+msgstr "Kaldır"
+
+msgid "Сообщение"
+msgstr "Mesaj"
+
+msgid "Друзья с"
+msgstr "Arkadaşlık başlangıcı"
+
+msgid "Интеграции"
+msgstr "Bağlantılar"
+
+msgid "Заметка (видна только вам)"
+msgstr "Not (yalnızca sen görürsün)"
+
+msgid "Активность"
+msgstr "Etkinlik"
+
+msgid "Общие друзья"
+msgstr "Ortak arkadaşlar"
+
+msgid "Общие серверы"
+msgstr "Ortak sunucular"
+
+msgid "Сейчас ничего не происходит"
+msgstr "Şu anda bir şey olmuyor"
+
+msgid "Заглушить "
+msgstr "Sessize al: "
+
+msgid "На 15 минут"
+msgstr "15 dakika"
+
+msgid "На 1 час"
+msgstr "1 saat"
+
+msgid "На 3 часа"
+msgstr "3 saat"
+
+msgid "На 8 часов"
+msgstr "8 saat"
+
+msgid "На 24 часа"
+msgstr "24 saat"
+
+msgid "Пока не включу снова"
+msgstr "Yeniden açana kadar"
+
+msgid "Значки пользователя"
+msgstr "Rozetleri:"
+
+msgid "Открыть страницу"
+msgstr "Sayfayı aç"
+
+msgid "Прогресс"
+msgstr "İlerleme"
+
+msgid "Присоединиться к звонку"
+msgstr "Aramaya katıl"
+
+msgid "Nimbus обновлён"
+msgstr "Nimbus güncellendi"
+
+msgid "Что нового"
+msgstr "Yenilikler"

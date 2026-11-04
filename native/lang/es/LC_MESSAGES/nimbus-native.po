@@ -1,0 +1,1801 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Устройства не найдены"
+msgstr "No se encontraron dispositivos"
+
+msgid "Настройки пользователя"
+msgstr "Ajustes de usuario"
+
+msgid "Моя учётная запись"
+msgstr "Mi cuenta"
+
+msgid "Данные и конфиденциальность"
+msgstr "Datos y privacidad"
+
+msgid "Разрешения для сообщений"
+msgstr "Permisos de mensajes"
+
+msgid "Уведомления"
+msgstr "Notificaciones"
+
+msgid "Выставление счетов"
+msgstr "Facturación"
+
+msgid "Подписки и счета"
+msgstr "Suscripciones y facturación"
+
+msgid "Взаимодействие"
+msgstr "Interacción"
+
+msgid "Голос и видео"
+msgstr "Voz y vídeo"
+
+msgid "Стриминг"
+msgstr "Transmisión"
+
+msgid "Звуки"
+msgstr "Sonidos"
+
+msgid "Внешний вид"
+msgstr "Apariencia"
+
+msgid "Специальные возможности"
+msgstr "Accesibilidad"
+
+msgid "Система"
+msgstr "Sistema"
+
+msgid "Язык и время"
+msgstr "Idioma y hora"
+
+msgid "Игры и приложения"
+msgstr "Juegos y aplicaciones"
+
+msgid "Зарегистрированные игры"
+msgstr "Juegos registrados"
+
+msgid "Конфиденциальность активности"
+msgstr "Privacidad de la actividad"
+
+msgid "Подключённые приложения"
+msgstr "Aplicaciones conectadas"
+
+msgid "О программе"
+msgstr "Acerca de"
+
+msgid "Кто может добавлять тебя в друзья, фильтр личных сообщений, выгрузка и удаление данных. Это настройки самого аккаунта: Nimbus их не меняет, чтобы ничего не нарушить."
+msgstr "Quién puede añadirte como amigo, el filtro de mensajes directos, la exportación y eliminación de datos. Son ajustes de la cuenta: Nimbus no los cambia, así que nada se rompe."
+
+msgid "Кто может писать тебе в личные сообщения с серверов. Хранится в аккаунте: меняется в Discord."
+msgstr "Quién puede escribirte desde los servidores. Se guarda en tu cuenta: cámbialo en Discord."
+
+msgid "Nitro и его возможности привязаны к аккаунту и оплате. Управлять подпиской нужно в самом Discord."
+msgstr "Nitro y sus ventajas pertenecen a tu cuenta y facturación. Gestiona la suscripción en el propio Discord."
+
+msgid "Подписки, платежи и склад подарков. Nimbus не работает с оплатой: всё это делается на сайте Discord."
+msgstr "Suscripciones, pagos y el inventario de regalos. Nimbus no gestiona pagos: todo esto se hace en el sitio web de Discord."
+
+msgid "Игры, которые Discord показывает в твоём статусе. Их список ведёт официальное приложение."
+msgstr "Los juegos que Discord muestra en tu estado. Esa lista la lleva la aplicación oficial."
+
+msgid "Что видят другие: твой статус и игра. Настройка хранится в аккаунте, меняется в Discord."
+msgstr "Lo que ven los demás: tu estado y tu juego. Se guarda en tu cuenta, cámbialo en Discord."
+
+msgid "Приложения и боты, которым ты дал доступ к аккаунту. Отозвать доступ можно только на сайте Discord."
+msgstr "Aplicaciones y bots a los que diste acceso a tu cuenta. Solo puedes revocar el acceso en el sitio web de Discord."
+
+msgid "Этих настроек в Nimbus пока нет. Они хранятся в твоём аккаунте Discord и меняются там: в официальном приложении или на сайте."
+msgstr "Nimbus aún no tiene estos ajustes. Se guardan en tu cuenta de Discord y se cambian allí: en la aplicación oficial o en el sitio web."
+
+msgid "Имя пользователя"
+msgstr "Nombre de usuario"
+
+msgid "Электронная почта"
+msgstr "Correo electrónico"
+
+msgid "Номер телефона"
+msgstr "Número de teléfono"
+
+msgid "не указан"
+msgstr "sin configurar"
+
+msgid "Двухфакторная аутентификация"
+msgstr "Autenticación en dos pasos"
+
+msgid "Включена"
+msgstr "Activada"
+
+msgid "Выключена"
+msgstr "Desactivada"
+
+msgid "Копировать мой ID"
+msgstr "Copiar mi ID"
+
+msgid "Скрыть почту и телефон"
+msgstr "Ocultar correo y teléfono"
+
+msgid "Показать почту и телефон"
+msgstr "Mostrar correo y teléfono"
+
+msgid "Имя, почту, пароль и телефон меняй в Discord. Nimbus такие изменения не отправляет."
+msgstr "Cambia tu nombre, correo, contraseña y teléfono en Discord. Nimbus no envía estos cambios."
+
+msgid "Открыть Discord в браузере"
+msgstr "Abrir Discord en el navegador"
+
+msgid "Качество показа экрана"
+msgstr "Calidad de la pantalla compartida"
+
+msgid "Так начинается новый показ экрана; то же стоит в меню показа."
+msgstr "Así empieza una nueva pantalla compartida; el mismo ajuste está en el menú de compartir."
+
+msgid "Разрешение"
+msgstr "Resolución"
+
+msgid "Как у источника"
+msgstr "Igual que la fuente"
+
+msgid "Кадров в секунду"
+msgstr "Fotogramas por segundo"
+
+msgid "Звук приложения"
+msgstr "Audio de la aplicación"
+
+msgid "Передавать звук показываемого окна или всего экрана."
+msgstr "Enviar el sonido de la ventana compartida o de toda la pantalla."
+
+msgid "Размер текста сообщений"
+msgstr "Tamaño del texto de los mensajes"
+
+msgid "Меняется сразу и запоминается."
+msgstr "Se aplica al instante y se recuerda."
+
+msgid "Мелкий (90%)"
+msgstr "Pequeño (90%)"
+
+msgid "Обычный (100%)"
+msgstr "Normal (100%)"
+
+msgid "Крупный (115%)"
+msgstr "Grande (115%)"
+
+msgid "Очень крупный (130%)"
+msgstr "Muy grande (130%)"
+
+msgid "Компактный режим"
+msgstr "Modo compacto"
+
+msgid "Сообщения разных авторов стоят ближе друг к другу."
+msgstr "Los mensajes de distintos autores quedan más juntos."
+
+msgid "Показывать время у автора"
+msgstr "Mostrar la hora junto al autor"
+
+msgid "Время сообщения рядом с именем."
+msgstr "La hora del mensaje junto al nombre."
+
+msgid "Алекс"
+msgstr "Mark"
+
+msgid "Сегодня, 21:52"
+msgstr "Hoy, 21:52"
+
+msgid "Так выглядит текст сообщения."
+msgstr "Así se ve el texto de los mensajes."
+
+msgid "Сегодня, 21:53"
+msgstr "Hoy, 21:53"
+
+msgid "А это ответ на него."
+msgstr "Y esta es una respuesta."
+
+msgid "Уведомления о новых сообщениях"
+msgstr "Notificaciones de mensajes nuevos"
+
+msgid "Небольшое окно в углу экрана, пока Nimbus не в фокусе: для личных сообщений и упоминаний. Заглушённые каналы и серверы молчат."
+msgstr "Una pequeña ventana en la esquina de la pantalla cuando Nimbus no está en primer plano: para mensajes directos y menciones. Los canales y servidores silenciados no avisan."
+
+msgid "Звук уведомления"
+msgstr "Sonido de notificación"
+
+msgid "Собственный короткий звук Nimbus."
+msgstr "El breve sonido propio de Nimbus."
+
+msgid "Показывать текст сообщения"
+msgstr "Mostrar el texto del mensaje"
+
+msgid "Выключи, чтобы в уведомлении было только «Новое сообщение»."
+msgstr "Desactívalo para mostrar solo \"Mensaje nuevo\" en la notificación."
+
+msgid "@everyone и @here"
+msgstr "@everyone y @here"
+
+msgid "Считать их упоминанием."
+msgstr "Contarlos como mención."
+
+msgid "Сворачивать в трей при закрытии"
+msgstr "Minimizar a la bandeja al cerrar"
+
+msgid "Крестик прячет окно, а Nimbus продолжает работать в трее. Чтобы закрыть совсем, используй меню значка."
+msgstr "La X oculta la ventana y Nimbus sigue en la bandeja. Para salir, usa el menú del icono de la bandeja."
+
+msgid "Запускать вместе с Windows"
+msgstr "Iniciar con Windows"
+
+msgid "Выключено по умолчанию. Включится, только если ты сам нажмёшь переключатель."
+msgstr "Desactivado por defecto. Solo se activa si tú mismo mueves el interruptor."
+
+msgid "Забыть решения о голосовых серверах"
+msgstr "Olvidar las decisiones sobre servidores de voz"
+
+msgid "Запускается только одна копия Nimbus. Второй запуск ничего не откроет."
+msgstr "Solo se ejecuta una copia de Nimbus. Un segundo inicio no abre nada."
+
+msgid "Уменьшить анимации"
+msgstr "Reducir animaciones"
+
+msgid "Без скольжения и плавных переходов в меню и на кнопках."
+msgstr "Sin deslizamientos ni transiciones suaves en menús y botones."
+
+msgid "Повышенная контрастность"
+msgstr "Alto contraste"
+
+msgid "Светлее текст и заметнее границы."
+msgstr "Texto más claro y bordes más nítidos."
+
+msgid "Остальные настройки доступности хранятся в аккаунте Discord."
+msgstr "Los demás ajustes de accesibilidad se guardan en tu cuenta de Discord."
+
+msgid "Язык"
+msgstr "Idioma"
+
+msgid "Язык интерфейса Nimbus."
+msgstr "Elige el idioma de la interfaz de Nimbus."
+
+msgid "Формат времени"
+msgstr "Formato de hora"
+
+msgid "Применяется к сообщениям, открытым после выбора (открой канал заново)."
+msgstr "Se aplica a los mensajes abiertos tras elegir (vuelve a abrir el canal)."
+
+msgid "24 часа"
+msgstr "24 horas"
+
+msgid "12 часов (AM/PM)"
+msgstr "12 horas (AM/PM)"
+
+msgid "Формат даты"
+msgstr "Formato de fecha"
+
+msgid "Звуки звонка"
+msgstr "Sonidos de llamada"
+
+msgid "Вход и выход, мут и размут, приход и уход других. Свои звуки: положи WAV-файлы в папку со звуками, они заменят встроенные."
+msgstr "Entrar y salir, silenciar y activar, otros que llegan y se van. Sonidos propios: pon archivos WAV en la carpeta de sonidos y sustituirán a los integrados."
+
+msgid "Открыть папку со звуками"
+msgstr "Abrir la carpeta de sonidos"
+
+msgid "Неофициальный открытый клиент Discord. Не связан с Discord Inc. и не выдаёт себя за официальное приложение."
+msgstr "Un cliente no oficial de Discord de código abierto. No está afiliado a Discord Inc. ni se hace pasar por la aplicación oficial."
+
+msgid "Показ экрана идёт через твой собственный сервер LiveKit, не через Nitro. Вход в голос Discord выполняется от твоего аккаунта на твой риск."
+msgstr "La pantalla compartida pasa por tu propio servidor LiveKit, no por Nitro. Unirte a la voz de Discord se hace desde tu cuenta bajo tu propio riesgo."
+
+msgid "Микрофон"
+msgstr "Micrófono"
+
+msgid "УСТРОЙСТВО ВВОДА"
+msgstr "DISPOSITIVO DE ENTRADA"
+
+msgid "Громкость микрофона · "
+msgstr "Volumen del micrófono · "
+
+msgid "Динамик"
+msgstr "Altavoz"
+
+msgid "УСТРОЙСТВО ВЫВОДА"
+msgstr "DISPOSITIVO DE SALIDA"
+
+msgid "Громкость динамика · "
+msgstr "Volumen del altavoz · "
+
+msgid "Остановить проверку"
+msgstr "Detener la prueba"
+
+msgid "Проверка микрофона"
+msgstr "Prueba de micrófono"
+
+msgid "Говори, и услышишь себя так, как тебя слышат другие."
+msgstr "Habla y te oirás como te oyen los demás."
+
+msgid "Проверка включает микрофон и проигрывает твой голос тебе же."
+msgstr "La prueba enciende el micrófono y te reproduce tu voz."
+
+msgid "Режим голоса"
+msgstr "Modo de voz"
+
+msgid "В режиме рации микрофон открыт, только пока зажата клавиша. Клавиша работает и когда окно Nimbus не в фокусе."
+msgstr "En pulsar para hablar el micrófono solo está abierto mientras mantienes la tecla. La tecla funciona aunque la ventana de Nimbus no esté en primer plano."
+
+msgid "Активность голоса"
+msgstr "Actividad de voz"
+
+msgid "Микрофон открыт, когда слышит речь"
+msgstr "El micrófono se abre cuando oye voz"
+
+msgid "Рация (Push to talk)"
+msgstr "Pulsar para hablar"
+
+msgid "Говоришь, только пока держишь клавишу"
+msgstr "Solo hablas mientras mantienes la tecla"
+
+msgid "Нажмите клавишу…"
+msgstr "Pulsa una tecla…"
+
+msgid "Esc отменяет"
+msgstr "Esc cancela"
+
+msgid "Нажми на поле, чтобы сменить"
+msgstr "Haz clic en el campo para cambiar"
+
+msgid "Ctrl добавляется сам, если его не было: иначе клавиша сработает при наборе текста."
+msgstr "Ctrl se añade automáticamente si no estaba: si no, la tecla se activaría al escribir."
+
+msgid "Быстрые клавиши"
+msgstr "Atajos"
+
+msgid "Работают из любой программы. Delete или Backspace снимает клавишу. Без Ctrl/Shift/Alt добавляется Ctrl."
+msgstr "Funcionan desde cualquier programa. Supr o Retroceso borra la tecla. Ctrl se añade si no hay Ctrl/Mayús/Alt."
+
+msgid "Выключить / включить микрофон"
+msgstr "Silenciar / activar micrófono"
+
+msgid "Заглушить / вернуть звук"
+msgstr "Ensordecer / dejar de ensordecer"
+
+msgid "Профиль ввода"
+msgstr "Perfil de entrada"
+
+msgid "Изоляция голоса"
+msgstr "Aislamiento de voz"
+
+msgid "Только твой голос: усиленное шумоподавление убирает всё остальное"
+msgstr "Solo tu voz: una fuerte supresión de ruido elimina todo lo demás"
+
+msgid "Студия"
+msgstr "Estudio"
+
+msgid "Чистый звук: открытый микрофон без обработки"
+msgstr "Sonido limpio: micrófono abierto sin procesamiento"
+
+msgid "Пользовательский"
+msgstr "Personalizado"
+
+msgid "Все кнопки и переключатели ниже"
+msgstr "Todos los botones e interruptores de abajo"
+
+msgid "Автоматически определять чувствительность ввода"
+msgstr "Detectar automáticamente la sensibilidad de entrada"
+
+msgid "Микрофон передаёт, только когда слышит речь. Выключи, чтобы задать порог вручную."
+msgstr "El micrófono solo transmite cuando oye voz. Desactívalo para fijar el umbral a mano."
+
+msgid "Порог: "
+msgstr "Umbral: "
+
+msgid " дБ. Что тише, не передаётся"
+msgstr " dB. Lo más bajo no se envía"
+
+msgid "Шумоподавление"
+msgstr "Supresión de ruido"
+
+msgid "Усиленное использует нейросеть RNNoise на этом компьютере и убирает клавиатуру, вентилятор и дыхание."
+msgstr "La fuerte usa la red neuronal RNNoise en este ordenador y elimina teclados, ventiladores y respiración."
+
+msgid "Нет"
+msgstr "Ninguna"
+
+msgid "Стандартное"
+msgstr "Estándar"
+
+msgid "Усиленное (RNNoise)"
+msgstr "Fuerte (RNNoise)"
+
+msgid "Сила подавления"
+msgstr "Intensidad de la supresión"
+
+msgid "Мягко"
+msgstr "Suave"
+
+msgid "Средне"
+msgstr "Media"
+
+msgid "Максимум"
+msgstr "Máxima"
+
+msgid "Эхоподавление"
+msgstr "Cancelación de eco"
+
+msgid "Убирает из микрофона звук твоих динамиков."
+msgstr "Elimina del micrófono el sonido de tus altavoces."
+
+msgid "Автоматическая регулировка усиления"
+msgstr "Control automático de ganancia"
+
+msgid "Выравнивает громкость: тихий голос громче, крик тише."
+msgstr "Iguala el volumen: una voz baja sube, los gritos bajan."
+
+msgid "Написать сообщение"
+msgstr "Mensaje"
+
+msgid "Громкость пользователя · "
+msgstr "Volumen del usuario · "
+
+msgid "Заглушить"
+msgstr "Silenciar"
+
+msgid "Удалить из друзей"
+msgstr "Eliminar de amigos"
+
+msgid "ДОБАВИТЬ В ДРУЗЬЯ"
+msgstr "Añadir amigo"
+
+msgid "Откл. микрофон на сервере"
+msgstr "Silenciar micrófono en el servidor"
+
+msgid "Сервер: откл. звук"
+msgstr "Servidor: ensordecer"
+
+msgid "Переместить в"
+msgstr "Mover a"
+
+msgid "Отключить"
+msgstr "Desconectar"
+
+msgid "Выгнать "
+msgstr "Expulsar a "
+
+msgid "Забанить "
+msgstr "Banear a "
+
+msgid "Копировать ID пользователя"
+msgstr "Copiar ID de usuario"
+
+msgid "Подключиться к голосовому серверу?"
+msgstr "¿Conectar al servidor de voz?"
+
+msgid "Удалить сообщение?"
+msgstr "¿Eliminar el mensaje?"
+
+msgid "Сообщество использует голос на "
+msgstr "La comunidad usa voz en "
+
+msgid ". Тот, кто держит этот сервер, увидит твой IP-адрес. Подключайся, только если доверяешь ему. Ответ запомнится."
+msgstr ". Quien gestione este servidor verá tu dirección IP. Conéctate solo si confías en esa persona. Tu respuesta se recordará."
+
+msgid "Сообщение исчезнет у всех. Вернуть его нельзя."
+msgstr "El mensaje desaparecerá para todos. No se puede recuperar."
+
+msgid "Он не сможет вернуться на сервер, пока бан не снимут."
+msgstr "No podrá volver al servidor hasta que se retire el baneo."
+
+msgid "Он сможет вернуться по новому приглашению."
+msgstr "Podrá volver con una nueva invitación."
+
+msgid "Отмена"
+msgstr "Cancelar"
+
+msgid "Подключиться"
+msgstr "Conectar"
+
+msgid "Удалить"
+msgstr "Eliminar"
+
+msgid "Забанить"
+msgstr "Banear"
+
+msgid "Выгнать"
+msgstr "Expulsar"
+
+msgid "Вход в Discord"
+msgstr "Iniciar sesión en Discord"
+
+msgid "Войти через discord.com"
+msgstr "Iniciar sesión con discord.com"
+
+msgid "Откроется страница входа Discord: пароль или QR-код с телефона, капча, если она понадобится. Токен сохранится только на этом компьютере."
+msgstr "Se abre la página de inicio de sesión de Discord: contraseña o código QR desde el móvil, captcha si hace falta. El token se guarda solo en este ordenador."
+
+msgid "Или вставь токен аккаунта"
+msgstr "O pega un token de cuenta"
+
+msgid "Войти по токену"
+msgstr "Iniciar sesión con un token"
+
+msgid "Неофициальный клиент, не связан с Discord Inc. Сторонние клиенты нарушают Условия использования Discord, аккаунт могут заблокировать. Токен даёт полный доступ к аккаунту, никому его не показывай."
+msgstr "Cliente no oficial, no afiliado a Discord Inc. Los clientes de terceros infringen las Condiciones de Discord y la cuenta puede ser baneada. Un token da acceso total a la cuenta: no se lo muestres a nadie."
+
+msgid " публикаций"
+msgstr " publicaciones"
+
+msgid "КАЧЕСТВО"
+msgstr "CALIDAD"
+
+msgid "Исходное"
+msgstr "Fuente"
+
+msgid "60 к/с"
+msgstr "60 fps"
+
+msgid "30 к/с"
+msgstr "30 fps"
+
+msgid "Звук"
+msgstr "Audio"
+
+msgid "ЧТО ПОКАЗАТЬ"
+msgstr "QUÉ COMPARTIR"
+
+msgid "Ищу экраны и окна…"
+msgstr "Buscando pantallas y ventanas…"
+
+msgid "Смотрите сейчас"
+msgstr "Ver ahora"
+
+msgid "Смотреть стрим"
+msgstr "Ver transmisión"
+
+msgid "Жду видео…"
+msgstr "Esperando vídeo…"
+
+msgid "В ЭФИРЕ"
+msgstr "EN DIRECTO"
+
+msgid "Выйти"
+msgstr "Salir"
+
+msgid "Ничего не найдено"
+msgstr "No se encontró nada"
+
+msgid "Найдено: "
+msgstr "Encontrado: "
+
+msgid "Куда отправимся?"
+msgstr "¿Adónde?"
+
+msgid "Начни вводить имя друга, переписки, сервера или канала"
+msgstr "Empieza a escribir el nombre de un amigo, conversación, servidor o canal"
+
+msgid "Ничего не нашлось"
+msgstr "No se encontró nada"
+
+msgid "ЛС"
+msgstr "MD"
+
+msgid "Друг"
+msgstr "Amigo"
+
+msgid "Сервер"
+msgstr "Servidor"
+
+msgid "Канал"
+msgstr "Canal"
+
+msgid "↑ ↓ выбрать   ·   Enter открыть   ·   Esc закрыть   ·   имя друга, сервера или #канала"
+msgstr "↑ ↓ elegir   ·   Enter abrir   ·   Esc cerrar   ·   nombre de amigo, servidor o #canal"
+
+msgid "Друзья"
+msgstr "Amigos"
+
+msgid "Запросы общения"
+msgstr "Solicitudes de mensajes"
+
+msgid "В СЕТИ"
+msgstr "En línea"
+
+msgid "Все"
+msgstr "Todos"
+
+msgid "ОЖИДАНИЕ"
+msgstr "Pendiente"
+
+msgid "Вы можете добавить друзей по их имени пользователя в Discord."
+msgstr "Puedes añadir amigos por su nombre de usuario de Discord."
+
+msgid "Отправить запрос дружбы"
+msgstr "Enviar solicitud de amistad"
+
+msgid "ВСЕ ДРУЗЬЯ"
+msgstr "TODOS LOS AMIGOS"
+
+msgid "ЗАПРОСЫ"
+msgstr "SOLICITUDES"
+
+msgid "Заявок в друзья нет"
+msgstr "No hay solicitudes de amistad"
+
+msgid "Здесь пока никого"
+msgstr "Aún no hay nadie aquí"
+
+msgid "Новых запросов нет"
+msgstr "No hay solicitudes nuevas"
+
+msgid "Входящая заявка в друзья"
+msgstr "Solicitud de amistad entrante"
+
+msgid "Исходящая заявка в друзья"
+msgstr "Solicitud de amistad saliente"
+
+msgid "  ·  скачать"
+msgstr "  ·  descargar"
+
+msgid "(изменено)"
+msgstr "(editado)"
+
+msgid "Подключение…"
+msgstr "Conectando…"
+
+msgid "Выбери канал или личную переписку слева"
+msgstr "Elige un canal o un mensaje directo a la izquierda"
+
+msgid "Не задана"
+msgstr "Sin configurar"
+
+msgid "Найти или начать беседу"
+msgstr "Buscar o iniciar una conversación"
+
+msgid "Голос не работает"
+msgstr "La voz no funciona"
+
+msgid "Поиск в переписке"
+msgstr "Buscar en esta conversación"
+
+msgid "Искать на сервере"
+msgstr "Buscar en este servidor"
+
+msgid "Редактирование сообщения · Esc отменяет"
+msgstr "Editando un mensaje · Esc cancela"
+
+msgid "Ответ на сообщение · Esc отменяет"
+msgstr "Respondiendo a un mensaje · Esc cancela"
+
+msgid "Вернуться к последним"
+msgstr "Ir a lo más reciente"
+
+msgid "Найти эмодзи по названию"
+msgstr "Buscar un emoji por nombre"
+
+msgid "Добавить реакцию"
+msgstr "Añadir reacción"
+
+msgid "Закрепить"
+msgstr "Fijar"
+
+msgid "Открепить"
+msgstr "Desfijar"
+
+msgid "Ответить"
+msgstr "Responder"
+
+msgid "Копировать текст"
+msgstr "Copiar texto"
+
+msgid "Копировать ссылку"
+msgstr "Copiar enlace"
+
+msgid "Копировать ID сообщения"
+msgstr "Copiar ID del mensaje"
+
+msgid "Меню автора"
+msgstr "Menú del autor"
+
+msgid "Редактировать"
+msgstr "Editar"
+
+msgid "сообщение"
+msgstr "Mensaje"
+
+msgid "Приложения"
+msgstr "Aplicaciones"
+
+msgid "Весь экран"
+msgstr "Pantalla completa"
+
+msgid "Игры"
+msgstr "Juegos"
+
+msgid "Демонстрация экрана"
+msgstr "Compartir pantalla"
+
+msgid "Пользовательские"
+msgstr "Personalizado"
+
+msgid " к/с"
+msgstr " fps"
+
+msgid "Звук на стриме включён"
+msgstr "El audio de la transmisión está activado"
+
+msgid "Звук на стриме заглушён"
+msgstr "El audio de la transmisión está silenciado"
+
+msgid "Режим стрима"
+msgstr "Modo de transmisión"
+
+msgid "Более плавное видео (1440p, 60 к/с)"
+msgstr "Vídeo más fluido (1440p, 60 fps)"
+
+msgid "Более чёткий текст (источник, 15 к/с)"
+msgstr "Texto más nítido (fuente, 15 fps)"
+
+msgid "Разрешение экрана"
+msgstr "Resolución de pantalla"
+
+msgid "Источник"
+msgstr "Fuente"
+
+msgid "Частота кадров"
+msgstr "Fotogramas"
+
+msgid "Передавать звук"
+msgstr "Compartir sonido"
+
+msgid "Прекратить просмотр"
+msgstr "Dejar de ver"
+
+msgid "Прекратить стрим"
+msgstr "Detener transmisión"
+
+msgid "Изменить источник"
+msgstr "Cambiar fuente"
+
+msgid "Поделиться звуком стрима"
+msgstr "Compartir audio de la transmisión"
+
+
+msgid "Редактировать профиль"
+msgstr "Editar perfil"
+
+msgid "Как используются мои данные"
+msgstr "Cómo se usan mis datos"
+
+msgid "Что Discord собирает и для чего: настройка отбора данных и выгрузка архива."
+msgstr "Qué recopila Discord y por qué: selección de datos y descarga de un archivo."
+
+msgid "Спонсируемый контент"
+msgstr "Contenido patrocinado"
+
+msgid "Показывать ли рекламные материалы партнёров."
+msgstr "Si se muestran promociones de socios."
+
+msgid "Приватность профиля"
+msgstr "Privacidad del perfil"
+
+msgid "Кто видит твои подключения и активность на странице профиля."
+msgstr "Quién ve tus conexiones y actividad en tu perfil."
+
+msgid "Шифрование голосовых чатов"
+msgstr "Cifrado del chat de voz"
+
+msgid "Голос и видео шифруются от края до края. Nimbus поддерживает такое шифрование."
+msgstr "La voz y el vídeo tienen cifrado de extremo a extremo. Nimbus admite este cifrado."
+
+msgid "Фильтры содержимого"
+msgstr "Filtros de contenido"
+
+msgid "Проверка картинок и вложений в личных сообщениях."
+msgstr "Comprobación de imágenes y adjuntos en mensajes directos."
+
+msgid "Защита от спама"
+msgstr "Protección contra spam"
+
+msgid "Отбор подозрительных сообщений и запросов."
+msgstr "Filtrado de mensajes y solicitudes sospechosos."
+
+msgid "Личные сообщения"
+msgstr "Mensajes directos"
+
+msgid "Кто может писать тебе с общих серверов."
+msgstr "Quién puede escribirte desde servidores en común."
+
+msgid "Запросы в друзья"
+msgstr "Solicitudes de amistad"
+
+msgid "Кто может отправлять тебе запросы."
+msgstr "Quién puede enviarte solicitudes."
+
+msgid "Игнорирование и блокировка"
+msgstr "Ignorar y bloquear"
+
+msgid "Список людей, чьи сообщения скрыты или заблокированы."
+msgstr "Personas cuyos mensajes están ocultos o bloqueados."
+
+msgid "Подписка с расширенными возможностями: размер файлов, качество показа экрана, свои эмодзи."
+msgstr "Una suscripción con extras: tamaño de archivos, calidad de pantalla compartida, emojis personalizados."
+
+msgid "Буст сервера"
+msgstr "Mejora de servidor"
+
+msgid "Улучшение серверов за счёт бустов."
+msgstr "Mejorar servidores con mejoras."
+
+msgid "Подписки"
+msgstr "Suscripciones"
+
+msgid "Твои действующие подписки и их продление."
+msgstr "Tus suscripciones activas y su renovación."
+
+msgid "Склад подарков"
+msgstr "Inventario de regalos"
+
+msgid "Коды и купленные подарки."
+msgstr "Códigos y regalos comprados."
+
+msgid "Способы оплаты и история операций."
+msgstr "Métodos de pago e historial de transacciones."
+
+msgid "Текущая игра"
+msgstr "Juego actual"
+
+msgid "Игра, которая сейчас показана в твоём статусе."
+msgstr "El juego que se muestra ahora en tu estado."
+
+msgid "Добавленные игры"
+msgstr "Juegos añadidos"
+
+msgid "Игры, добавленные вручную, чтобы статус их показывал."
+msgstr "Juegos añadidos a mano para que aparezcan en el estado."
+
+msgid "Какой активностью я делюсь"
+msgstr "Qué actividad comparto"
+
+msgid "Показывать ли игру и статус другим людям."
+msgstr "Si los demás ven tu juego y estado."
+
+msgid "Где я публикую активность"
+msgstr "Dónde muestro la actividad"
+
+msgid "На каких серверах видна твоя активность."
+msgstr "En qué servidores se ve tu actividad."
+
+msgid "Присоединение к активности"
+msgstr "Unirse a la actividad"
+
+msgid "Могут ли друзья присоединяться к тебе без запроса."
+msgstr "Si los amigos pueden unirse a ti sin preguntar."
+
+msgid "Приложения и боты с доступом к аккаунту."
+msgstr "Aplicaciones y bots con acceso a la cuenta."
+
+msgid "Связанные настройки"
+msgstr "Ajustes relacionados"
+
+msgid "Голос"
+msgstr "Voz"
+
+msgid "Расширенные"
+msgstr "Avanzado"
+
+msgid "Сообщения"
+msgstr "Mensajes"
+
+msgid "Цвет и контраст"
+msgstr "Color y contraste"
+
+msgid "Пониженное движение"
+msgstr "Movimiento reducido"
+
+msgid "Основные"
+msgstr "General"
+
+msgid "Время и дата"
+msgstr "Hora y fecha"
+
+msgid "Информация об учётной записи"
+msgstr "Información de la cuenta"
+
+msgid "Уведомления на рабочем столе"
+msgstr "Notificaciones de escritorio"
+
+msgid "Выйти из аккаунта"
+msgstr "Cerrar sesión"
+
+msgid "Поиск"
+msgstr "Buscar"
+
+msgid "Пароль и безопасность"
+msgstr "Contraseña y seguridad"
+
+msgid "Тема"
+msgstr "Tema"
+
+msgid "Значок приложения"
+msgstr "Icono de la aplicación"
+
+msgid "Режим стримера"
+msgstr "Modo streamer"
+
+msgid "Фон"
+msgstr "Fondo"
+
+msgid "Цвет окон и панелей. Меняется сразу."
+msgstr "El color de ventanas y paneles. Cambia al instante."
+
+msgid "Цвет акцента"
+msgstr "Color de acento"
+
+msgid "Кнопки, переключатели и полоски выбора."
+msgstr "Botones, interruptores y barras de selección."
+
+msgid "Цвет значка"
+msgstr "Color del icono"
+
+msgid "Значок в заголовке окна, на панели задач и в трее."
+msgstr "El icono de la barra de título, la barra de tareas y la bandeja."
+
+msgid "Чёрная"
+msgstr "Negro"
+
+msgid "Графит"
+msgstr "Grafito"
+
+msgid "Полночь"
+msgstr "Medianoche"
+
+msgid "Светлая"
+msgstr "Claro"
+
+msgid "Обычный"
+msgstr "Original"
+
+msgid "Зелёный"
+msgstr "Verde"
+
+msgid "Розовый"
+msgstr "Rosa"
+
+msgid "Серый"
+msgstr "Gris"
+
+msgid "Включить режим стримера"
+msgstr "Activar el modo streamer"
+
+msgid "Прячет почту, телефон и номер аккаунта в настройках и отключает всплывающие уведомления и их звук."
+msgstr "Oculta el correo, el teléfono y el número de cuenta en los ajustes y desactiva las ventanas y sonidos de notificación."
+
+msgid "Включать сам при показе экрана"
+msgstr "Activar solo mientras se comparte una pantalla"
+
+msgid "Пока ты показываешь экран, режим стримера включён. Когда показ закончится, он выключится."
+msgstr "El modo streamer está activo mientras compartes una pantalla. Se desactiva al terminar."
+
+msgid "Интерфейс Nimbus на английском"
+msgstr "Interfaz de Nimbus en inglés"
+
+msgid "Интерфейс Nimbus на русском"
+msgstr "Interfaz de Nimbus en ruso"
+
+msgid "День, месяц, год"
+msgstr "Día, mes, año"
+
+msgid "Год, месяц, день"
+msgstr "Año, mes, día"
+
+msgid "Говори: услышишь себя. Пока идёт проверка, звонок тебя не слышит, а ты не слышишь звонок."
+msgstr "Habla: te oirás a ti mismo. Durante la prueba la llamada no te oye y tú no oyes la llamada."
+
+msgid "Мелкий"
+msgstr "Pequeño"
+
+msgid "Крупный"
+msgstr "Grande"
+
+msgid "Очень крупный"
+msgstr "Extra grande"
+
+msgid "Средний"
+msgstr "Mediano"
+
+msgid "Фильтры контента"
+msgstr "Filtros de contenido"
+
+msgid "Проверять картинки в личных сообщениях"
+msgstr "Comprobar imágenes en mensajes directos"
+
+msgid "Discord размывает то, что считает неприемлемым. Меняется на аккаунте."
+msgstr "Discord difumina lo que considera inapropiado. Cambia la cuenta."
+
+msgid "Не удалось получить настройки с Discord. Проверь соединение и открой окно заново."
+msgstr "No se pudieron obtener los ajustes de Discord. Comprueba la conexión y vuelve a abrir la ventana."
+
+msgid "Проверять всё"
+msgstr "Comprobar todo"
+
+msgid "Сообщения от всех, включая друзей"
+msgstr "Mensajes de todos, incluidos amigos"
+
+msgid "Проверять от не друзей"
+msgstr "Comprobar a quienes no son amigos"
+
+msgid "Друзьям доверяем"
+msgstr "Se confía en los amigos"
+
+msgid "Не проверять"
+msgstr "No comprobar"
+
+msgid "Фильтры спама"
+msgstr "Filtros de spam"
+
+msgid "Фильтры спама можно изменить только на сайте Discord."
+msgstr "Los filtros de spam solo se pueden cambiar en el sitio web de Discord."
+
+msgid "Личные сообщения от участников серверов настрой на сайте Discord."
+msgstr "Configura los mensajes directos de miembros de servidores en el sitio web de Discord."
+
+msgid "Запросы дружбы"
+msgstr "Solicitudes de amistad"
+
+msgid "Кто может отправлять запросы в друзья"
+msgstr "Quién puede enviar solicitudes de amistad"
+
+msgid "Меняется на аккаунте сразу."
+msgstr "Cambia la cuenta al instante."
+
+msgid "Друзья друзей"
+msgstr "Amigos de amigos"
+
+msgid "Участники общих серверов"
+msgstr "Miembros de servidores en común"
+
+msgid "Подключённые игры"
+msgstr "Juegos conectados"
+
+msgid "Подключённые игры и список заблокированных меняй на сайте Discord."
+msgstr "Cambia los juegos conectados y la lista de bloqueo en el sitio web de Discord."
+
+msgid "Игнорировать и заблокировать"
+msgstr "Ignorar y bloquear"
+
+msgid "Статус"
+msgstr "Estado"
+
+msgid "Как тебя видят другие. Меняется на аккаунте сразу."
+msgstr "Cómo te ven los demás. Cambia la cuenta al instante."
+
+msgid "В сети"
+msgstr "En línea"
+
+msgid "Неактивен"
+msgstr "Ausente"
+
+msgid "Не беспокоить"
+msgstr "No molestar"
+
+msgid "Уведомления отключены"
+msgstr "Las notificaciones están desactivadas"
+
+msgid "Невидимый"
+msgstr "Invisible"
+
+msgid "Ты в сети, но показываешься как не в сети"
+msgstr "Estás en línea pero apareces desconectado"
+
+msgid "Свой статус"
+msgstr "Estado personalizado"
+
+msgid "Строка под твоим именем; пустая убирает её."
+msgstr "La línea bajo tu nombre; vacía se elimina."
+
+msgid "Чем ты занят?"
+msgstr "¿Qué estás haciendo?"
+
+msgid "Сохранить статус"
+msgstr "Guardar estado"
+
+msgid "О себе"
+msgstr "Sobre mí"
+
+msgid "Короткий текст в твоём профиле, до 190 знаков."
+msgstr "Un texto breve en tu perfil, hasta 190 caracteres."
+
+msgid "Расскажи о себе"
+msgstr "Cuenta algo sobre ti"
+
+msgid "Сохранить «О себе»"
+msgstr "Guardar \"Sobre mí\""
+
+msgid "«О себе» сохранено"
+msgstr "\"Sobre mí\" guardado"
+
+msgid "Показывать игру, в которую я играю"
+msgstr "Mostrar el juego al que juego"
+
+msgid "Другие видят её в твоём профиле и в списке. Меняется на аккаунте сразу."
+msgstr "Los demás lo ven en tu perfil y en la lista. Cambia la cuenta al instante."
+
+msgid "Серверы, где видна активность, выбирай на сайте Discord."
+msgstr "Elige los servidores que muestran tu actividad en el sitio web de Discord."
+
+msgid "Баннер"
+msgstr "Banner"
+
+msgid "Картинка над профилем. Если Discord её не принимает (например, нужен Nitro), он ответит почему."
+msgstr "La imagen sobre tu perfil. Si Discord no la acepta (por ejemplo, porque requiere Nitro), te dirá por qué."
+
+msgid "Загрузить"
+msgstr "Subir"
+
+msgid "Убрать"
+msgstr "Quitar"
+
+msgid "Аватар"
+msgstr "Avatar"
+
+msgid "PNG, JPEG, GIF или WebP, до 8 МБ."
+msgstr "PNG, JPEG, GIF o WebP, hasta 8 MB."
+
+msgid "Отображаемое имя"
+msgstr "Nombre visible"
+
+msgid "До 32 знаков. Пустое показывает имя пользователя."
+msgstr "Hasta 32 caracteres. Vacío muestra el nombre de usuario."
+
+msgid "Сохранить имя"
+msgstr "Guardar nombre"
+
+msgid "Местоимения"
+msgstr "Pronombres"
+
+msgid "До 40 знаков."
+msgstr "Hasta 40 caracteres."
+
+msgid "Например, они/их"
+msgstr "Por ejemplo, elle"
+
+msgid "Сохранить местоимения"
+msgstr "Guardar pronombres"
+
+msgid "До 190 знаков."
+msgstr "Hasta 190 caracteres."
+
+msgid "Меняется в Discord"
+msgstr "Se cambia en Discord"
+
+msgid "Украшение аватара, эффект профиля, бейджик, стиль имени, виджеты"
+msgstr "Decoración de avatar, efecto de perfil, insignia, estilo de nombre, widgets"
+
+msgid "Так тебя увидят"
+msgstr "Cómo te verán los demás"
+
+msgid "Применить"
+msgstr "Aplicar"
+
+msgid "Бейджик"
+msgstr "Insignia"
+
+msgid "Аватар и украшение"
+msgstr "Avatar y decoración"
+
+msgid "Стиль отображаемого имени"
+msgstr "Estilo del nombre visible"
+
+msgid "Тема и баннер"
+msgstr "Tema y banner"
+
+msgid "Эффект профиля"
+msgstr "Efecto de perfil"
+
+msgid "Присоединиться"
+msgstr "Unirse"
+
+msgid "Отклонить"
+msgstr "Rechazar"
+
+msgid "Показ экрана в звонках ЛС пока недоступен"
+msgstr "Compartir pantalla aún no está disponible en llamadas de MD"
+
+msgid "Опрос завершён"
+msgstr "Encuesta finalizada"
+
+msgid "Можно выбрать несколько ответов"
+msgstr "Selecciona una o más respuestas"
+
+msgid "Выбери один ответ"
+msgstr "Selecciona una respuesta"
+
+msgid "Голосов: "
+msgstr "Votos: "
+
+msgid "Закончится: "
+msgstr "Termina: "
+
+msgid "Переслано"
+msgstr "Reenviado"
+
+msgid "Заметка"
+msgstr "Nota"
+
+msgid "Нажми, чтобы добавить заметку"
+msgstr "Haz clic para añadir una nota"
+
+msgid "Искать в Tenor"
+msgstr "Buscar en Tenor"
+
+msgid "Ищу GIF…"
+msgstr "Buscando GIF…"
+
+msgid "Переслать"
+msgstr "Reenviar"
+
+msgid "Как на сервере"
+msgstr "Predeterminado del servidor"
+
+msgid "Все сообщения"
+msgstr "Todos los mensajes"
+
+msgid "Только упоминания"
+msgstr "Solo @menciones"
+
+msgid "Ничего"
+msgstr "Nada"
+
+msgid "Заглушить сервер"
+msgstr "Silenciar servidor"
+
+msgid "Заглушить канал"
+msgstr "Silenciar canal"
+
+msgid "Переслать сообщение"
+msgstr "Reenviar mensaje"
+
+msgid "Найти канал или беседу"
+msgstr "Buscar un canal o conversación"
+
+msgid "Пригласить"
+msgstr "Invitar"
+
+msgid "Создать ветку"
+msgstr "Crear hilo"
+
+msgid "ПРИГЛАШЕНИЕ НЕДЕЙСТВИТЕЛЬНО"
+msgstr "INVITACIÓN NO VÁLIDA"
+
+msgid "ВАС ПРИГЛАСИЛИ НА СЕРВЕР"
+msgstr "TE HAN INVITADO A UN SERVIDOR"
+
+msgid "Загрузка…"
+msgstr "Cargando…"
+
+msgid "Попросите новое приглашение"
+msgstr "Pide una nueva invitación"
+
+msgid "Открыть"
+msgstr "Abrir"
+
+msgid "Отправка голосового сообщения…"
+msgstr "Enviando el mensaje de voz…"
+
+msgid "Запись длится 20 минут, это предел. Отправить?"
+msgstr "La grabación alcanzó el límite de 20 minutos. ¿Enviarla?"
+
+msgid "Запись голосового сообщения"
+msgstr "Grabando un mensaje de voz"
+
+msgid "Новая публикация"
+msgstr "Nueva publicación"
+
+msgid "Присоединиться к серверу"
+msgstr "Unirse a un servidor"
+
+msgid "Вставьте приглашение: .gg/invite."
+msgstr "Paste an invite: .gg/invite."
+
+msgid "Найти"
+msgstr "Buscar"
+
+msgid "Спрашиваю Discord о приглашении…"
+msgstr "Preguntando a Discord por la invitación…"
+
+msgid "Вы присоединились к серверу"
+msgstr "Te has unido al servidor"
+
+msgid "Вы уже на этом сервере"
+msgstr "Ya estás en este servidor"
+
+msgid "Закрыть"
+msgstr "Cerrar"
+
+msgid "Присоединение…"
+msgstr "Uniéndose…"
+
+msgid "Открыть сервер"
+msgstr "Abrir servidor"
+
+msgid "Пригласить друзей в "
+msgstr "Invitar amigos a "
+
+msgid "Создаю приглашение…"
+msgstr "Creando la invitación…"
+
+msgid "Отправьте эту ссылку другу. Она действует 1 день, число использований не ограничено."
+msgstr "Envía este enlace a un amigo. Funciona durante 1 día, sin límite de usos."
+
+msgid "Скопировано"
+msgstr "Copiado"
+
+msgid "Копировать"
+msgstr "Copiar"
+
+msgid "Готово"
+msgstr "Listo"
+
+msgid "НАЗВАНИЕ ВЕТКИ"
+msgstr "NOMBRE DEL HILO"
+
+msgid "ЗАГОЛОВОК"
+msgstr "TÍTULO"
+
+msgid "Новая ветка"
+msgstr "Nuevo hilo"
+
+msgid "О чём публикация?"
+msgstr "¿De qué trata la publicación?"
+
+msgid "ТЕКСТ"
+msgstr "TEXTO"
+
+msgid "Напишите первое сообщение публикации"
+msgstr "Escribe el primer mensaje de la publicación"
+
+msgid "Создание…"
+msgstr "Creando…"
+
+msgid "Опубликовать"
+msgstr "Publicar"
+
+msgid "Ожидание"
+msgstr "Pendiente"
+
+msgid "Добавить в друзья"
+msgstr "Añadir amigo"
+
+msgid "Где показывать"
+msgstr "Dónde mostrar"
+
+msgid "Комната Nimbus"
+msgstr "Sala de Nimbus"
+
+msgid "Оба"
+msgstr "Ambos"
+
+msgid "На Discord качество ограничено подпиской: без Nitro 720p, 30 к/с; Nitro Classic 1080p, 60 к/с."
+msgstr "En Discord la calidad depende de la suscripción: sin Nitro 720p, 30 fps; Nitro Classic 1080p, 60 fps."
+
+msgid "Камера"
+msgstr "CÁMARA"
+
+msgid "Включи камеру кнопкой в звонке. Nimbus отправит её в голос Discord в 720p и 30 кадров в секунду, если камера так умеет."
+msgstr "Enciende la cámara con el botón de la llamada. Nimbus la envía a la voz de Discord a 720p y 30 fotogramas por segundo si la cámara lo admite."
+
+msgid "КАМЕРА"
+msgstr "CÁMARA"
+
+msgid "Камеры не найдены"
+msgstr "No se encontraron cámaras"
+
+msgid "Предпросмотр"
+msgstr "Vista previa"
+
+msgid "Показать здесь, что видит камера. Пока предпросмотр включён, камера работает."
+msgstr "Muestra aquí lo que ve la cámara. Con la vista previa activa, la cámara está encendida."
+
+msgid "Включаю камеру…"
+msgstr "Encendiendo la cámara…"
+
+msgid "Найдите идеальный звук"
+msgstr "Encuentra el sonido perfecto"
+
+msgid "Загружаю звуки…"
+msgstr "Cargando sonidos…"
+
+msgid "Звуков не нашлось"
+msgstr "No se encontraron sonidos"
+
+msgid "Сделайте выбор"
+msgstr "Haz una selección"
+
+msgid "Только вы можете видеть это сообщение"
+msgstr "Solo tú puedes ver este mensaje"
+
+msgid "Идёт сейчас"
+msgstr "Sucediendo ahora"
+
+msgid "Поделиться"
+msgstr "Compartir"
+
+msgid "Интересно"
+msgstr "Me interesa"
+
+msgid "Отменить мероприятие"
+msgstr "Cancelar evento"
+
+msgid "Мероприятия"
+msgstr "Eventos"
+
+msgid "Создать событие"
+msgstr "Crear evento"
+
+msgid "Нет предстоящих событий."
+msgstr "No hay eventos próximos."
+
+msgid "Планируйте мероприятия: созвоны, стримы, игры и встречи. Участники смогут отметить, что им интересно."
+msgstr "Programa eventos: llamadas, transmisiones, juegos y quedadas. Los miembros pueden marcar su interés."
+
+msgid "Где"
+msgstr "Ubicación"
+
+msgid "Сведения"
+msgstr "Información del evento"
+
+msgid "Где пройдёт мероприятие?"
+msgstr "¿Dónde es tu evento?"
+
+msgid "Чтобы никто не потерялся."
+msgstr "Para que nadie se pierda."
+
+msgid "Трибуна"
+msgstr "Canal de escenario"
+
+msgid "Выступайте перед слушателями в канале-трибуне"
+msgstr "Habla ante un público en un canal de escenario"
+
+msgid "Голосовой канал"
+msgstr "Canal de voz"
+
+msgid "Общайтесь голосом и по видео, показывайте экран"
+msgstr "Habla con voz y vídeo y comparte tu pantalla"
+
+msgid "В другом месте"
+msgstr "En otro lugar"
+
+msgid "Текстовый канал, внешняя ссылка или место встречи"
+msgstr "Canal de texto, enlace externo o lugar presencial"
+
+msgid "ВЫБЕРИТЕ КАНАЛ"
+msgstr "SELECCIONA UN CANAL"
+
+msgid "УКАЖИТЕ МЕСТО"
+msgstr "INDICA UNA UBICACIÓN"
+
+msgid "Добавьте место, ссылку или что-то ещё."
+msgstr "Añade un lugar, enlace o algo así."
+
+msgid "Расскажите о мероприятии"
+msgstr "¿De qué trata tu evento?"
+
+msgid "ТЕМА МЕРОПРИЯТИЯ"
+msgstr "TEMA DEL EVENTO"
+
+msgid "О чём ваше мероприятие?"
+msgstr "¿Cuál es tu evento?"
+
+msgid "ДАТА НАЧАЛА"
+msgstr "FECHA DE INICIO"
+
+msgid "ВРЕМЯ НАЧАЛА"
+msgstr "HORA DE INICIO"
+
+msgid "ДАТА ОКОНЧАНИЯ"
+msgstr "FECHA DE FIN"
+
+msgid "ВРЕМЯ ОКОНЧАНИЯ"
+msgstr "HORA DE FIN"
+
+msgid "дд.мм.гггг"
+msgstr "dd.mm.aaaa"
+
+msgid "чч:мм"
+msgstr "hh:mm"
+
+msgid "ЧАСТОТА"
+msgstr "FRECUENCIA DEL EVENTO"
+
+msgid "Не повторяется"
+msgstr "No se repite"
+
+msgid "ОПИСАНИЕ"
+msgstr "DESCRIPCIÓN"
+
+msgid "Расскажите подробнее. Можно использовать разметку и ссылки."
+msgstr "Cuenta algo más sobre tu evento. Se admiten Markdown y enlaces."
+
+msgid "Всё верно?"
+msgstr "¿Se ve bien?"
+
+msgid "Так участники сервера увидят ваше мероприятие."
+msgstr "Así verán tu evento los miembros del servidor."
+
+msgid "Назад"
+msgstr "Atrás"
+
+msgid "Далее"
+msgstr "Siguiente"
+
+msgid "В числе участников с"
+msgstr "Miembro desde"
+
+msgid "Сообщение для @{}"
+msgstr "Mensaje para @{}"
+
+msgid "Полный профиль"
+msgstr "Perfil completo"
+
+msgid "Искать «{}»"
+msgstr "Buscar \"{}\""
+
+msgid "Мягкий свет на фоне"
+msgstr "Luz de fondo suave"
+
+msgid "Добавляет за окном едва заметный серый свет сверху."
+msgstr "Añade una tenue luz gris arriba, detrás de la ventana."
+
+msgid "Копировать ID сервера"
+msgstr "Copiar ID del servidor"
+
+msgid "Параметры уведомлений"
+msgstr "Ajustes de notificaciones"
+
+msgid "Пригласить на сервер"
+msgstr "Invitar al servidor"
+
+msgid "Проверяю обновления"
+msgstr "Buscando actualizaciones"
+
+msgid "Скачиваю обновление"
+msgstr "Descargando la actualización"
+
+msgid "Устанавливаю обновление"
+msgstr "Instalando la actualización"
+
+msgid "Запускаю Nimbus"
+msgstr "Iniciando Nimbus"
+
+msgid "Нет связи с сервером обновлений"
+msgstr "Sin conexión con el servidor de actualizaciones"
+
+msgid "Пропустить"
+msgstr "Omitir"
+
+msgid "или"
+msgstr "o"
+
+msgid "Вставь токен аккаунта"
+msgstr "Pega un token de cuenta"
+
+msgid "Скрывать Nimbus при показе экрана"
+msgstr "Ocultar Nimbus al compartir la pantalla"
+
+msgid "Пока ты показываешь экран, окна Nimbus не будет ни в демонстрации, ни на скриншотах. Выключено: зрители видят твои чаты."
+msgstr "Mientras compartes la pantalla, la ventana de Nimbus queda fuera de la transmisión y de las capturas. Si está desactivado, los espectadores pueden ver tus chats."
+
+msgid "Чёрный"
+msgstr "Negro"
+
+msgid "Белый"
+msgstr "Blanco"
+
+msgid "Тусклый"
+msgstr "Atenuado"
+
+msgid "Входим…"
+msgstr "Iniciando sesión…"
+
+msgid "Войдите на странице Discord паролем или QR-кодом. Если появится капча, пройдите её."
+msgstr "Inicia sesión en la página de Discord con tu contraseña o un código QR. Si aparece un captcha, complétalo."
+
+msgid "Nimbus не связан с Discord Inc. Условия Discord запрещают сторонние клиенты, поэтому Discord может заблокировать аккаунт."
+msgstr "Nimbus no está afiliado a Discord Inc. Las condiciones de Discord prohíben los clientes de terceros, por lo que Discord puede banear tu cuenta."
+
+msgid "С возвращением, {}"
+msgstr "Bienvenido de nuevo, {}"
+
+msgid "С возвращением"
+msgstr "Bienvenido de nuevo"
+
+msgid "Загружаю серверы и сообщения"
+msgstr "Cargando servidores y mensajes"
+
+msgid "Голосовой чат был отключён, так как вы подключились из другого места."
+msgstr "La voz se desconectó porque te conectaste desde otro lugar."
+
+msgid "Переподключиться"
+msgstr "Reconectar"
+
+msgid "Открыть в Discord"
+msgstr "Abrir en Discord"
+
+msgid "Пометить как прочитанное"
+msgstr "Marcar como leído"
+
+msgid "Профиль"
+msgstr "Perfil"
+
+msgid "Упомянуть"
+msgstr "Mencionar"
+
+msgid "Начать звонок"
+msgstr "Iniciar llamada"
+
+msgid "Изменить никнейм друга"
+msgstr "Cambiar apodo de amigo"
+
+msgid "Добавить никнейм друга"
+msgstr "Añadir apodo de amigo"
+
+msgid "Заглушить звуковую панель"
+msgstr "Silenciar panel de sonidos"
+
+msgid "Отключить видео"
+msgstr "Desactivar vídeo"
+
+msgid "Изменить никнейм"
+msgstr "Cambiar apodo"
+
+msgid "Перестать игнорировать"
+msgstr "Dejar de ignorar"
+
+msgid "Игнорировать"
+msgstr "Ignorar"
+
+msgid "Разблокировать"
+msgstr "Desbloquear"
+
+msgid "Заблокировать"
+msgstr "Bloquear"
+
+msgid "Роли"
+msgstr "Roles"
+
+msgid "Включить уведомления"
+msgstr "Activar notificaciones del chat"
+
+msgid "Заглушить чат"
+msgstr "Silenciar chat"
+
+msgid "Покинуть группу"
+msgstr "Salir del grupo"
+
+msgid "Закрыть ЛС"
+msgstr "Cerrar MD"
+
+msgid "Поделиться профилем"
+msgstr "Compartir perfil"
+
+msgid "Копировать ID канала"
+msgstr "Copiar ID del canal"
+
+msgid "Сохранить"
+msgstr "Guardar"
+
+msgid "Заблокировать "
+msgstr "Bloquear a "
+
+msgid "Удалить из друзей "
+msgstr "Eliminar de amigos: "
+
+msgid "Вы не увидите сообщений этого человека, а он не сможет вам писать."
+msgstr "No verás los mensajes de esta persona y no podrá escribirte."
+
+msgid "Этот человек исчезнет из списка друзей."
+msgstr "Esta persona saldrá de tu lista de amigos."
+
+msgid "Никнейм друга"
+msgstr "Apodo de amigo"
+
+msgid "Убрать из избранного"
+msgstr "Quitar de favoritos"
+
+msgid "Добавить в избранное"
+msgstr "Añadir a favoritos"
+
+msgid "Открыть в Spotify"
+msgstr "Abrir en Spotify"
+
+msgid "Слушать вместе"
+msgstr "Escuchar juntos"
+
+msgid "Просмотреть код подтверждения"
+msgstr "Ver código de verificación"
+
+msgid "Открыть с доступом модератора"
+msgstr "Abrir en vista de moderador"
+
+msgid "Открыть магазин"
+msgstr "Abrir tienda"
+
+msgid "Пожаловаться на профиль"
+msgstr "Denunciar perfil"
+
+msgid "Тайм-аут"
+msgstr "Aislar"
+
+msgid "10 минут"
+msgstr "10 minutos"
+
+msgid "1 час"
+msgstr "1 hora"
+
+msgid "1 день"
+msgstr "1 día"
+
+msgid "Снять"
+msgstr "Retirar"
+
+msgid "Сообщение"
+msgstr "Mensaje"
+
+msgid "Друзья с"
+msgstr "Amigos desde"
+
+msgid "Интеграции"
+msgstr "Conexiones"
+
+msgid "Заметка (видна только вам)"
+msgstr "Nota (solo la ves tú)"
+
+msgid "Активность"
+msgstr "Actividad"
+
+msgid "Общие друзья"
+msgstr "Amigos en común"
+
+msgid "Общие серверы"
+msgstr "Servidores en común"
+
+msgid "Сейчас ничего не происходит"
+msgstr "Ahora mismo no pasa nada"
+
+msgid "Заглушить "
+msgstr "Silenciar a "
+
+msgid "На 15 минут"
+msgstr "Durante 15 minutos"
+
+msgid "На 1 час"
+msgstr "Durante 1 hora"
+
+msgid "На 3 часа"
+msgstr "Durante 3 horas"
+
+msgid "На 8 часов"
+msgstr "Durante 8 horas"
+
+msgid "На 24 часа"
+msgstr "Durante 24 horas"
+
+msgid "Пока не включу снова"
+msgstr "Hasta que lo vuelva a activar"
+
+msgid "Значки пользователя"
+msgstr "Insignias de"
+
+msgid "Открыть страницу"
+msgstr "Abrir página"
+
+msgid "Прогресс"
+msgstr "Progreso"
+
+msgid "Присоединиться к звонку"
+msgstr "Unirse a la llamada"
+
+msgid "Nimbus обновлён"
+msgstr "Nimbus se ha actualizado"
+
+msgid "Что нового"
+msgstr "Novedades"

@@ -1293,8 +1293,8 @@ msgstr "New post"
 msgid "Присоединиться к серверу"
 msgstr "Join a server"
 
-msgid "Вставьте приглашение: https://discord.gg/hTKzmak, discord.gg/hTKzmak или просто hTKzmak."
-msgstr "Paste an invite: https://discord.gg/hTKzmak, discord.gg/hTKzmak or just hTKzmak."
+msgid "Вставьте приглашение: .gg/invite."
+msgstr "Paste an invite: .gg/invite."
 
 msgid "Найти"
 msgstr "Find"
@@ -1790,3 +1790,12 @@ msgstr "Open page"
 
 msgid "Прогресс"
 msgstr "Progress"
+
+msgid "Присоединиться к звонку"
+msgstr "Join the call"
+
+msgid "Nimbus обновлён"
+msgstr "Nimbus was updated"
+
+msgid "Что нового"
+msgstr "What's new"

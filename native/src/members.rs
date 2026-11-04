@@ -128,6 +128,8 @@ pub struct List {
     items: Vec<Option<Item>>,
     /// How many people the server has, as Discord says (0 until it did).
     total: u64,
+    /// How many each group has, from the list of groups that comes with each update.
+    group_counts: HashMap<String, u64>,
 }
 
 impl List {
@@ -135,6 +137,7 @@ impl List {
         self.id.clear();
         self.items.clear();
         self.total = 0;
+        self.group_counts.clear();
     }
 
     /// The people (not group headers) received so far, and the server's total.
@@ -154,7 +157,17 @@ impl List {
 
     /// What's known so far, in order (gaps not yet received are left out).
     pub fn items(&self) -> Vec<Item> {
-        self.items.iter().flatten().cloned().collect()
+        let mut list: Vec<Item> = self.items.iter().flatten().cloned().collect();
+        // A group's own line often says nothing of its size: the list of groups does, or else who follows it here.
+        for at in 0..list.len() {
+            if let Item::Group { id, count: 0 } = &list[at] {
+                let told = self.group_counts.get(id).copied();
+                let here = list[at + 1..].iter().take_while(|i| matches!(i, Item::Member { .. })).count() as u64;
+                let id = id.clone();
+                list[at] = Item::Group { id, count: told.filter(|n| *n > 0).unwrap_or(here) };
+            }
+        }
+        list
     }
 
     /// Applies one `GUILD_MEMBER_LIST_UPDATE`. Returns whether anything changed.
@@ -172,6 +185,11 @@ impl List {
         }
         if let Some(n) = data["member_count"].as_u64() {
             self.total = n;
+        }
+        for group in data["groups"].as_array().into_iter().flatten() {
+            if let (Some(id), Some(count)) = (group["id"].as_str(), group["count"].as_u64()) {
+                self.group_counts.insert(id.to_string(), count);
+            }
         }
         let mut changed = false;
         for op in ops {

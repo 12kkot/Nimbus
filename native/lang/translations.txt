@@ -1,0 +1,192 @@
+User settings|Налаштування користувача|Ajustes de usuario|Benutzereinstellungen|Paramètres utilisateur|Configurações do usuário|Ustawienia użytkownika|Kullanıcı ayarları
+My account|Мій обліковий запис|Mi cuenta|Mein Konto|Mon compte|Minha conta|Moje konto|Hesabım
+Data & privacy|Дані та приватність|Datos y privacidad|Daten und Datenschutz|Données et confidentialité|Dados e privacidade|Dane i prywatność|Veri ve gizlilik
+Notifications|Сповіщення|Notificaciones|Benachrichtigungen|Notifications|Notificações|Powiadomienia|Bildirimler
+Voice & video|Голос і відео|Voz y vídeo|Sprache und Video|Voix et vidéo|Voz e vídeo|Głos i wideo|Ses ve görüntü
+Streaming|Трансляція|Transmisión|Streaming|Diffusion|Transmissão|Transmisja|Yayın
+Sounds|Звуки|Sonidos|Töne|Sons|Sons|Dźwięki|Sesler
+Appearance|Вигляд|Apariencia|Darstellung|Apparence|Aparência|Wygląd|Görünüm
+Accessibility|Доступність|Accesibilidad|Barrierefreiheit|Accessibilité|Acessibilidade|Ułatwienia dostępu|Erişilebilirlik
+System|Система|Sistema|System|Système|Sistema|System|Sistem
+Language & time|Мова і час|Idioma y hora|Sprache und Zeit|Langue et heure|Idioma e hora|Język i czas|Dil ve saat
+About|Про застосунок|Acerca de|Über|À propos|Sobre|O aplikacji|Hakkında
+Username|Ім'я користувача|Nombre de usuario|Benutzername|Nom d'utilisateur|Nome de usuário|Nazwa użytkownika|Kullanıcı adı
+Email|Електронна пошта|Correo|E-Mail|E-mail|E-mail|E-mail|E-posta
+Phone number|Номер телефону|Teléfono|Telefonnummer|Téléphone|Telefone|Numer telefonu|Telefon numarası
+Enabled|Увімкнено|Activado|Aktiviert|Activé|Ativado|Włączone|Açık
+Disabled|Вимкнено|Desactivado|Deaktiviert|Désactivé|Desativado|Wyłączone|Kapalı
+Copy my ID|Копіювати мій ID|Copiar mi ID|Meine ID kopieren|Copier mon ID|Copiar meu ID|Kopiuj moje ID|Kimliğimi kopyala
+Screen share quality|Якість трансляції екрана|Calidad de pantalla compartida|Qualität der Bildschirmübertragung|Qualité du partage d'écran|Qualidade da transmissão|Jakość udostępniania ekranu|Ekran paylaşımı kalitesi
+Resolution|Роздільність|Resolución|Auflösung|Résolution|Resolução|Rozdzielczość|Çözünürlük
+Frames per second|Кадрів за секунду|Fotogramas por segundo|Bilder pro Sekunde|Images par seconde|Quadros por segundo|Klatki na sekundę|Saniyedeki kare
+Microphone|Мікрофон|Micrófono|Mikrofon|Microphone|Microfone|Mikrofon|Mikrofon
+Speaker|Динамік|Altavoz|Lautsprecher|Haut-parleur|Alto-falante|Głośnik|Hoparlör
+Microphone test|Перевірка мікрофона|Prueba de micrófono|Mikrofontest|Test du micro|Teste de microfone|Test mikrofonu|Mikrofon testi
+Voice mode|Режим голосу|Modo de voz|Sprachmodus|Mode vocal|Modo de voz|Tryb głosu|Ses modu
+Voice activity|Голосова активність|Actividad de voz|Sprachaktivierung|Activité vocale|Atividade de voz|Aktywność głosowa|Ses etkinliği
+Push to talk|Натисни й говори|Pulsar para hablar|Push-to-Talk|Appuyer pour parler|Pressione para falar|Naciśnij, aby mówić|Bas-konuş
+Shortcuts|Гарячі клавіші|Atajos|Tastenkürzel|Raccourcis|Atalhos|Skróty|Kısayollar
+Noise suppression|Шумозаглушення|Supresión de ruido|Rauschunterdrückung|Suppression du bruit|Supressão de ruído|Tłumienie szumów|Gürültü bastırma
+Echo cancellation|Заглушення луни|Cancelación de eco|Echounterdrückung|Annulation d'écho|Cancelamento de eco|Usuwanie echa|Yankı giderme
+None|Немає|Ninguno|Keine|Aucun|Nenhum|Brak|Yok
+Standard|Стандартне|Estándar|Standard|Standard|Padrão|Standardowe|Standart
+Custom|Власне|Personalizado|Benutzerdefiniert|Personnalisé|Personalizado|Własne|Özel
+Language|Мова|Idioma|Sprache|Langue|Idioma|Język|Dil
+Choose the language of the Nimbus interface.|Виберіть мову інтерфейсу Nimbus.|Elige el idioma de la interfaz de Nimbus.|Wähle die Sprache der Nimbus-Oberfläche.|Choisissez la langue de l'interface de Nimbus.|Escolha o idioma da interface do Nimbus.|Wybierz język interfejsu Nimbus.|Nimbus arayüz dilini seçin.
+Time format|Формат часу|Formato de hora|Zeitformat|Format de l'heure|Formato de hora|Format czasu|Saat biçimi
+Date format|Формат дати|Formato de fecha|Datumsformat|Format de la date|Formato de data|Format daty|Tarih biçimi
+Message|Повідомлення|Mensaje|Nachricht|Message|Mensagem|Wiadomość|Mesaj
+Mute|Вимкнути звук|Silenciar|Stummschalten|Mettre en sourdine|Silenciar|Wycisz|Sessize al
+Remove from friends|Видалити з друзів|Eliminar de amigos|Aus Freunden entfernen|Retirer des amis|Remover dos amigos|Usuń ze znajomych|Arkadaşlardan çıkar
+Mute microphone on server|Вимкнути мікрофон на сервері|Silenciar micrófono en el servidor|Mikrofon auf dem Server stummschalten|Couper le micro sur le serveur|Silenciar microfone no servidor|Wycisz mikrofon na serwerze|Sunucuda mikrofonu kapat
+Server deafen|Вимкнути звук на сервері|Ensordecer en el servidor|Auf dem Server taub schalten|Mettre en sourdine sur le serveur|Ensurdecer no servidor|Wyłącz dźwięk na serwerze|Sunucuda sesi kapat
+Move to|Перемістити до|Mover a|Verschieben nach|Déplacer vers|Mover para|Przenieś do|Şuraya taşı
+Disconnect|Відключити|Desconectar|Trennen|Déconnecter|Desconectar|Rozłącz|Bağlantıyı kes
+Kick |Вигнати |Expulsar a |Kicken: |Expulser |Expulsar |Wyrzuć |At:
+Ban |Забанити |Banear a |Bannen: |Bannir |Banir |Zbanuj |Yasakla:
+Copy user ID|Копіювати ID користувача|Copiar ID de usuario|Benutzer-ID kopieren|Copier l'ID utilisateur|Copiar ID do usuário|Kopiuj ID użytkownika|Kullanıcı kimliğini kopyala
+Cancel|Скасувати|Cancelar|Abbrechen|Annuler|Cancelar|Anuluj|İptal
+Connect|Підключитися|Conectar|Verbinden|Se connecter|Conectar|Połącz|Bağlan
+Delete|Видалити|Eliminar|Löschen|Supprimer|Excluir|Usuń|Sil
+Ban|Забанити|Banear|Bannen|Bannir|Banir|Zbanuj|Yasakla
+Kick|Вигнати|Expulsar|Kicken|Expulser|Expulsar|Wyrzuć|At
+Sign in to Discord|Увійти в Discord|Iniciar sesión en Discord|Bei Discord anmelden|Se connecter à Discord|Entrar no Discord|Zaloguj się do Discorda|Discord'a giriş yap
+Sign in with discord.com|Увійти через discord.com|Entrar con discord.com|Mit discord.com anmelden|Se connecter avec discord.com|Entrar com discord.com|Zaloguj przez discord.com|discord.com ile giriş yap
+Watch stream|Дивитися стрим|Ver transmisión|Stream ansehen|Regarder le stream|Assistir à transmissão|Oglądaj transmisję|Yayını izle
+Waiting for video…|Очікування відео…|Esperando vídeo…|Warte auf Video…|En attente de la vidéo…|Aguardando vídeo…|Oczekiwanie na wideo…|Video bekleniyor…
+LIVE|НАЖИВО|EN VIVO|LIVE|EN DIRECT|AO VIVO|NA ŻYWO|CANLI
+Leave|Вийти|Salir|Verlassen|Quitter|Sair|Wyjdź|Ayrıl
+Nothing found|Нічого не знайдено|Nada encontrado|Nichts gefunden|Rien trouvé|Nada encontrado|Nic nie znaleziono|Hiçbir şey bulunamadı
+Friends|Друзі|Amigos|Freunde|Amis|Amigos|Znajomi|Arkadaşlar
+Message requests|Запити на спілкування|Solicitudes de mensaje|Nachrichtenanfragen|Demandes de message|Solicitações de mensagem|Prośby o wiadomość|Mesaj istekleri
+ONLINE|У МЕРЕЖІ|EN LÍNEA|ONLINE|EN LIGNE|ONLINE|ONLINE|ÇEVRİMİÇİ
+All|Усі|Todos|Alle|Tous|Todos|Wszyscy|Tümü
+PENDING|ОЧІКУЮТЬ|PENDIENTES|AUSSTEHEND|EN ATTENTE|PENDENTES|OCZEKUJĄCE|BEKLEYEN
+Send friend request|Надіслати запит у друзі|Enviar solicitud de amistad|Freundschaftsanfrage senden|Envoyer une demande d'ami|Enviar pedido de amizade|Wyślij zaproszenie|Arkadaşlık isteği gönder
+ADD FRIEND|ДОДАТИ В ДРУЗІ|AÑADIR AMIGO|FREUND HINZUFÜGEN|AJOUTER UN AMI|ADICIONAR AMIGO|DODAJ ZNAJOMEGO|ARKADAŞ EKLE
+(edited)|(змінено)|(editado)|(bearbeitet)|(modifié)|(editado)|(edytowano)|(düzenlendi)
+Connecting…|Підключення…|Conectando…|Verbinde…|Connexion…|Conectando…|Łączenie…|Bağlanıyor…
+Find or start a conversation|Знайти або почати розмову|Buscar o iniciar una conversación|Unterhaltung finden oder starten|Trouver ou démarrer une discussion|Encontrar ou iniciar uma conversa|Znajdź lub rozpocznij rozmowę|Sohbet bul veya başlat
+Search this conversation|Шукати в розмові|Buscar en esta conversación|Diese Unterhaltung durchsuchen|Rechercher dans cette discussion|Buscar nesta conversa|Szukaj w tej rozmowie|Bu sohbette ara
+Search this server|Шукати на сервері|Buscar en este servidor|Diesen Server durchsuchen|Rechercher sur ce serveur|Buscar neste servidor|Szukaj na tym serwerze|Bu sunucuda ara
+Jump to latest|До останніх|Ir a lo más reciente|Zum Neuesten|Aller au plus récent|Ir para o mais recente|Przejdź do najnowszych|En yeniye git
+Add reaction|Додати реакцію|Añadir reacción|Reaktion hinzufügen|Ajouter une réaction|Adicionar reação|Dodaj reakcję|Tepki ekle
+Pin|Закріпити|Fijar|Anheften|Épingler|Fixar|Przypnij|Sabitle
+Unpin|Відкріпити|Desfijar|Lösen|Désépingler|Desafixar|Odepnij|Sabitlemeyi kaldır
+Reply|Відповісти|Responder|Antworten|Répondre|Responder|Odpowiedz|Yanıtla
+Copy text|Копіювати текст|Copiar texto|Text kopieren|Copier le texte|Copiar texto|Kopiuj tekst|Metni kopyala
+Copy link|Копіювати посилання|Copiar enlace|Link kopieren|Copier le lien|Copiar link|Kopiuj link|Bağlantıyı kopyala
+Edit|Редагувати|Editar|Bearbeiten|Modifier|Editar|Edytuj|Düzenle
+Entire screen|Весь екран|Pantalla completa|Gesamter Bildschirm|Écran entier|Tela inteira|Cały ekran|Tüm ekran
+Screen share|Трансляція екрана|Pantalla compartida|Bildschirmübertragung|Partage d'écran|Transmissão de tela|Udostępnianie ekranu|Ekran paylaşımı
+Stop watching|Припинити перегляд|Dejar de ver|Nicht mehr ansehen|Arrêter de regarder|Parar de assistir|Przestań oglądać|İzlemeyi bırak
+Stop stream|Завершити стрим|Detener transmisión|Stream beenden|Arrêter le stream|Parar transmissão|Zakończ transmisję|Yayını durdur
+Edit profile|Редагувати профіль|Editar perfil|Profil bearbeiten|Modifier le profil|Editar perfil|Edytuj profil|Profili düzenle
+Log out|Вийти з облікового запису|Cerrar sesión|Abmelden|Se déconnecter|Sair da conta|Wyloguj się|Çıkış yap
+Search|Пошук|Buscar|Suchen|Rechercher|Buscar|Szukaj|Ara
+Theme|Тема|Tema|Design|Thème|Tema|Motyw|Tema
+Background|Фон|Fondo|Hintergrund|Arrière-plan|Fundo|Tło|Arka plan
+Status|Статус|Estado|Status|Statut|Status|Status|Durum
+Online|У мережі|En línea|Online|En ligne|Online|Online|Çevrimiçi
+Offline|Не в мережі|Desconectado|Offline|Hors ligne|Offline|Offline|Çevrimdışı
+Idle|Неактивний|Ausente|Abwesend|Absent|Ausente|Zaraz wracam|Boşta
+Do not disturb|Не турбувати|No molestar|Nicht stören|Ne pas déranger|Não perturbe|Nie przeszkadzać|Rahatsız etmeyin
+Invisible|Невидимий|Invisible|Unsichtbar|Invisible|Invisível|Niewidoczny|Görünmez
+Custom status|Власний статус|Estado personalizado|Eigener Status|Statut personnalisé|Status personalizado|Własny status|Özel durum
+About me|Про мене|Sobre mí|Über mich|À propos de moi|Sobre mim|O mnie|Hakkımda
+Avatar|Аватар|Avatar|Avatar|Avatar|Avatar|Awatar|Avatar
+Banner|Банер|Banner|Banner|Bannière|Banner|Baner|Afiş
+Display name|Показуване ім'я|Nombre visible|Anzeigename|Nom d'affichage|Nome de exibição|Wyświetlana nazwa|Görünen ad
+Pronouns|Займенники|Pronombres|Pronomen|Pronoms|Pronomes|Zaimki|Zamirler
+Join|Приєднатися|Unirse|Beitreten|Rejoindre|Entrar|Dołącz|Katıl
+Decline|Відхилити|Rechazar|Ablehnen|Refuser|Recusar|Odrzuć|Reddet
+Forwarded|Переслано|Reenviado|Weitergeleitet|Transféré|Encaminhado|Przekazane|İletildi
+Note|Нотатка|Nota|Notiz|Note|Nota|Notatka|Not
+Click to add a note|Натисніть, щоб додати нотатку|Haz clic para añadir una nota|Klicken, um eine Notiz hinzuzufügen|Cliquez pour ajouter une note|Clique para adicionar uma nota|Kliknij, aby dodać notatkę|Not eklemek için tıklayın
+Forward|Переслати|Reenviar|Weiterleiten|Transférer|Encaminhar|Przekaż|İlet
+Mute server|Вимкнути сповіщення сервера|Silenciar servidor|Server stummschalten|Mettre le serveur en sourdine|Silenciar servidor|Wycisz serwer|Sunucuyu sessize al
+Mute channel|Вимкнути сповіщення каналу|Silenciar canal|Kanal stummschalten|Mettre le salon en sourdine|Silenciar canal|Wycisz kanał|Kanalı sessize al
+Invite|Запросити|Invitar|Einladen|Inviter|Convidar|Zaproś|Davet et
+Create thread|Створити гілку|Crear hilo|Thread erstellen|Créer un fil|Criar tópico|Utwórz wątek|Konu oluştur
+Loading…|Завантаження…|Cargando…|Wird geladen…|Chargement…|Carregando…|Ładowanie…|Yükleniyor…
+Open|Відкрити|Abrir|Öffnen|Ouvrir|Abrir|Otwórz|Aç
+Join a server|Приєднатися до сервера|Unirse a un servidor|Einem Server beitreten|Rejoindre un serveur|Entrar em um servidor|Dołącz do serwera|Bir sunucuya katıl
+Close|Закрити|Cerrar|Schließen|Fermer|Fechar|Zamknij|Kapat
+Open server|Відкрити сервер|Abrir servidor|Server öffnen|Ouvrir le serveur|Abrir servidor|Otwórz serwer|Sunucuyu aç
+Copy|Копіювати|Copiar|Kopieren|Copier|Copiar|Kopiuj|Kopyala
+Copied|Скопійовано|Copiado|Kopiert|Copié|Copiado|Skopiowano|Kopyalandı
+Done|Готово|Listo|Fertig|Terminé|Concluído|Gotowe|Tamam
+Add friend|Додати в друзі|Añadir amigo|Freund hinzufügen|Ajouter un ami|Adicionar amigo|Dodaj znajomego|Arkadaş ekle
+Camera|Камера|Cámara|Kamera|Caméra|Câmera|Kamera|Kamera
+Preview|Попередній перегляд|Vista previa|Vorschau|Aperçu|Pré-visualização|Podgląd|Önizleme
+Events|Події|Eventos|Events|Événements|Eventos|Wydarzenia|Etkinlikler
+Back|Назад|Atrás|Zurück|Retour|Voltar|Wstecz|Geri
+Next|Далі|Siguiente|Weiter|Suivant|Próximo|Dalej|İleri
+Member since|Учасник від|Miembro desde|Mitglied seit|Membre depuis|Membro desde|Członek od|Üyelik tarihi
+Full profile|Повний профіль|Perfil completo|Vollständiges Profil|Profil complet|Perfil completo|Pełny profil|Tam profil
+Copy server ID|Копіювати ID сервера|Copiar ID del servidor|Server-ID kopieren|Copier l'ID du serveur|Copiar ID do servidor|Kopiuj ID serwera|Sunucu kimliğini kopyala
+Notification settings|Налаштування сповіщень|Ajustes de notificaciones|Benachrichtigungseinstellungen|Paramètres de notification|Configurações de notificação|Ustawienia powiadomień|Bildirim ayarları
+Invite to server|Запросити на сервер|Invitar al servidor|Zum Server einladen|Inviter sur le serveur|Convidar para o servidor|Zaproś na serwer|Sunucuya davet et
+Checking for updates|Перевірка оновлень|Buscando actualizaciones|Suche nach Updates|Recherche de mises à jour|Verificando atualizações|Sprawdzanie aktualizacji|Güncellemeler denetleniyor
+Downloading the update|Завантаження оновлення|Descargando la actualización|Update wird geladen|Téléchargement de la mise à jour|Baixando a atualização|Pobieranie aktualizacji|Güncelleme indiriliyor
+Installing the update|Встановлення оновлення|Instalando la actualización|Update wird installiert|Installation de la mise à jour|Instalando a atualização|Instalowanie aktualizacji|Güncelleme yükleniyor
+Starting Nimbus|Запуск Nimbus|Iniciando Nimbus|Nimbus wird gestartet|Démarrage de Nimbus|Iniciando o Nimbus|Uruchamianie Nimbus|Nimbus başlatılıyor
+No connection to the update server|Немає зв'язку із сервером оновлень|Sin conexión con el servidor de actualizaciones|Keine Verbindung zum Update-Server|Pas de connexion au serveur de mises à jour|Sem conexão com o servidor de atualização|Brak połączenia z serwerem aktualizacji|Güncelleme sunucusuna bağlanılamadı
+Skip|Пропустити|Omitir|Überspringen|Passer|Pular|Pomiń|Atla
+Welcome back, {}|З поверненням, {}|Hola de nuevo, {}|Willkommen zurück, {}|Bon retour, {}|Bem-vindo de volta, {}|Witaj ponownie, {}|Tekrar hoş geldin, {}
+Welcome back|З поверненням|Hola de nuevo|Willkommen zurück|Bon retour|Bem-vindo de volta|Witaj ponownie|Tekrar hoş geldin
+Loading servers and messages|Завантаження серверів і повідомлень|Cargando servidores y mensajes|Server und Nachrichten werden geladen|Chargement des serveurs et des messages|Carregando servidores e mensagens|Ładowanie serwerów i wiadomości|Sunucular ve mesajlar yükleniyor
+Voice was disconnected because you connected from another location.|Голос відключено, бо ви підключилися з іншого місця.|La voz se desconectó porque te conectaste desde otro lugar.|Sprache wurde getrennt, weil du dich von einem anderen Ort verbunden hast.|La voix a été déconnectée car vous vous êtes connecté ailleurs.|A voz foi desconectada porque você se conectou de outro lugar.|Głos rozłączono, bo połączono się z innego miejsca.|Başka bir yerden bağlandığınız için ses kesildi.
+Reconnect|Перепідключитися|Reconectar|Neu verbinden|Se reconnecter|Reconectar|Połącz ponownie|Yeniden bağlan
+Open in Discord|Відкрити в Discord|Abrir en Discord|In Discord öffnen|Ouvrir dans Discord|Abrir no Discord|Otwórz w Discordzie|Discord'da aç
+Mark as read|Позначити прочитаним|Marcar como leído|Als gelesen markieren|Marquer comme lu|Marcar como lido|Oznacz jako przeczytane|Okundu olarak işaretle
+Profile|Профіль|Perfil|Profil|Profil|Perfil|Profil|Profil
+Mention|Згадати|Mencionar|Erwähnen|Mentionner|Mencionar|Wspomnij|Bahset
+Start call|Почати дзвінок|Iniciar llamada|Anruf starten|Démarrer un appel|Iniciar chamada|Rozpocznij rozmowę|Arama başlat
+Add friend nickname|Додати нікнейм друга|Añadir apodo de amigo|Spitznamen hinzufügen|Ajouter un surnom d'ami|Adicionar apelido do amigo|Dodaj pseudonim znajomego|Arkadaş takma adı ekle
+Change friend nickname|Змінити нікнейм друга|Cambiar apodo de amigo|Spitznamen ändern|Modifier le surnom d'ami|Alterar apelido do amigo|Zmień pseudonim znajomego|Arkadaş takma adını değiştir
+Mute soundboard|Вимкнути звукову панель|Silenciar panel de sonidos|Soundboard stummschalten|Couper la soundboard|Silenciar painel de sons|Wycisz panel dźwięków|Ses panelini sessize al
+Disable video|Вимкнути відео|Desactivar vídeo|Video deaktivieren|Désactiver la vidéo|Desativar vídeo|Wyłącz wideo|Videoyu kapat
+Change nickname|Змінити нікнейм|Cambiar apodo|Spitznamen ändern|Modifier le pseudo|Alterar apelido|Zmień pseudonim|Takma adı değiştir
+Ignore|Ігнорувати|Ignorar|Ignorieren|Ignorer|Ignorar|Ignoruj|Yoksay
+Stop ignoring|Припинити ігнорувати|Dejar de ignorar|Nicht mehr ignorieren|Ne plus ignorer|Parar de ignorar|Przestań ignorować|Yoksaymayı bırak
+Block|Заблокувати|Bloquear|Blockieren|Bloquer|Bloquear|Zablokuj|Engelle
+Unblock|Розблокувати|Desbloquear|Blockierung aufheben|Débloquer|Desbloquear|Odblokuj|Engeli kaldır
+Roles|Ролі|Roles|Rollen|Rôles|Cargos|Role|Roller
+Unmute chat|Увімкнути сповіщення|Activar sonido del chat|Chat-Stummschaltung aufheben|Réactiver la discussion|Reativar conversa|Wyłącz wyciszenie czatu|Sohbetin sesini aç
+Mute chat|Вимкнути сповіщення чату|Silenciar chat|Chat stummschalten|Mettre la discussion en sourdine|Silenciar conversa|Wycisz czat|Sohbeti sessize al
+Leave group|Покинути групу|Salir del grupo|Gruppe verlassen|Quitter le groupe|Sair do grupo|Opuść grupę|Gruptan ayrıl
+Close DM|Закрити ЛП|Cerrar MD|DM schließen|Fermer le MP|Fechar DM|Zamknij wiadomość|DM'yi kapat
+Share profile|Поділитися профілем|Compartir perfil|Profil teilen|Partager le profil|Compartilhar perfil|Udostępnij profil|Profili paylaş
+Copy channel ID|Копіювати ID каналу|Copiar ID del canal|Kanal-ID kopieren|Copier l'ID du salon|Copiar ID do canal|Kopiuj ID kanału|Kanal kimliğini kopyala
+Save|Зберегти|Guardar|Speichern|Enregistrer|Salvar|Zapisz|Kaydet
+Friend nickname|Нікнейм друга|Apodo de amigo|Spitzname|Surnom d'ami|Apelido do amigo|Pseudonim znajomego|Arkadaş takma adı
+Remove from favorites|Прибрати з обраного|Quitar de favoritos|Aus Favoriten entfernen|Retirer des favoris|Remover dos favoritos|Usuń z ulubionych|Favorilerden çıkar
+Add to favorites|Додати в обране|Añadir a favoritos|Zu Favoriten hinzufügen|Ajouter aux favoris|Adicionar aos favoritos|Dodaj do ulubionych|Favorilere ekle
+Open in Spotify|Відкрити в Spotify|Abrir en Spotify|In Spotify öffnen|Ouvrir dans Spotify|Abrir no Spotify|Otwórz w Spotify|Spotify'da aç
+Listen along|Слухати разом|Escuchar juntos|Mithören|Écouter ensemble|Ouvir junto|Słuchaj razem|Birlikte dinle
+View verification code|Переглянути код підтвердження|Ver código de verificación|Bestätigungscode anzeigen|Voir le code de vérification|Ver código de verificação|Pokaż kod weryfikacyjny|Doğrulama kodunu gör
+Open in moderator view|Відкрити з доступом модератора|Abrir en vista de moderador|In Moderatorenansicht öffnen|Ouvrir en vue modérateur|Abrir na visão de moderador|Otwórz w widoku moderatora|Moderatör görünümünde aç
+Open shop|Відкрити магазин|Abrir tienda|Shop öffnen|Ouvrir la boutique|Abrir loja|Otwórz sklep|Mağazayı aç
+Report profile|Поскаржитися на профіль|Denunciar perfil|Profil melden|Signaler le profil|Denunciar perfil|Zgłoś profil|Profili bildir
+Time out|Тайм-аут|Aislar|Timeout|Exclusion temporaire|Castigo|Przerwa|Zaman aşımı
+Friends since|Друзі від|Amigos desde|Freunde seit|Amis depuis|Amigos desde|Znajomi od|Arkadaşlık tarihi
+Connections|Інтеграції|Conexiones|Verbindungen|Connexions|Conexões|Połączenia|Bağlantılar
+Activity|Активність|Actividad|Aktivität|Activité|Atividade|Aktywność|Etkinlik
+Mutual friends|Спільні друзі|Amigos en común|Gemeinsame Freunde|Amis en commun|Amigos em comum|Wspólni znajomi|Ortak arkadaşlar
+Mutual servers|Спільні сервери|Servidores en común|Gemeinsame Server|Serveurs en commun|Servidores em comum|Wspólne serwery|Ortak sunucular
+Join the call|Приєднатися до дзвінка|Unirse a la llamada|Dem Anruf beitreten|Rejoindre l'appel|Entrar na chamada|Dołącz do rozmowy|Aramaya katıl
+Direct Messages|Особисті повідомлення|Mensajes directos|Direktnachrichten|Messages privés|Mensagens diretas|Wiadomości prywatne|Direkt Mesajlar
+Voice connected|Голос підключено|Voz conectada|Sprache verbunden|Voix connectée|Voz conectada|Głos połączony|Ses bağlandı
+Today, {}|Сьогодні, {}|Hoy, {}|Heute, {}|Aujourd'hui, {}|Hoje, {}|Dzisiaj, {}|Bugün, {}
+Yesterday, {}|Учора, {}|Ayer, {}|Gestern, {}|Hier, {}|Ontem, {}|Wczoraj, {}|Dün, {}
+{} member|{} учасник|{} miembro|{} Mitglied|{} membre|{} membro|{} osoba|{} üye
+{} members|Учасників: {}|{} miembros|{} Mitglieder|{} membres|{} membros|Osób: {}|{} üye
+Message #{}|Написати в #{}|Mensaje en #{}|Nachricht an #{}|Envoyer un message dans #{}|Mensagem em #{}|Napisz na #{}|#{} kanalına mesaj
+Message {}|Написати {}|Mensaje para {}|Nachricht an {}|Envoyer un message à {}|Mensagem para {}|Napisz do {}|{} kişisine mesaj
+Favorites|Обране|Favoritos|Favoriten|Favoris|Favoritos|Ulubione|Favoriler
+added {} to the group|додає {} до групи|añadió a {} al grupo|hat {} zur Gruppe hinzugefügt|a ajouté {} au groupe|adicionou {} ao grupo|dodaje {} do grupy|{} kişisini gruba ekledi
+removed {} from the group|прибирає {} з групи|eliminó a {} del grupo|hat {} aus der Gruppe entfernt|a retiré {} du groupe|removeu {} do grupo|usuwa {} z grupy|{} kişisini gruptan çıkardı
+left the group|покидає групу|salió del grupo|hat die Gruppe verlassen|a quitté le groupe|saiu do grupo|opuszcza grupę|gruptan ayrıldı
+started a call|починає дзвінок|inició una llamada|hat einen Anruf gestartet|a lancé un appel|iniciou uma chamada|rozpoczyna rozmowę|bir arama başlattı
+Owner|Власник|Propietario|Eigentümer|Propriétaire|Dono|Właściciel|Sahip

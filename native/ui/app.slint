@@ -56,6 +56,8 @@ export struct CallTile {
     has-decoration: bool,
     // A stream tile: being received now, and how well ("1080P 60 КАДРОВ В СЕКУНДУ").
     watched: bool,
+    // Its sound button: silent here, whatever the other streams do.
+    sound-off: bool,
     quality: string,
     // Their camera's newest picture (ours mirrored), or the stream's; without it the avatar or the preview shows.
     video: image,
@@ -526,6 +528,12 @@ export struct MessageItem {
     blocks: [Block],
     grouped: bool,
     system: bool,
+    // A line of the chat itself: its mark (see SystemLine in main.rs), its words around a name, a call to join.
+    system-icon: int,
+    system-what: string,
+    system-whom: string,
+    system-rest: string,
+    system-call: bool,
     // The space is reserved right away; the picture itself arrives later.
     picture: image,
     has-picture: bool,
@@ -590,6 +598,12 @@ export struct NotifyMenuInfo {
 }
 
 // Settings → Внешний вид, Специальные возможности, Язык и время.
+// A line of the changelog. kind: 0 version, 1 section, 2 item, 3 plain text.
+export struct ChangelogLine {
+    kind: int,
+    text: string,
+}
+
 export global Appearance {
     // How big the text of messages is; 1.0 = the usual.
     in-out property <float> scale: 1.0;
@@ -605,8 +619,13 @@ export global Appearance {
     // 12-hour clock and the date as 2026-10-29 (the texts are made in Rust, so it applies to messages opened after).
     in-out property <bool> time12: false;
     in-out property <bool> date-iso: false;
-    // "en" or "ru"; English until the person picks Russian (here, or on the sign-in screen).
+    // A code of `Languages`; English until the person picks another (here, or on the sign-in screen).
     in-out property <string> language: "en";
+    // This version is new here: the window that says so. The changelog also opens from the settings.
+    in-out property <bool> updated-open;
+    in-out property <bool> changelog-open;
+    in property <[ChangelogLine]> changelog;
+    in property <string> nimbus-version;
     callback language-picked(string);
     // 0 black, 1 graphite, 2 midnight, 3 light.
     in-out property <int> theme: 0;
@@ -628,6 +647,21 @@ export global Appearance {
 }
 
 // Text helpers that live in Rust: Discord's time stamps (`<t:…>`) written out in local time.
+// The languages offered, each in its own words.
+global Languages {
+    out property <[{ code: string, name: string, flag: image }]> all: [
+        { code: "en", name: "English", flag: @image-url("../assets/flags/gb.svg") },
+        { code: "ru", name: "Русский", flag: @image-url("../assets/flags/ru.svg") },
+        { code: "uk", name: "Українська", flag: @image-url("../assets/flags/ua.svg") },
+        { code: "es", name: "Español", flag: @image-url("../assets/flags/es.svg") },
+        { code: "de", name: "Deutsch", flag: @image-url("../assets/flags/de.svg") },
+        { code: "fr", name: "Français", flag: @image-url("../assets/flags/fr.svg") },
+        { code: "pt", name: "Português (Brasil)", flag: @image-url("../assets/flags/br.svg") },
+        { code: "pl", name: "Polski", flag: @image-url("../assets/flags/pl.svg") },
+        { code: "tr", name: "Türkçe", flag: @image-url("../assets/flags/tr.svg") },
+    ];
+}
+
 export global Fmt {
     pure callback stamps(string) -> string;
 }
@@ -706,6 +740,9 @@ global Icons {
     out property <string> camera-off: "M10.7 6H14a2 2 0 0 1 2 2v2.5l5.2-3a.5.5 0 0 1 .8.4v8.2 M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2 M2 2l20 20";
     out property <string> screen: "M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M8 21h8M12 17v4M12 13V7M9 10l3-3 3 3";
     out property <string> window: "M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M3 9h18 M6.5 6.5h.01 M9 6.5h.01";
+    out property <string> plus: "M12 5v14 M5 12h14";
+    out property <string> arrow-right: "M4 12h15 M13 6l6 6-6 6";
+    out property <string> arrow-left: "M20 12H5 M11 6l-6 6 6 6";
     out property <string> close: "M6 6L18 18M18 6L6 18";
     out property <string> eye: "M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z";
     out property <string> friends: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 7a4 4 0 1 0 0 0.01 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75";
@@ -883,6 +920,7 @@ component GuildButton inherits Rectangle {
             height: 24px;
         }
         if !root.item.has-icon && root.item.id != "@me": Text {
+            y: (parent.height - self.height) / 2 - self.font-size * 0.064;
             text: root.item.initials;
             color: (root.selected || ta.has-hover) ? Theme.on-accent : Theme.text;
             font-size: 15px;
@@ -1238,6 +1276,70 @@ component ToggleRow inherits HorizontalLayout {
 }
 
 // One choice of the input profile.
+// The language in use, flag and name; a click opens the list of them.
+component LanguagePicker inherits Rectangle {
+    height: 44px;
+    border-radius: 8px;
+    background: picker-area.has-hover ? Theme.hover : Theme.card;
+    border-width: 1px;
+    border-color: Theme.line;
+    animate background { duration: Appearance.quick; }
+    picker-area := TouchArea { mouse-cursor: pointer; clicked => { list.show(); } }
+    for l in Languages.all: Rectangle {
+        visible: Appearance.language == l.code;
+        Rectangle {
+            x: 12px;
+            width: 27px;
+            height: 18px;
+            border-radius: 3px;
+            clip: true;
+            Image { width: 27px; height: 18px; source: l.flag; image-fit: fill; }
+        }
+        Text { x: 49px; width: parent.width - 90px; height: parent.height; text: l.name; color: Theme.text; font-size: 15px; font-weight: 500; vertical-alignment: center; overflow: elide; }
+    }
+    Icon { x: parent.width - 32px; width: 20px; height: 20px; commands: Icons.chevron; tint: Theme.text2; }
+    list := PopupWindow {
+        x: 0;
+        y: root.height + 4px;
+        width: root.width;
+        height: list-body.preferred-height;
+        close-policy: close-on-click-outside;
+        Rectangle {
+            background: Theme.popup;
+            border-radius: 8px;
+            border-width: 1px;
+            border-color: Theme.line;
+            drop-shadow-blur: 18px;
+            drop-shadow-color: Theme.shadow;
+            list-body := VerticalLayout {
+                padding: 6px;
+                for l in Languages.all: Rectangle {
+                    height: 40px;
+                    border-radius: 6px;
+                    background: Appearance.language == l.code ? Theme.active : (row-area.has-hover ? Theme.hover : transparent);
+                    row-area := TouchArea {
+                        mouse-cursor: pointer;
+                        clicked => {
+                            Appearance.language-picked(l.code);
+                            list.close();
+                        }
+                    }
+                    Rectangle {
+                        x: 8px;
+                        width: 27px;
+                        height: 18px;
+                        border-radius: 3px;
+                        clip: true;
+                        Image { width: 27px; height: 18px; source: l.flag; image-fit: fill; }
+                    }
+                    Text { x: 45px; width: parent.width - 80px; height: parent.height; text: l.name; color: Theme.text; font-size: 14px; font-weight: 500; vertical-alignment: center; overflow: elide; }
+                    if Appearance.language == l.code: Icon { x: parent.width - 28px; width: 18px; height: 18px; commands: Icons.check; tint: Theme.accent; }
+                }
+            }
+        }
+    }
+}
+
 component Radio inherits Rectangle {
     in property <string> text;
     in property <string> hint;
@@ -2562,8 +2664,7 @@ component VoiceSettingsView inherits Rectangle {
             height: parent.height - 61px;
             side: root.side;
             Anchor { key: 0; text: @tr("" => "Язык"); }
-            Radio { text: "English"; hint: @tr("" => "Интерфейс Nimbus на английском"); on: Appearance.language == "en"; clicked => { Appearance.language-picked("en"); } }
-            Radio { text: "Русский"; hint: @tr("" => "Интерфейс Nimbus на русском"); on: Appearance.language == "ru"; clicked => { Appearance.language-picked("ru"); } }
+            LanguagePicker {}
             Rectangle { height: 1px; background: Theme.line; }
             Anchor { key: 1; text: @tr("" => "Время и дата"); }
             SettingTitle { text: @tr("" => "Формат времени"); hint: @tr("" => "Применяется к сообщениям, открытым после выбора (открой канал заново)."); }
@@ -2581,6 +2682,16 @@ component VoiceSettingsView inherits Rectangle {
             height: parent.height - 61px;
             side: root.side;
             Text { text: "Nimbus " + root.version; color: Theme.text; font-size: 20px; font-weight: 800; }
+            HorizontalLayout {
+                alignment: start;
+                DialogButton {
+                    text: @tr("" => "Что нового");
+                    clicked => {
+                        Appearance.changelog-open = true;
+                        Appearance.updated-open = true;
+                    }
+                }
+            }
             Text {
                 text: @tr("" => "Неофициальный открытый клиент Discord. Не связан с Discord Inc. и не выдаёт себя за официальное приложение.");
                 color: Theme.text2;
@@ -3460,6 +3571,111 @@ component InfoDialog inherits Rectangle {
     }
 }
 
+// After an update: black like the start window, with the mark. "What's new" turns it into the changelog, right here.
+component UpdatedWindow inherits Rectangle {
+    background: #000000b8;
+    keys := FocusScope {
+        key-pressed(event) => {
+            if (event.text == Key.Escape) {
+                root.close();
+                return accept;
+            }
+            return reject;
+        }
+    }
+    function close() {
+        Appearance.updated-open = false;
+        Appearance.changelog-open = false;
+    }
+    init => { keys.focus(); }
+    TouchArea { clicked => { root.close(); } }
+    Rectangle {
+        property <bool> shown;
+        init => { self.shown = true; }
+        opacity: self.shown ? 1 : 0;
+        animate opacity, height { duration: Appearance.quick; easing: ease-out; }
+        width: Appearance.changelog-open ? min(620px, root.width - 48px) : 340px;
+        height: Appearance.changelog-open ? min(680px, root.height - 64px) : 360px;
+        border-radius: 14px;
+        background: #000000;
+        border-width: 1px;
+        border-color: #1c1c1c;
+        drop-shadow-blur: 32px;
+        drop-shadow-color: Theme.shadow;
+        clip: true;
+        TouchArea {}
+        if !Appearance.changelog-open: Rectangle {
+            NimbusMark { x: (parent.width - self.width) / 2; y: 44px; width: 72px; height: 72px; ink: #ffffff; animated: !Appearance.reduce-motion; }
+            Text { y: 132px; width: parent.width; horizontal-alignment: center; text: @tr("" => "Nimbus обновлён"); color: #ffffff; font-size: 20px; font-weight: 700; }
+            Text { y: 166px; width: parent.width; horizontal-alignment: center; text: Appearance.nimbus-version; color: #a1a1a1; font-size: 13px; }
+            Rectangle {
+                x: 32px;
+                y: 218px;
+                width: parent.width - 64px;
+                height: 42px;
+                border-radius: 8px;
+                background: news-area.has-hover ? #e4e4e4 : #ffffff;
+                animate background { duration: Appearance.quick; }
+                news-area := TouchArea { mouse-cursor: pointer; clicked => { Appearance.changelog-open = true; } }
+                Text { text: @tr("" => "Что нового"); color: #000000; font-size: 14px; font-weight: 600; }
+            }
+            Rectangle {
+                x: 32px;
+                y: 270px;
+                width: parent.width - 64px;
+                height: 42px;
+                border-radius: 8px;
+                background: later-area.has-hover ? #1a1a1a : transparent;
+                animate background { duration: Appearance.quick; }
+                later-area := TouchArea { mouse-cursor: pointer; clicked => { root.close(); } }
+                Text { text: @tr("" => "Закрыть"); color: #a1a1a1; font-size: 14px; font-weight: 500; }
+            }
+        }
+        if Appearance.changelog-open: Rectangle {
+            NimbusMark { x: 24px; y: 22px; width: 24px; height: 24px; ink: #ffffff; }
+            Text { x: 58px; y: 20px; height: 28px; text: @tr("" => "Что нового"); color: #ffffff; font-size: 18px; font-weight: 700; vertical-alignment: center; }
+            Rectangle {
+                x: parent.width - 44px;
+                y: 16px;
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                background: log-close.has-hover ? #1a1a1a : transparent;
+                log-close := TouchArea { mouse-cursor: pointer; clicked => { root.close(); } }
+                Icon { x: 7px; y: 7px; width: 18px; height: 18px; commands: Icons.close; tint: #ffffff; }
+            }
+            Rectangle { y: 64px; height: 1px; background: #1c1c1c; }
+            Flickable {
+                x: 24px;
+                y: 65px;
+                width: parent.width - 48px;
+                height: parent.height - 65px;
+                interactive: false;
+                content-height: log-body.preferred-height;
+                log-body := VerticalLayout {
+                    width: parent.width;
+                    padding-top: 16px;
+                    padding-bottom: 24px;
+                    spacing: 8px;
+                    for line in Appearance.changelog: HorizontalLayout {
+                        padding-top: line.kind == 0 ? 14px : line.kind == 1 ? 10px : 0px;
+                        spacing: 8px;
+                        if line.kind == 2: Text { text: "•"; color: #a1a1a1; font-size: 14px; }
+                        Text {
+                            horizontal-stretch: 1;
+                            text: line.text;
+                            color: line.kind == 0 || line.kind == 1 ? #ffffff : #c8c8c8;
+                            font-size: line.kind == 0 ? 20px : line.kind == 1 ? 15px : 14px;
+                            font-weight: line.kind == 0 ? 800 : line.kind == 1 ? 700 : 400;
+                            wrap: word-wrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 // A line of words asked for on the spot: a nickname. Empty takes it away.
 component PromptDialog inherits Rectangle {
     in property <string> title;
@@ -3596,10 +3812,9 @@ component LoginScreen inherits Rectangle {
         x: root.width - self.preferred-width - 16px;
         y: 48px;
         width: self.preferred-width;
-        height: 32px;
+        height: 44px;
         spacing: 4px;
-        Chip { text: "Русский"; on: Appearance.language == "ru"; clicked => { Appearance.language-picked("ru"); } }
-        Chip { text: "English"; on: Appearance.language == "en"; clicked => { Appearance.language-picked("en"); } }
+        LanguagePicker { width: 240px; }
     }
     box := VerticalLayout {
         x: (root.width - self.width) / 2;
@@ -4134,7 +4349,7 @@ component CallTileView inherits Rectangle {
             clip: true;
             background: Theme.accent;
             if root.tile.has-avatar: Image { width: parent.width; height: parent.height; source: root.tile.avatar; image-fit: cover; }
-            if !root.tile.has-avatar: Text { text: root.tile.initial; color: Theme.on-accent; font-size: root.face * 0.4; font-weight: 700; }
+            if !root.tile.has-avatar: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: root.tile.initial; color: Theme.on-accent; font-size: root.face * 0.4; font-weight: 700; }
         }
         if root.tile.has-decoration: Image { x: -root.face * 0.125; y: -root.face * 0.125; width: root.face * 1.25; height: root.face * 1.25; source: root.tile.decoration; }
     }
@@ -4303,7 +4518,6 @@ component CallView inherits Rectangle {
     in property <image> stream-frame;
     // Every stream being watched plays on its tile; one is up on stage, or all share the grid.
     in-out property <bool> grid-view;
-    in property <string> sound-stream;
     callback focus-stream(string);
     callback stop-one(string);
     callback set-sound(string);
@@ -4343,9 +4557,9 @@ component CallView inherits Rectangle {
     function pick(t: CallTile) {
         if (t.stream) {
             root.focus-person = "";
-            // One being watched goes up on stage at once, without connecting again; the others keep playing.
+            // A stream opens big. One being watched goes up at once, without connecting again; the others keep playing.
+            root.grid-view = false;
             if (t.watched) {
-                root.grid-view = false;
                 root.focus-stream(t.identity);
             } else {
                 root.watch(t.identity);
@@ -4401,7 +4615,6 @@ component CallView inherits Rectangle {
             visible: !t.stream && t.identity == root.focus-person;
             tile: t;
             clicked => { root.focus-person = ""; }
-            double-clicked => { root.toggle-fullscreen(); }
             user-menu(id, x, y) => { root.user-menu(id, x, y); }
         }
         Rectangle {
@@ -4424,7 +4637,11 @@ component CallView inherits Rectangle {
         border-radius: 10px;
         clip: true;
         background: #000;
-        TouchArea { double-clicked => { root.toggle-fullscreen(); } }
+        // A click: back to everyone side by side, as in Discord.
+        TouchArea {
+            mouse-cursor: pointer;
+            clicked => { root.grid-view = true; }
+        }
         Image { width: parent.width; height: parent.height; source: root.stream-frame; image-fit: contain; }
         if root.stream-frame.width == 0: Text { text: @tr("" => "Жду видео…"); color: Theme.muted; font-size: 14px; }
         Rectangle {
@@ -4503,8 +4720,8 @@ component CallView inherits Rectangle {
         live: t.video;
         closable: self.showing;
         close => { root.stop-one(t.identity); }
-        sound-on: t.identity == root.sound-stream;
-        toggle-sound => { root.set-sound(t.identity == root.sound-stream ? "" : t.identity); }
+        sound-on: !t.sound-off;
+        toggle-sound => { root.set-sound(t.identity); }
         width: root.tile-w;
         height: root.tile-h;
         x: root.pad + (root.area-w - (self.in-row * root.tile-w + (self.in-row - 1) * root.gap)) / 2 + self.grid-col * (root.tile-w + root.gap);
@@ -4514,12 +4731,6 @@ component CallView inherits Rectangle {
         }
         clicked => { root.pick(t); }
         user-menu(id, x, y) => { root.user-menu(id, x, y); }
-        double-clicked => {
-            if (t.stream || root.focus-person != t.identity) {
-                root.pick(t);
-            }
-            root.toggle-fullscreen();
-        }
     }
 
     // One stream up on stage, or all of them side by side.
@@ -4860,7 +5071,7 @@ component SearchOverlay inherits Rectangle {
                             height: 26px;
                             border-radius: r.kind == 2 ? 8px : 13px;
                             background: r.kind == 2 ? Theme.surface3 : Theme.accent;
-                            Text { text: r.initial; color: r.kind == 2 ? Theme.strong : Theme.on-accent; font-size: 12px; font-weight: 700; }
+                            Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: r.initial; color: r.kind == 2 ? Theme.strong : Theme.on-accent; font-size: 12px; font-weight: 700; }
                         }
                     }
                     Text { text: r.name; color: Theme.text; font-size: 15px; font-weight: 600; vertical-alignment: center; overflow: elide; }
@@ -5089,7 +5300,7 @@ component PeopleView inherits Rectangle {
                                     clip: true;
                                     background: Theme.accent;
                                     if p.has-avatar: Image { width: 36px; height: 36px; source: p.avatar; image-fit: cover; }
-                                    if !p.has-avatar: Text { text: p.initial; color: Theme.on-accent; font-size: 15px; font-weight: 700; }
+                                    if !p.has-avatar: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: p.initial; color: Theme.on-accent; font-size: 15px; font-weight: 700; }
                                 }
                                 if p.status > 0: StatusDot { x: 23px; y: 23px; status: p.status; ring: Theme.surface2; }
                             }
@@ -5195,7 +5406,7 @@ component VoiceMemberRow inherits Rectangle {
                         // Discord-only people stay a little dimmer, like their names.
                         opacity: root.member.discord ? 0.75 : 1.0;
                     }
-                    if !root.member.has-avatar: Text { text: root.member.initial; color: root.member.discord ? Theme.strong : Theme.on-accent; font-size: 11px; font-weight: 700; }
+                    if !root.member.has-avatar: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: root.member.initial; color: root.member.discord ? Theme.strong : Theme.on-accent; font-size: 11px; font-weight: 700; }
                 }
                 // Drawn on top so the speaking ring isn't clipped away.
                 Rectangle {
@@ -5718,6 +5929,7 @@ component InviteCard inherits Rectangle {
         background: root.invite.state == 2 ? Theme.surface3 : Theme.accent;
         if root.invite.has-icon: Image { width: 48px; height: 48px; source: root.invite.icon; image-fit: cover; }
         if !root.invite.has-icon: Text {
+            y: (parent.height - self.height) / 2 - self.font-size * 0.064;
             text: root.invite.state == 2 ? "?" : root.invite.initials;
             color: root.invite.state == 2 ? Theme.strong : Theme.on-accent;
             font-size: 15px;
@@ -5922,7 +6134,7 @@ component EventCard inherits Rectangle {
                 clip: true;
                 background: Theme.accent;
                 if root.event.has-avatar: Image { width: 20px; height: 20px; source: root.event.avatar; }
-                if !root.event.has-avatar: Text { text: root.event.initial; color: Theme.on-accent; font-size: 10px; font-weight: 700; horizontal-alignment: center; vertical-alignment: center; }
+                if !root.event.has-avatar: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: root.event.initial; color: Theme.on-accent; font-size: 10px; font-weight: 700; horizontal-alignment: center; vertical-alignment: center; }
             }
             HorizontalLayout {
                 spacing: 4px;
@@ -6026,6 +6238,7 @@ component EventCard inherits Rectangle {
 }
 
 component MessageRow inherits Rectangle {    in property <MessageItem> item;
+    callback join-call();
     // A bot's button clicked: the message, the button's custom id.
     callback component-click(string, string);
     // A bot's select menu clicked: the message, its custom id, where it is (x, its bottom edge, width).
@@ -6090,6 +6303,15 @@ component MessageRow inherits Rectangle {    in property <MessageItem> item;
                 alignment: start;
                 min-width: 40px;
                 max-width: 40px;
+                if root.item.system-icon > 0: Rectangle {
+                    height: 22px;
+                    Icon {
+                        width: 18px;
+                        height: 18px;
+                        commands: root.item.system-icon == 2 ? Icons.arrow-left : root.item.system-icon == 3 ? Icons.phone : root.item.system-icon == 4 ? Icons.pin : Icons.arrow-right;
+                        tint: root.item.system-icon == 2 ? #f04a55 : root.item.system-icon == 4 || root.item.system-icon == 5 ? Theme.muted : #23a55a;
+                    }
+                }
                 if !root.item.grouped && !root.item.system: Rectangle {
                     width: 40px;
                     height: 40px;
@@ -6148,6 +6370,21 @@ component MessageRow inherits Rectangle {    in property <MessageItem> item;
                     spacing: 4px;
                     Icon { width: 14px; height: 14px; stroke-width: 2.2px; commands: Icons.forward; tint: Theme.muted; }
                     Text { text: @tr("" => "Переслано"); color: Theme.muted; font-size: 12.5px; font-italic: true; vertical-alignment: center; }
+                }
+                if root.item.system-icon > 0: HorizontalLayout {
+                    height: 22px;
+                    spacing: 4px;
+                    alignment: start;
+                    Text { text: root.item.author; color: Theme.text; font-size: 14px; font-weight: 700; vertical-alignment: center; overflow: elide; }
+                    Text { text: root.item.system-what; color: Theme.text2; font-size: 14px; vertical-alignment: center; overflow: elide; }
+                    if root.item.system-whom != "": Text { text: root.item.system-whom; color: Theme.text; font-size: 14px; font-weight: 700; vertical-alignment: center; overflow: elide; }
+                    if root.item.system-rest != "": Text { text: root.item.system-rest; color: Theme.text2; font-size: 14px; vertical-alignment: center; overflow: elide; }
+                    if root.item.system-call: Rectangle {
+                        width: join-call-label.preferred-width;
+                        join-call-area := TouchArea { mouse-cursor: pointer; clicked => { root.join-call(); } }
+                        join-call-label := Text { text: @tr("" => "Присоединиться к звонку"); color: join-call-area.has-hover ? Theme.text : #00a8fc; font-size: 14px; vertical-alignment: center; }
+                    }
+                    Text { text: root.item.time; color: Theme.faint; font-size: 12px; vertical-alignment: center; }
                 }
                 for b in root.item.blocks: BlockView {
                     block: b;
@@ -6805,7 +7042,7 @@ component FullProfile inherits Rectangle {
                                     }
                                 }
                             }
-                            if full-note.text == "": Text { height: parent.height; vertical-alignment: center; text: @tr("" => "Нажми, чтобы добавить заметку"); color: Theme.faint; font-size: 14px; }
+                            if full-note.text == "": Text { x: 0; width: parent.width; height: parent.height; vertical-alignment: center; text: @tr("" => "Нажми, чтобы добавить заметку"); color: Theme.faint; font-size: 14px; }
                         }
                     }
                 }
@@ -7218,7 +7455,7 @@ export component ToastWindow inherits Window {
             clip: true;
             background: #2a2a2a;
             if root.has-avatar && !root.anonymous: Image { width: 40px; height: 40px; source: root.avatar; image-fit: cover; }
-            if !root.has-avatar && !root.anonymous: Text { text: root.initial; color: #ffffff; font-size: 16px; font-weight: 600; }
+            if !root.has-avatar && !root.anonymous: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: root.initial; color: #ffffff; font-size: 16px; font-weight: 600; }
             if root.anonymous: NimbusMark { x: 8px; y: 8px; width: 24px; height: 24px; }
         }
         Text {
@@ -7529,7 +7766,6 @@ export component AppWindow inherits Window {
     in-out property <bool> show-call;
     in-out property <string> watched-identity;
     in-out property <bool> call-grid;
-    in property <string> sound-stream;
     // Our voice was taken over by another client of this account: the line under the title bar,
     // which pushes the client down instead of covering it.
     in-out property <bool> voice-taken;
@@ -7709,6 +7945,14 @@ export component AppWindow inherits Window {
         root.menu-y = y;
         root.menu-from-card = false;
         root.user-menu-requested(id);
+    }
+    // The widths of the side panels, changed by dragging their edges and kept.
+    in-out property <length> sidebar-width: 248px;
+    in-out property <length> members-width: 240px;
+    in-out property <length> dm-panel-width: 340px;
+    callback panel-widths-saved(float, float, float);
+    function save-panel-widths() {
+        root.panel-widths-saved(root.sidebar-width / 1px, root.members-width / 1px, root.dm-panel-width / 1px);
     }
     // Someone's badges, the one to show first.
     in-out property <bool> badges-open;
@@ -8207,7 +8451,7 @@ export component AppWindow inherits Window {
                 background: add-area.has-hover ? #23a55a : Theme.surface3;
                 animate border-radius, background { duration: Appearance.slow; easing: ease-out; }
                 add-area := TouchArea { mouse-cursor: pointer; clicked => { root.open-join(""); } }
-                Text { text: "+"; color: add-area.has-hover ? #fff : #23a55a; font-size: 24px; font-weight: 400; horizontal-alignment: center; vertical-alignment: center; }
+                Icon { width: 22px; height: 22px; commands: Icons.plus; tint: add-area.has-hover ? #fff : #23a55a; }
             }
             ListView {
                 height: parent.height - 56px - root.dock-height;
@@ -8233,7 +8477,7 @@ export component AppWindow inherits Window {
 
         // Sidebar: server name, channels, user panel
         Rectangle {
-            width: 248px;
+            width: root.sidebar-width;
             background: Theme.pane0;
             opacity: root.client-hidden ? 0 : 1;
             animate opacity { delay: 260ms; duration: root.client-in; easing: ease-out; }
@@ -8400,6 +8644,7 @@ export component AppWindow inherits Window {
                             members: root.voice-members;
                             watch(identity) => {
                                 root.show-call = true;
+                                root.call-grid = false;
                                 root.watched-identity = identity;
                                 root.watch-stream(identity);
                             }
@@ -9004,7 +9249,9 @@ export component AppWindow inherits Window {
                                 }
                                 Text {
                                     x: 10px;
+                                    width: parent.width - 20px;
                                     height: parent.height;
+                                    overflow: elide;
                                     vertical-alignment: center;
                                     visible: search-input.text == "";
                                     text: root.selected-guild == "@me" ? (root.channel-is-dm ? @tr("" => "Искать «{}»", root.channel-title) : @tr("" => "Поиск в переписке")) : @tr("" => "Искать на сервере");
@@ -9044,6 +9291,7 @@ export component AppWindow inherits Window {
                         component-click(id, custom) => { root.component-click(id, custom); }
                         select-open(id, custom, x, y, w) => { root.open-select(id, custom, x, y, w); }
                         voice-play(id) => { root.voice-play(id); }
+                        join-call => { root.dm-call-start(false); }
                         user-menu(id, x, y) => { root.open-user-menu(id, x, y); }
                         message-menu(id, author, pinned, x, y) => { root.open-message-menu(id, author, pinned, x, y); }
                         open-invite(code) => { root.open-join(code); }
@@ -9226,7 +9474,7 @@ export component AppWindow inherits Window {
                             border-radius: 14px;
                             background: attach-area.has-hover ? Theme.hover : transparent;
                             attach-area := TouchArea { mouse-cursor: pointer; clicked => { root.attach-file(); } }
-                            Text { text: "+"; color: Theme.text2; font-size: 22px; font-weight: 700; horizontal-alignment: center; vertical-alignment: center; }
+                            Icon { width: 20px; height: 20px; stroke-width: 2.4px; commands: Icons.plus; tint: Theme.text2; }
                         }
                         // A voice message, while nothing is typed: a click starts recording.
                         if input.text == "" && root.editing == "": Rectangle {
@@ -9701,7 +9949,7 @@ export component AppWindow inherits Window {
         }
         // Members of the server, on the right of a text channel.
         if root.members-open && root.members-shown && !root.forum-open: MemberPanel {
-            width: 240px;
+            width: root.members-width;
             members: root.members;
             user-menu(id, x, y) => { root.open-user-menu(id, x, y); }
             user-card(id, x, y) => { root.open-user-card(id, x, y); }
@@ -9709,7 +9957,7 @@ export component AppWindow inherits Window {
         }
         // The other person, beside a DM.
         if root.channel-is-dm && root.people-page == 0 && root.dm-panel-shown && root.dm-card.id != "" && !root.show-call: Rectangle {
-            width: 340px;
+            width: root.dm-panel-width;
             UserCardView {
                 x: 8px;
                 y: 8px;
@@ -9730,6 +9978,58 @@ export component AppWindow inherits Window {
         }
     }
 
+    // The edges of the side panels: dragged, they change the panel's width.
+    if !root.call-fullscreen: TouchArea {
+        x: 72px + root.sidebar-width - 3px;
+        y: 32px + root.banner-h;
+        width: 6px;
+        height: root.height - 32px - root.banner-h;
+        mouse-cursor: ew-resize;
+        moved => {
+            if (self.pressed) {
+                root.sidebar-width = clamp(root.sidebar-width + self.mouse-x - self.pressed-x, 190px, 440px);
+            }
+        }
+        pointer-event(e) => {
+            if (e.kind == PointerEventKind.up) {
+                root.save-panel-widths();
+            }
+        }
+    }
+    if !root.call-fullscreen && root.members-open && root.members-shown && !root.forum-open: TouchArea {
+        x: root.width - root.members-width - 3px;
+        y: 32px + root.banner-h;
+        width: 6px;
+        height: root.height - 32px - root.banner-h;
+        mouse-cursor: ew-resize;
+        moved => {
+            if (self.pressed) {
+                root.members-width = clamp(root.members-width - (self.mouse-x - self.pressed-x), 180px, 400px);
+            }
+        }
+        pointer-event(e) => {
+            if (e.kind == PointerEventKind.up) {
+                root.save-panel-widths();
+            }
+        }
+    }
+    if !root.call-fullscreen && root.channel-is-dm && root.people-page == 0 && root.dm-panel-shown && root.dm-card.id != "" && !root.show-call: TouchArea {
+        x: root.width - root.dm-panel-width - 3px;
+        y: 32px + root.banner-h;
+        width: 6px;
+        height: root.height - 32px - root.banner-h;
+        mouse-cursor: ew-resize;
+        moved => {
+            if (self.pressed) {
+                root.dm-panel-width = clamp(root.dm-panel-width - (self.mouse-x - self.pressed-x), 280px, 480px);
+            }
+        }
+        pointer-event(e) => {
+            if (e.kind == PointerEventKind.up) {
+                root.save-panel-widths();
+            }
+        }
+    }
     // A stream watched while reading a chat: small, as in Discord, and it goes wherever it is dragged.
     // A click or the arrow: back to the call; the corner: full screen; ×: stop watching.
     if root.watching && !root.show-call && root.voice-channel != "": pip := Rectangle {
@@ -9899,7 +10199,6 @@ export component AppWindow inherits Window {
                 stream-name: root.stream-name;
                 stream-frame: root.stream-frame;
                 grid-view <=> root.call-grid;
-                sound-stream: root.sound-stream;
                 focus-stream(identity) => { root.focus-stream(identity); }
                 set-sound(identity) => { root.set-stream-sound(identity); }
                 stop-one(identity) => { root.stop-one(identity); }
@@ -10613,7 +10912,7 @@ export component AppWindow inherits Window {
                     IconButton { icon: Icons.close; clicked => { root.join-open = false; } }
                 }
                 Text {
-                    text: @tr("" => "Вставьте приглашение: https://discord.gg/hTKzmak, discord.gg/hTKzmak или просто hTKzmak.");
+                    text: @tr("" => "Вставьте приглашение: .gg/invite.");
                     color: Theme.text2;
                     font-size: 13px;
                     wrap: word-wrap;
@@ -10665,7 +10964,7 @@ export component AppWindow inherits Window {
                         clip: true;
                         background: Theme.accent;
                         if root.join-preview.has-icon: Image { width: 48px; height: 48px; source: root.join-preview.icon; image-fit: cover; }
-                        if !root.join-preview.has-icon: Text { text: root.join-preview.initials; color: Theme.on-accent; font-size: 15px; font-weight: 700; }
+                        if !root.join-preview.has-icon: Text { y: (parent.height - self.height) / 2 - self.font-size * 0.064; text: root.join-preview.initials; color: Theme.on-accent; font-size: 15px; font-weight: 700; }
                     }
                     VerticalLayout {
                         x: 76px;
@@ -11559,6 +11858,10 @@ export component AppWindow inherits Window {
         closed => { root.share-picker-open = false; }
     }
 
+    if Appearance.updated-open && !root.login-needed: UpdatedWindow {
+        width: root.width;
+        height: root.height;
+    }
     TitleBar {
         x: 0px;
         y: 0px;

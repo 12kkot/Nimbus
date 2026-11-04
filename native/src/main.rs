@@ -55,6 +55,7 @@ mod search;
 mod servers;
 mod unread;
 mod userprofile;
+mod changelog;
 mod hwenc;
 mod share;
 mod voice;
@@ -312,6 +313,8 @@ struct Blk {
 }
 
 struct Msg {
+    /// A line of the chat itself ("X added Y"), drawn instead of the text.
+    system_line: Option<SystemLine>,
     picture_links: PictureLinks,
     id: String,
     author_id: String,
@@ -1060,11 +1063,32 @@ fn demo_toast(variant: i32) -> Result<(), slint::PlatformError> {
     }
     window.run()
 }
+/// The changelog in the window, and the note that this version is new here (not in the demo).
+fn setup_changelog(ui: &AppWindow) {
+    let lines: Vec<ChangelogLine> = changelog::lines()
+        .into_iter()
+        .map(|line| match line {
+            changelog::Line::Version(text) => ChangelogLine { kind: 0, text: text.into() },
+            changelog::Line::Section(text) => ChangelogLine { kind: 1, text: text.into() },
+            changelog::Line::Item(text) => ChangelogLine { kind: 2, text: text.into() },
+            changelog::Line::Plain(text) => ChangelogLine { kind: 3, text: text.into() },
+        })
+        .collect();
+    let a = ui.global::<Appearance>();
+    a.set_changelog(ModelRc::new(VecModel::from(lines)));
+    a.set_nimbus_version(update::VERSION.into());
+    let demo = std::env::args().any(|arg| arg == "--demo");
+    let new_here = !demo && changelog::note_version(update::VERSION);
+    let shown = new_here || std::env::args().any(|arg| arg == "--demo-updated" || arg == "--demo-changelog");
+    a.set_updated_open(shown);
+    a.set_changelog_open(std::env::args().any(|arg| arg == "--demo-changelog"));
+}
+
 /// The interface language: English until the person picks another, then remembered.
 fn setup_language(ui: &AppWindow) {
     let apply = |lang: &str| {
-        let lang = if lang == "ru" { "ru" } else { "en" };
-        i18n::set_english(lang == "en");
+        let lang = ["ru", "uk", "es", "de", "fr", "pt", "pl", "tr"].into_iter().find(|known| *known == lang).unwrap_or("en");
+        i18n::set_language(lang);
         if let Err(e) = slint::select_bundled_translation(lang) {
             log_line(&format!("language {lang}: {e}"));
         }
@@ -1238,6 +1262,11 @@ impl Msg {
             blocks: ModelRc::new(VecModel::from(blocks)),
             grouped: self.grouped,
             system: self.system,
+            system_icon: self.system_line.as_ref().map_or(0, |l| l.icon),
+            system_what: self.system_line.as_ref().map_or(String::new(), |l| l.what.clone()).into(),
+            system_whom: self.system_line.as_ref().map_or(String::new(), |l| l.whom.clone()).into(),
+            system_rest: self.system_line.as_ref().map_or(String::new(), |l| l.rest.clone()).into(),
+            system_call: self.system_line.as_ref().is_some_and(|l| l.call_open),
             picture: Image::default(),
             has_picture: self.picture.is_some(),
             picture_full: self.picture_links.full.clone().into(),
@@ -1518,9 +1547,14 @@ pub fn set_stream_watched(ui: &AppWindow, id: &str, on: bool) {
         watched.remove(id);
     }
     drop(watched);
+    // Closed and opened again, it is heard again.
+    if !on {
+        golive::set_stream_sound_off(id, false);
+    }
     let Some(row) = stream_row(ui, id) else { return };
     update_row(ui.get_call_tiles(), row, |t| {
         t.watched = on;
+        t.sound_off = false;
         if !on {
             t.video = Image::default();
             t.has_video = false;
@@ -1549,13 +1583,15 @@ pub fn show_stream_quality(ui: &AppWindow, id: &str, text: String) {
     update_row(ui.get_call_tiles(), row, |t| t.quality = text.into());
 }
 
-/// Whose stream is heard; nobody's when empty.
-fn set_stream_sound(ui: &AppWindow, id: &str) {
-    golive::set_sound_from(id);
-    ui.set_sound_stream(id.into());
+/// The sound button of a stream's tile: heard or silent, whatever the others do.
+fn toggle_stream_sound(ui: &AppWindow, id: &str) {
+    let off = !golive::stream_sound_off(id);
+    golive::set_stream_sound_off(id, off);
+    let Some(row) = stream_row(ui, id) else { return };
+    update_row(ui.get_call_tiles(), row, |t| t.sound_off = off);
 }
 
-/// Brings a stream being watched up on stage, and its sound with it.
+/// Brings a stream being watched up on stage.
 pub fn focus_stream(ui: &AppWindow, id: &str) {
     let tile = stream_row(ui, id).and_then(|row| ui.get_call_tiles().row_data(row));
     ui.set_watched_identity(id.into());
@@ -1565,7 +1601,6 @@ pub fn focus_stream(ui: &AppWindow, id: &str) {
     ui.set_stream_name(tile.map(|t| t.name).unwrap_or_default());
     ui.set_stream_volume(audio::user_volume(&format!("stream:{id}")) as f32);
     ui.set_stream_viewers(STREAM_VIEWERS.lock().unwrap().get(id).copied().unwrap_or(0));
-    set_stream_sound(ui, id);
 }
 
 fn clear_stream_stage(ui: &AppWindow) {
@@ -1574,7 +1609,6 @@ fn clear_stream_stage(ui: &AppWindow) {
     ui.set_stream_name("".into());
     ui.set_stream_frame(Image::default());
     ui.set_stream_quality("".into());
-    set_stream_sound(ui, "");
 }
 
 /// A stream ended or was closed: the next one being watched goes up on stage in its place.
@@ -1617,6 +1651,7 @@ fn plain_tile(m: &VoiceMember, stream: bool) -> CallTile {
         decoration: m.decoration.clone(),
         has_decoration: m.has_decoration,
         watched: stream && WATCHED_STREAMS.lock().unwrap().contains(m.identity.as_str()),
+        sound_off: stream && golive::stream_sound_off(m.identity.as_str()),
         quality: "".into(),
         has_video: !stream && video.is_some(),
         video: if stream { Image::default() } else { video.map(Image::from_rgba8).unwrap_or_default() },
@@ -2063,15 +2098,27 @@ const PLATE_H: u32 = 96;
 /// Appends a line to %TEMP%\nimbus-native.log, for problems worth looking at later.
 fn log_line(text: &str) {
     use std::io::Write;
+    if !logging() {
+        return;
+    }
     let path = std::env::temp_dir().join("nimbus-native.log");
     if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open(path) {
         let _ = writeln!(file, "{} {text}", Local::now().format("%F %T"));
     }
 }
 
+/// The log is written only when asked for (the NIMBUS_LOG variable), to look into a problem.
+fn logging() -> bool {
+    static ON: std::sync::LazyLock<bool> = std::sync::LazyLock::new(|| std::env::var_os("NIMBUS_LOG").is_some());
+    *ON
+}
+
 /// Notes pictures that couldn't be shown, so problem cases can be looked at.
 fn log_failure(job: &ImageJob) {
     use std::io::Write;
+    if !logging() {
+        return;
+    }
     let path = std::env::temp_dir().join("nimbus-native.log");
     if let Ok(mut file) = std::fs::OpenOptions::new().create(true).append(true).open(path) {
         let _ = writeln!(file, "{} picture failed: {} (fallbacks: {:?})", Local::now().format("%F %T"), job.url, job.fallbacks);
@@ -2925,13 +2972,39 @@ fn blocks_of(text: &str) -> Vec<Blk> {
     out
 }
 
-/// A group's line that names who came or went, when the message says.
-fn system_text(m: &Value, kind: u64, action: String) -> String {
-    let named = m["mentions"].as_array().and_then(|l| l.first()).map(display_name);
-    match (kind, named) {
-        (1, Some(name)) => i18n::tf("добавил(а) {} в группу", &[&name]),
-        (2, Some(name)) => i18n::tf("убрал(а) {} из группы", &[&name]),
-        _ => action,
+/// A line like "X added Y to the group", in its parts: the words before the name, the name, the words after;
+/// its mark (1 came, 2 went, 3 a call, 4 a pin, 5 anything else) and whether the call can still be joined.
+#[derive(Clone, Default)]
+struct SystemLine {
+    icon: i32,
+    what: String,
+    whom: String,
+    rest: String,
+    call_open: bool,
+}
+
+fn system_line(m: &Value, kind: u64, action: String) -> SystemLine {
+    let author = m["author"]["id"].as_str();
+    let named = m["mentions"].as_array().and_then(|l| l.first());
+    let template = match (kind, named) {
+        // Someone who removes themself has left.
+        (2, Some(u)) if u["id"].as_str() == author => Some(i18n::t("покинул(а) группу")),
+        (1, Some(_)) => Some(i18n::t("добавил(а) {} в группу")),
+        (2, Some(_)) => Some(i18n::t("убрал(а) {} из группы")),
+        _ => None,
+    };
+    let icon = match kind {
+        1 | 7 => 1,
+        2 => 2,
+        3 => 3,
+        6 => 4,
+        _ => 5,
+    };
+    let call_open = kind == 3 && m["call"].is_object() && m["call"]["ended_timestamp"].is_null();
+    let Some(template) = template else { return SystemLine { icon, what: action, call_open, ..Default::default() } };
+    match (template.split_once("{}"), named) {
+        (Some((what, rest)), Some(u)) => SystemLine { icon, what: what.trim().to_string(), whom: display_name(u), rest: rest.trim().to_string(), call_open },
+        _ => SystemLine { icon, what: template, call_open, ..Default::default() },
     }
 }
 
@@ -3117,16 +3190,16 @@ fn to_msg(m: &Value, prev: &mut Option<(String, i64)>, jobs: &mut Vec<ImageJob>)
     let kind = m["type"].as_u64().unwrap_or(0);
 
     if let Some(action) = system_action(kind) {
-        let action = system_text(m, kind, action);
+        let line = system_line(m, kind, action);
         *prev = None;
-        let line = Blk { kind: TEXT, text: format!("{author} {action} · {time_text}"), url: String::new() };
         return Msg {
+            system_line: Some(line),
             id,
             author_id,
             author,
             time: time_text,
             short_time: short,
-            blocks: vec![line],
+            blocks: Vec::new(),
             grouped: false,
             system: true,
             picture_links: PictureLinks::default(),
@@ -3202,6 +3275,7 @@ fn to_msg(m: &Value, prev: &mut Option<(String, i64)>, jobs: &mut Vec<ImageJob>)
         blocks,
         grouped,
         system: false,
+        system_line: None,
         picture_links,
         picture: size,
         edited,
@@ -3551,7 +3625,10 @@ impl Worker {
         let result = match cmd {
             // A click still in the queue when another server has been clicked since.
             Cmd::SelectGuild(id) if *LAST_GUILD_CLICK.lock().unwrap() != id => Ok(()),
-            Cmd::SelectGuild(id) => self.select_guild(id).await,
+            Cmd::SelectGuild(id) => match self.select_guild(id.clone()).await {
+                Ok(()) => self.open_left_chat(id).await,
+                failed => failed,
+            },
             Cmd::SelectChannel(id) if click_is_stale(&id) => Ok(()),
             Cmd::SelectChannel(id) => self.select_channel(id).await,
             Cmd::GoBack => {
@@ -5036,6 +5113,45 @@ impl Worker {
         }
     }
 
+    /// A click on a server or on the DM button: the chat left open there; the first we can see in a server new to us,
+    /// the friends page on the DM side when there is none.
+    async fn open_left_chat(&mut self, guild: String) -> Result<(), String> {
+        // Another place has been clicked since.
+        if *LAST_GUILD_CLICK.lock().unwrap() != guild {
+            return Ok(());
+        }
+        let left = pages::last_in(&guild);
+        let target = if guild == HOME {
+            let open = self.dm_ids();
+            left.filter(|c| open.contains(c))
+        } else {
+            let list = self.guild_cache.get(&guild).map(|(_, list, _)| list.clone());
+            let mine = self.guild_perms(&guild).await;
+            let channels = list.as_ref().and_then(Value::as_array).cloned().unwrap_or_default();
+            let usable = |id: &str| channels.iter().any(|c| c["id"].as_str() == Some(id) && matches!(c["type"].as_u64(), Some(0 | 5 | 15)) && mine.as_ref().is_none_or(|m| m.can_view(c)));
+            left.filter(|c| usable(c) || self.thread_ids.contains(c)).or_else(|| mine.as_ref().and_then(|m| usermenu::invite_channel(&channels, m)))
+        };
+        let Some(channel) = target else {
+            if guild == HOME {
+                on_ui(&self.ui, |ui| {
+                    ui.set_show_call(false);
+                    ui.set_selected_channel("friends".into());
+                    ui.set_people_page(1);
+                });
+                return self.select_channel("friends".into()).await;
+            }
+            return Ok(());
+        };
+        let shown = channel.clone();
+        on_ui(&self.ui, move |ui| {
+            ui.set_show_call(false);
+            ui.set_forum_open(false);
+            ui.set_people_page(0);
+            ui.set_selected_channel(shown.into());
+        });
+        self.select_channel(channel).await
+    }
+
     /// A channel's messages: the newest, or those around one message (a search hit).
     async fn open_messages(&mut self, id: String, around: Option<String>) -> Result<(), String> {
         self.channel = Some(id.clone());
@@ -5045,6 +5161,7 @@ impl Worker {
         }
         if let Some(guild) = &self.guild {
             pages::note_recent(guild, &id);
+            pages::note_last(guild, &id);
         }
         let opening = Instant::now();
         // The page below only replaces one already on screen, when it differs at all.
@@ -9023,6 +9140,7 @@ fn fill_demo(ui: &AppWindow) {
             blocks: blocks_of(&readable(text)),
             grouped,
             system,
+            system_line: None,
             picture,
             edited: false,
             reactions: Vec::new(),
@@ -9852,6 +9970,7 @@ fn demo_media() -> Vec<MessageItem> {
         blocks: blocks_of(text),
         grouped: false,
         system: false,
+        system_line: None,
         picture_links: PictureLinks::default(),
         picture: None,
         edited: false,
@@ -10386,6 +10505,7 @@ fn main() -> Result<(), slint::PlatformError> {
     }
     let ui = AppWindow::new()?;
     setup_language(&ui);
+    setup_changelog(&ui);
     // Watches the push-to-talk key in the background: Windows gives key
     // presses only to the focused window, but the key must work anywhere.
     audio::watch_ptt();
@@ -10583,7 +10703,7 @@ fn main() -> Result<(), slint::PlatformError> {
     let weak = ui.as_weak();
     ui.on_set_stream_sound(move |identity| {
         if let Some(ui) = weak.upgrade() {
-            set_stream_sound(&ui, &identity);
+            toggle_stream_sound(&ui, &identity);
         }
     });
     let stop_one_tx = tx.clone();
@@ -10761,6 +10881,17 @@ fn main() -> Result<(), slint::PlatformError> {
     ui.on_user_menu_requested(move |id| {
         let _ = menu_tx.send(Cmd::UserMenu(id.to_string()));
     });
+    let widths = &prefs::read()["panel_widths"];
+    if let Some(w) = widths[0].as_f64() {
+        ui.set_sidebar_width(w as f32);
+    }
+    if let Some(w) = widths[1].as_f64() {
+        ui.set_members_width(w as f32);
+    }
+    if let Some(w) = widths[2].as_f64() {
+        ui.set_dm_panel_width(w as f32);
+    }
+    ui.on_panel_widths_saved(|sidebar, members, dm| prefs::write("panel_widths", json!([sidebar, members, dm])));
     let full_profile_tx = tx.clone();
     ui.on_full_profile_requested(move |id| {
         let _ = full_profile_tx.send(Cmd::FullProfile(id.to_string()));
