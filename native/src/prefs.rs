@@ -92,6 +92,8 @@ pub struct Look {
     pub compact: bool,
     pub show_time: bool,
     pub reduce_motion: bool,
+    /// How a new message comes in: 0 from the side, 1 glitch, 2 fade and zoom.
+    pub message_anim: i32,
     pub contrast: bool,
     pub time12: bool,
     pub date_iso: bool,
@@ -114,6 +116,7 @@ impl Look {
         compact: false,
         show_time: true,
         reduce_motion: false,
+        message_anim: 2,
         contrast: false,
         time12: false,
         date_iso: false,
@@ -134,6 +137,7 @@ impl Look {
             compact: flag("compact", d.compact),
             show_time: flag("show_time", d.show_time),
             reduce_motion: flag("reduce_motion", d.reduce_motion),
+            message_anim: v["message_anim"].as_i64().map(|n| (n as i32).clamp(0, 2)).unwrap_or(d.message_anim),
             contrast: flag("contrast", d.contrast),
             time12: flag("time12", d.time12),
             date_iso: flag("date_iso", d.date_iso),
@@ -149,7 +153,7 @@ impl Look {
 
     pub fn to_json(self) -> Value {
         json!({
-            "scale": self.scale, "compact": self.compact, "show_time": self.show_time, "reduce_motion": self.reduce_motion,
+            "scale": self.scale, "compact": self.compact, "show_time": self.show_time, "reduce_motion": self.reduce_motion, "message_anim": self.message_anim,
             "contrast": self.contrast, "time12": self.time12, "date_iso": self.date_iso,
             "theme": self.theme, "glass": self.glass, "accent": self.accent, "streamer": self.streamer, "streamer_auto": self.streamer_auto, "hide_from_capture": self.hide_from_capture, "app_icon": self.app_icon,
         })
@@ -172,10 +176,12 @@ mod tests {
             accent: 3,
             streamer: true,
             app_icon: 1,
+            message_anim: 1,
             ..Look::DEFAULT
         };
         assert_eq!(Look::from_json(&look.to_json()), look);
         assert_eq!(Look::from_json(&json!({ "scale": 9.0 })).scale, 1.5);
+        assert_eq!(Look::from_json(&json!({ "message_anim": 9 })).message_anim, 2);
         assert_eq!(Look::from_json(&json!({ "theme": 9, "accent": -3, "app_icon": 7 })).theme, 3);
         assert_eq!(Look::from_json(&json!({ "accent": -3 })).accent, 0);
         assert_eq!(Look::from_json(&json!({ "app_icon": 7 })).app_icon, 3);

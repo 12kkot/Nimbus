@@ -1136,6 +1136,7 @@ fn apply_look(ui: &AppWindow, look: prefs::Look) {
     a.set_compact(look.compact);
     a.set_show_time(look.show_time);
     a.set_reduce_motion(look.reduce_motion);
+    a.set_message_anim(look.message_anim);
     a.set_contrast(look.contrast);
     a.set_glass(look.glass);
     a.set_time12(look.time12);
@@ -1161,6 +1162,7 @@ fn read_look(ui: &AppWindow) -> prefs::Look {
         compact: a.get_compact(),
         show_time: a.get_show_time(),
         reduce_motion: a.get_reduce_motion(),
+        message_anim: a.get_message_anim(),
         contrast: a.get_contrast(),
         glass: a.get_glass(),
         time12: a.get_time12(),
@@ -1172,6 +1174,26 @@ fn read_look(ui: &AppWindow) -> prefs::Look {
         hide_from_capture: a.get_hide_from_capture(),
         app_icon: a.get_app_icon(),
     }
+}
+
+/// Puts a new message at the end of the chat: it comes in with the animation from the settings.
+/// `fresh` goes away soon after, or the row would play it again when scrolled back to.
+fn push_fresh(ui: &AppWindow, mut row: MessageItem) {
+    let model = ui.get_messages();
+    let Some(list) = model.as_any().downcast_ref::<VecModel<MessageItem>>() else { return };
+    let id = row.id.clone();
+    row.fresh = true;
+    list.push(row);
+    let weak = ui.as_weak();
+    slint::Timer::single_shot(Duration::from_secs(1), move || {
+        let Some(ui) = weak.upgrade() else { return };
+        let model = ui.get_messages();
+        let found = (0..model.row_count()).rev().take(50).find_map(|i| model.row_data(i).filter(|r| r.id == id).map(|r| (i, r)));
+        if let Some((i, mut row)) = found {
+            row.fresh = false;
+            model.set_row_data(i, row);
+        }
+    });
 }
 
 /// 0xRRGGBB as a colour.
@@ -6697,12 +6719,7 @@ impl Worker {
         on_ui(&self.ui, move |ui| {
             // Someone reading far up keeps their place; their own message brings them down.
             let follow = mine || ui.invoke_near_bottom();
-            let model = ui.get_messages();
-            if let Some(list) = model.as_any().downcast_ref::<VecModel<MessageItem>>() {
-                let mut row = msg.item();
-                row.fresh = true;
-                list.push(row);
-            }
+            push_fresh(&ui, msg.item());
             if follow {
                 ui.invoke_follow_bottom();
             }
@@ -9382,7 +9399,22 @@ fn fill_demo(ui: &AppWindow) {
         let line = format!("--demo-many: {n} messages in the list");
         log_line(&line);
     }
+    // `--demo-incoming`: a made-up message arrives every 1.5 s, to watch them come in.
+    let incoming = messages.last().cloned().filter(|_| std::env::args().any(|a| a == "--demo-incoming"));
     ui.set_messages(ModelRc::new(VecModel::from(messages)));
+    if let Some(sample) = incoming {
+        let weak = ui.as_weak();
+        let count = std::cell::Cell::new(0);
+        let timer = slint::Timer::default();
+        timer.start(slint::TimerMode::Repeated, Duration::from_millis(1500), move || {
+            let Some(ui) = weak.upgrade() else { return };
+            count.set(count.get() + 1);
+            let row = MessageItem { id: format!("demo-incoming-{}", count.get()).into(), grouped: false, ..sample.clone() };
+            push_fresh(&ui, row);
+            ui.invoke_follow_bottom();
+        });
+        std::mem::forget(timer);
+    }
     ui.set_selected_guild("1".into());
     ui.set_selected_channel("12".into());
     ui.set_sidebar_title("Тестовый сервер".into());

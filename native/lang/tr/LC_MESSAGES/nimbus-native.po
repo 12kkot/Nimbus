@@ -65,6 +65,36 @@ msgstr "Etkinlik gizliliği"
 msgid "Подключённые приложения"
 msgstr "Bağlı uygulamalar"
 
+msgid "Кастомизация"
+msgstr "Özelleştir"
+
+msgid "Анимация появления сообщений"
+msgstr "Mesaj görünme animasyonu"
+
+msgid "Как новое сообщение появляется в чате."
+msgstr "Yeni bir mesajın sohbette nasıl göründüğü."
+
+msgid "Сбоку"
+msgstr "Yandan"
+
+msgid "Выезжает с левого края."
+msgstr "Sol kenardan kayarak gelir."
+
+msgid "Глитч"
+msgstr "Glitch"
+
+msgid "Короткие помехи и дрожание."
+msgstr "Kısa parazit ve titreme."
+
+msgid "Плавное появление и приближение"
+msgstr "Yumuşak solma ve yakınlaşma"
+
+msgid "Мягко проявляется и приближается."
+msgstr "Yumuşakça belirir ve yakınlaşır."
+
+msgid "Анимация не показывается, пока включено пониженное движение."
+msgstr "Azaltılmış hareket açıkken animasyon gösterilmez."
+
 msgid "О программе"
 msgstr "Hakkında"
 

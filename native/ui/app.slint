@@ -509,7 +509,7 @@ export struct ProfileExtra {
 
 export struct MessageItem {
     id: string,
-    // Just arrived: it fades in.
+    // Just arrived: it comes in with the animation from the settings.
     fresh: bool,
     // The picture at full size (what the viewer loads), and the file as it was sent.
     picture-full: string,
@@ -612,6 +612,8 @@ export global Appearance {
     in-out property <bool> show-time: true;
     // No sliding and fading.
     in-out property <bool> reduce-motion: false;
+    // How a new message comes in: 0 from the side, 1 glitch, 2 fade and zoom.
+    in-out property <int> message-anim: 2;
     // Brighter text and edges.
     in-out property <bool> contrast: false;
     // See-through panels over a soft coloured light, and a glow on what is active.
@@ -1892,8 +1894,8 @@ component VoiceSettingsView inherits Rectangle {
     }
 
     // Sections as in Discord's settings, in order. p: the page (-1: a group heading).
-    // Real pages: 0 account, 6 voice, 7 streaming, 8 sounds, 16 about; the rest only
-    // point to Discord, where those settings live.
+    // Real pages: 0 account, 6 voice, 7 streaming, 8 sounds, 16 about, 20 customize; the rest
+    // only point to Discord, where those settings live.
     in-out property <int> page: 6;
     property <length> nav-w: 270px;
     property <length> side: max(24px, (min(1100px, root.width - 48px) - root.nav-w - 580px) / 2);
@@ -1920,6 +1922,7 @@ component VoiceSettingsView inherits Rectangle {
         { t: @tr("" => "Конфиденциальность активности"), p: 14, i: Icons.pulse },
         { t: @tr("" => "Подключённые приложения"), p: 15, i: Icons.link },
         { t: "Nimbus", p: -1, i: "" },
+        { t: @tr("" => "Кастомизация"), p: 20, i: Icons.edit },
         { t: @tr("" => "О программе"), p: 16, i: Icons.info },
     ];
     function title-of(p: int) -> string {
@@ -1928,7 +1931,7 @@ component VoiceSettingsView inherits Rectangle {
             : p == 9 ? @tr("" => "Внешний вид") : p == 10 ? @tr("" => "Специальные возможности")
             : p == 11 ? @tr("" => "Система") : p == 12 ? @tr("" => "Язык и время") : p == 13 ? @tr("" => "Зарегистрированные игры")
             : p == 14 ? @tr("" => "Конфиденциальность активности") : p == 15 ? @tr("" => "Подключённые приложения")
-            : p == 17 ? @tr("" => "Буст сервера") : p == 18 ? @tr("" => "Склад подарков") : p == 19 ? @tr("" => "Выставление счетов") : @tr("" => "О программе");
+            : p == 17 ? @tr("" => "Буст сервера") : p == 18 ? @tr("" => "Склад подарков") : p == 19 ? @tr("" => "Выставление счетов") : p == 20 ? @tr("" => "Кастомизация") : @tr("" => "О программе");
     }
     function link-note(p: int) -> string {
         return p == 1 ? @tr("" => "Кто может добавлять тебя в друзья, фильтр личных сообщений, выгрузка и удаление данных. Это настройки самого аккаунта: Nimbus их не меняет, чтобы ничего не нарушить.")
@@ -2673,6 +2676,24 @@ component VoiceSettingsView inherits Rectangle {
             SettingTitle { text: @tr("" => "Формат даты"); }
             Radio { text: "29.10.2026"; hint: @tr("" => "День, месяц, год"); on: !Appearance.date-iso; clicked => { Appearance.date-iso = false; root.appearance-changed(0); } }
             Radio { text: "2026-10-29"; hint: @tr("" => "Год, месяц, день"); on: Appearance.date-iso; clicked => { Appearance.date-iso = true; root.appearance-changed(0); } }
+        }
+        // Customize
+        if root.page == 20: PageScroll {
+            x: root.nav-w;
+            y: 61px;
+            width: parent.width - root.nav-w;
+            height: parent.height - 61px;
+            side: root.side;
+            SettingTitle { text: @tr("" => "Анимация появления сообщений"); hint: @tr("" => "Как новое сообщение появляется в чате."); }
+            Radio { text: @tr("" => "Сбоку"); hint: @tr("" => "Выезжает с левого края."); on: Appearance.message-anim == 0; clicked => { Appearance.message-anim = 0; root.appearance-changed(0); } }
+            Radio { text: @tr("" => "Глитч"); hint: @tr("" => "Короткие помехи и дрожание."); on: Appearance.message-anim == 1; clicked => { Appearance.message-anim = 1; root.appearance-changed(0); } }
+            Radio { text: @tr("" => "Плавное появление и приближение"); hint: @tr("" => "Мягко проявляется и приближается."); on: Appearance.message-anim == 2; clicked => { Appearance.message-anim = 2; root.appearance-changed(0); } }
+            if Appearance.reduce-motion: Text {
+                text: @tr("" => "Анимация не показывается, пока включено пониженное движение.");
+                color: Theme.text2;
+                font-size: 14px;
+                wrap: word-wrap;
+            }
         }
         // About
         if root.page == 16: PageScroll {
@@ -6271,10 +6292,31 @@ component MessageRow inherits Rectangle {    in property <MessageItem> item;
     animate background { duration: Appearance.quick; }
     height: root.item.deleted ? 0px : body.preferred-height;
     clip: root.item.deleted;
-    property <bool> arrived: !root.item.fresh;
-    init => { self.arrived = true; }
-    opacity: self.arrived ? 1 : 0;
-    animate opacity { duration: Appearance.slow; easing: ease-out; }
+    // A new message comes in the way the settings say. The list hands rows to other messages as it
+    // scrolls, so this starts on each change of message, not only when the row is made.
+    property <string> row-id: root.item.id;
+    changed row-id => { root.enter(); }
+    init => { root.enter(); }
+    function enter() {
+        root.entered-at = animation-tick();
+        root.entering = root.item.fresh && !Appearance.reduce-motion;
+    }
+    property <bool> entering;
+    property <duration> entered-at;
+    property <int> enter-mode: Appearance.message-anim;
+    property <duration> enter-time: root.enter-mode == 0 ? 260ms : root.enter-mode == 1 ? 420ms : 300ms;
+    property <float> enter-t: root.entering ? clamp((animation-tick() - root.entered-at) / root.enter-time, 0, 1) : 1;
+    property <float> enter-ease: 1 - (1 - root.enter-t) * (1 - root.enter-t) * (1 - root.enter-t);
+    // The glitch moves in jumps, not smoothly.
+    property <int> glitch-step: floor(root.enter-t * 9);
+    property <float> glitch-shift: (mod(root.glitch-step * 7, 5) - 2) * (1 - root.enter-t);
+    Timer {
+        running: root.entering;
+        interval: root.enter-time;
+        triggered => { root.entering = false; }
+    }
+    opacity: root.enter-mode != 1 ? root.enter-ease : root.enter-t >= 1 ? 1 : root.glitch-step == 1 || root.glitch-step == 4 ? 0.3 : 0.55 + 0.45 * root.enter-t;
+    transform-scale: root.enter-mode == 2 ? (0.92 + 0.08 * root.enter-ease) * 100% : 100%;
 
     // A mention of you: Discord's yellow bar along the left edge.
     if root.item.mention && !root.item.deleted: Rectangle { x: 0; width: 2px; background: Theme.text; }
@@ -6288,8 +6330,8 @@ component MessageRow inherits Rectangle {    in property <MessageItem> item;
     }
 
     body := VerticalLayout {
-        y: root.arrived ? 0px : 6px;
-        animate y { duration: Appearance.slow; easing: ease-out; }
+        x: root.enter-mode == 0 ? -72px * (1 - root.enter-ease) : root.enter-mode == 1 ? 6px * root.glitch-shift : 0px;
+        y: root.enter-mode == 2 ? 8px * (1 - root.enter-ease) : 0px;
         visible: !root.item.deleted;
         padding-left: 16px;
         padding-right: 48px;
@@ -6570,6 +6612,20 @@ component MessageRow inherits Rectangle {    in property <MessageItem> item;
                 }
             }
         }
+    }
+
+    // The glitch's coloured stripes across the row.
+    if root.entering && root.enter-mode == 1: Rectangle {
+        x: 12px * root.glitch-shift;
+        y: (root.height - self.height) * mod(root.glitch-step * 3, 7) / 6;
+        height: max(3px, root.height / 5);
+        background: #00e5ff48;
+    }
+    if root.entering && root.enter-mode == 1: Rectangle {
+        x: -12px * root.glitch-shift;
+        y: (root.height - self.height) * mod(root.glitch-step * 5, 7) / 6;
+        height: max(3px, root.height / 6);
+        background: #ff2bd648;
     }
 }
 
