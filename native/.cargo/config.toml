@@ -1,0 +1,10 @@
+# LiveKit's prebuilt libwebrtc uses the static C runtime (/MT) on Windows,
+# so the whole program must link it statically too.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Opus is already inside that libwebrtc; songbird's libopus_sys links an
+# empty stand-in instead of building a second copy (see opus-stub/).
+[env]
+LIBOPUS_STATIC = "1"
+LIBOPUS_LIB_DIR = { value = "opus-stub", relative = true }

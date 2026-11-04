@@ -1,0 +1,66 @@
+[package]
+name = "nimbus-native"
+version = "0.1.8"
+default-run = "nimbus-native"
+description = "Native (no WebView) prototype of the Nimbus client"
+license = "GPL-3.0-or-later"
+edition = "2021"
+
+[dependencies]
+# No Skia renderer: its prebuilt binaries need the dynamic C runtime, which
+# clashes with LiveKit's static one (see .cargo/config.toml).
+slint = { version = "1.18.1", features = ["unstable-winit-030"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+futures-util = "0.3"
+reqwest = { version = "0.12", features = ["json", "multipart", "stream"] }
+# The system file dialog, for attaching files.
+rfd = "0.15"
+# The icon by the clock: the way back to a window that was closed to it.
+tray-icon = { version = "0.19", default-features = false }
+serde_json = "1"
+keyring = { version = "3", features = ["windows-native"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "webp", "gif"] }
+chrono = "0.4.45"
+regex = "1.13.1"
+unicode-normalization = "0.1.25"
+open = "5.4.4"
+bytes = "1"
+livekit = { version = "0.9.5", features = ["native-tls"] }
+windows-capture = "2.0.1"
+windows = { version = "0.62.2", features = ["Win32_Devices_FunctionDiscovery", "Win32_Foundation", "Win32_Graphics_Direct3D", "Win32_Graphics_Direct3D11", "Win32_Graphics_Dxgi_Common", "Win32_Graphics_Gdi", "Win32_Graphics_Dwm", "Win32_Storage_Xps", "Win32_Graphics_Direct3D", "Win32_Graphics_Direct3D11", "Win32_Graphics_Dxgi_Common", "Win32_Graphics_Gdi", "Win32_System_LibraryLoader", "Win32_Media_Audio", "Win32_Media_MediaFoundation", "Win32_System_Com", "Win32_System_DataExchange", "Win32_System_Memory", "Win32_Security", "Win32_Security_Cryptography", "Win32_System_Com_StructuredStorage", "Win32_System_Threading", "Win32_System_Variant", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Shell", "Win32_UI_Shell_PropertiesSystem", "Win32_UI_WindowsAndMessaging"] }
+windows-core = "0.62.2"
+songbird = { version = "0.6.1", default-features = false, features = ["driver", "gateway", "receive", "rustls", "tungstenite"] }
+async-trait = "0.1"
+# DAVE (Discord's end-to-end encryption) for Go Live streams; the same version Songbird uses.
+davey = "0.1.5"
+# Discord's transport encryption of Go Live video packets (same version as Songbird).
+aes-gcm = "0.10.3"
+symphonia-core = "0.5"
+# Songbird reads our mic as raw PCM; its symphonia comes without decoders. MP3: soundboard sounds.
+symphonia = { version = "0.5.2", default-features = false, features = ["pcm", "mp3"] }
+# RNNoise in pure Rust: the strong noise suppression (keeps speech, cuts keyboards, fans, breathing).
+nnnoiseless = "0.5"
+
+# Updates: the release signature, and the hash of the installer.
+ed25519-dalek = "2"
+sha2 = "0.10"
+base64 = "0.22"
+
+# The sign-in window: the real discord.com page in the system's WebView2.
+wry = "0.57"
+raw-window-handle = "0.6"
+
+[build-dependencies]
+slint-build = "1.18.1"
+winresource = "0.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+# Songbird with a side door for camera video on the voice connection (see vendor/songbird/src/driver/video.rs;
+# every change there is marked "Nimbus patch").
+[patch.crates-io]
+songbird = { path = "vendor/songbird" }
