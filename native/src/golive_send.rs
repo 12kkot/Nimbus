@@ -841,6 +841,8 @@ struct SendStats {
     keyframe_requests: u64,
     sound_frames: u64,
     first_error: Option<String>,
+    /// The most that waited to go out since the last report, in bytes: what holds frames up.
+    peak_waiting: std::cell::Cell<usize>,
 }
 
 /// How many sent packets are kept for retransmission.
@@ -849,7 +851,7 @@ const RING: usize = 1024;
 /// doesn't overflow the socket and the network in one burst.
 const PACE_FACTOR: f64 = 2.5;
 /// Whatever waits is sent within this long: the picture must not fall behind.
-const PACE_MAX_DELAY: f64 = 0.1;
+const PACE_MAX_DELAY: f64 = 0.03;
 const PACE_TICK: Duration = Duration::from_millis(2);
 /// What a frame may send at once, before pacing begins.
 const PACE_FIRST_BYTES: f64 = 12_000.0;
@@ -933,6 +935,7 @@ impl Media {
         if frame.key {
             self.stats.keyframes += 1;
         }
+        self.stats.peak_waiting.set(self.stats.peak_waiting.get().max(self.outbox_bytes));
         self.pump();
     }
 
@@ -1058,7 +1061,7 @@ impl Media {
     fn report(&self) -> String {
         let s = &self.stats;
         format!(
-            "sent {} frames ({} keyframes), {} packets, {} resent, {} sound frames; dropped before DAVE was ready {}, DAVE failed {}; keyframe requests {}; DAVE {}",
+            "sent {} frames ({} keyframes), {} packets, {} resent, {} sound frames; dropped before DAVE was ready {}, DAVE failed {}; keyframe requests {}; most waiting {} KB; DAVE {}",
             s.frames,
             s.keyframes,
             s.packets,
@@ -1067,6 +1070,7 @@ impl Media {
             s.dropped_no_dave,
             s.dave_failed,
             s.keyframe_requests,
+            s.peak_waiting.take() / 1024,
             if self.dave.on() { "on" } else { "off" }
         )
     }
@@ -1271,7 +1275,7 @@ mod tests {
         // 8 Mbit/s: a megabyte a second, times the pace factor.
         assert_eq!(pace_rate(8_000_000, 1000), 2_500_000.0);
         // A lot waiting: all of it within the longest delay.
-        assert_eq!(pace_rate(8_000_000, 1_000_000), 10_000_000.0);
+        assert_eq!(pace_rate(8_000_000, 1_000_000), 1_000_000.0 / PACE_MAX_DELAY);
     }
     use crate::golive::{open_rtp, Assembled, Assembler};
 

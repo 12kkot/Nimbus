@@ -443,11 +443,14 @@ struct Timing {
     convert: Duration,
     total: Duration,
     slowest: Duration,
+    /// The widest gap between two kept frames, and when the last one was.
+    widest: Duration,
+    last: Option<Instant>,
 }
 
 impl Timing {
     fn new() -> Self {
-        Self { since: Instant::now(), frames: 0, readback: Duration::ZERO, convert: Duration::ZERO, total: Duration::ZERO, slowest: Duration::ZERO }
+        Self { since: Instant::now(), frames: 0, readback: Duration::ZERO, convert: Duration::ZERO, total: Duration::ZERO, slowest: Duration::ZERO, widest: Duration::ZERO, last: None }
     }
 
     /// `readback`, `converted` and `total` are measured from the start of the callback.
@@ -457,18 +460,25 @@ impl Timing {
         self.convert += converted.saturating_sub(readback);
         self.total += total;
         self.slowest = self.slowest.max(total);
+        let now = Instant::now();
+        if let Some(last) = self.last.replace(now) {
+            self.widest = self.widest.max(now - last);
+        }
         if self.since.elapsed() >= Duration::from_secs(5) {
             let n = self.frames.max(1);
             let ms = |d: Duration| d.as_secs_f64() * 1000.0 / n as f64;
             crate::log_line(&format!(
-                "capture: {} frames in 5 s; per frame {:.1} ms (off the GPU {:.1}, convert {:.1}); slowest {:.1} ms",
+                "capture: {} frames in 5 s; per frame {:.1} ms (off the GPU {:.1}, convert {:.1}); slowest {:.1} ms; widest gap {:.1} ms",
                 self.frames,
                 ms(self.total),
                 ms(self.readback),
                 ms(self.convert),
-                self.slowest.as_secs_f64() * 1000.0
+                self.slowest.as_secs_f64() * 1000.0,
+                self.widest.as_secs_f64() * 1000.0
             ));
+            let last = self.last;
             *self = Self::new();
+            self.last = last;
         }
     }
 }

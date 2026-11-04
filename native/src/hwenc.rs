@@ -21,8 +21,9 @@ use windows::Win32::Media::MediaFoundation::*;
 use windows::Win32::System::Com::{CoInitializeEx, CoTaskMemFree, COINIT_MULTITHREADED};
 use windows::Win32::System::Variant::VARIANT;
 
-/// Seconds between the keyframes the encoder makes on its own.
-const KEYFRAME_SECONDS: u32 = 4;
+/// Seconds between the keyframes the encoder makes on its own. Each is several times a usual frame and
+/// holds up the ones behind it for a moment, so they are rare: whoever joins or loses packets asks for one.
+const KEYFRAME_SECONDS: u32 = 30;
 
 /// A frame waiting to be encoded.
 pub struct Input {
