@@ -28,12 +28,17 @@
 - Servers, channels, direct messages, friends, threads and forums.
 - Replies, reactions, pinned messages, forwarding and search.
 - Mentions show names and role colours. A click on a name opens the profile card.
+- Full profiles with badges, connections, notes, mutual friends and mutual servers.
+- A full right-click menu for people and DMs. Moderator actions follow your real permissions.
+- Group chats with a member list. Opening a server or the DM side returns you to the chat you left.
 - Stickers, GIFs, animated emoji, polls and voice messages.
 - Paste screenshots and files with Ctrl+V and preview them before sending.
 - Open a picture at almost full window size.
 
 **Voice and video**
 - Voice channels, DM calls, camera and screen sharing.
+- Watch several streams at once in a grid, each with its own sound. One click makes a stream big, another returns to the grid.
+- Picture-in-picture you can drag anywhere in the window.
 - RNNoise noise suppression that runs on your computer.
 - Soundboard and a volume setting for each person.
 
@@ -45,7 +50,8 @@
 **Settings**
 - Privacy, status, "About me", activity and a profile editor.
 - Black, graphite, midnight and light themes.
-- Russian and English interface.
+- Resizable side panels.
+- Interface in English, Russian, Ukrainian, Spanish, German, French, Portuguese (Brazil), Polish and Turkish. Translations have not been reviewed by native speakers yet.
 
 Some of the newer features have had little testing on real accounts. If something doesn't work, tell us what you see.
 
@@ -58,6 +64,12 @@ Some of the newer features have had little testing on real accounts. If somethin
 ## Updates
 
 At start, Nimbus looks for a new version on GitHub and installs it. It checks the ed25519 signature and the SHA-256 hash first, so a swapped file won't run. Without a connection, the current version opens.
+
+While running, it checks every hour and shows a green button in the title bar when an update is ready. After an update, it says so and shows what changed right in the app. The same list is in Settings, under About.
+
+## Logs
+
+Nimbus writes no log file by default. To look into a problem, set the `NIMBUS_LOG` environment variable before starting it. The log is then written to `%TEMP%\nimbus-native.log`.
 
 ## Build
 
