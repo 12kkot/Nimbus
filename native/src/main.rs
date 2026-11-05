@@ -1217,6 +1217,17 @@ fn change_invite_person(ui: &AppWindow, id: &str, change: impl FnOnce(&mut Perso
     show_invite_people(ui);
 }
 
+/// A gateway GUILD_CREATE as its id, name and icon hash; none while the server is unavailable.
+fn new_guild(data: &Value) -> Option<(String, String, Option<String>)> {
+    if data["unavailable"].as_bool() == Some(true) {
+        return None;
+    }
+    // As in READY, newer payloads nest these under `properties`.
+    let p = if data["properties"].is_object() { &data["properties"] } else { data };
+    let id = data["id"].as_str()?.to_string();
+    Some((id, readable(p["name"].as_str()?), p["icon"].as_str().map(String::from)))
+}
+
 /// The server rail's clicks and drags.
 fn setup_rail(ui: &AppWindow) {
     let weak = ui.as_weak();
@@ -3817,6 +3828,13 @@ impl Worker {
             }
             Event::Stream(kind, data) => {
                 let _ = self.voice.send(voice::VoiceCmd::DiscordStream(kind, data));
+            }
+            Event::Home(kind, data) if kind == "GUILD_CREATE" => self.guild_appeared(data),
+            // Only a server we are out of: "unavailable" is an outage at Discord.
+            Event::Home(kind, data) if kind == "GUILD_DELETE" && data["unavailable"].as_bool() != Some(true) => {
+                if let Some(id) = data["id"].as_str() {
+                    let _ = self.guild_gone(id.to_string()).await;
+                }
             }
             Event::Home(kind, data) => self.on_home_event(&kind, data),
             Event::Chat(kind, data) => self.on_chat_event(&kind, data),
@@ -6574,6 +6592,53 @@ impl Worker {
     /// "Покинуть сервер", after its question: it leaves the rail once Discord has said yes.
     async fn leave_server(&mut self, guild: String) -> Result<(), String> {
         self.api.leave_guild(&snowflake(&guild)?.to_string()).await?;
+        self.guild_gone(guild).await
+    }
+
+    /// A server we joined somewhere else (the official client, when Discord wanted its check there)
+    /// goes on the rail at once; one joined here is already there, and gets its details.
+    fn guild_appeared(&mut self, data: Value) {
+        let Some((id, name, icon)) = new_guild(&data) else { return };
+        names::note_roles(data["roles"].as_array().map(Vec::as_slice).unwrap_or_default());
+        names::note_channels(data["channels"].as_array().map(Vec::as_slice).unwrap_or_default());
+        if let Some(list) = self.ready["guilds"].as_array_mut() {
+            if !list.iter().any(|g| g["id"].as_str() == Some(id.as_str())) {
+                list.push(data);
+            }
+        }
+        if self.guild_names.contains_key(&id) {
+            return;
+        }
+        self.guild_names.insert(id.clone(), name.clone());
+        let item = Guild { id: id.clone(), name, ..Default::default() };
+        on_ui(&self.ui, move |ui| {
+            let model = ui.get_guilds();
+            if let Some(list) = model.as_any().downcast_ref::<VecModel<GuildItem>>() {
+                list.push(item.item());
+            }
+            sync_rail(&ui);
+        });
+        let Some(hash) = icon else { return };
+        let job = ImageJob { url: format!("{CDN}/icons/{id}/{hash}.png?size=128"), w: GUILD_ICON_PX, h: GUILD_ICON_PX, ..Default::default() };
+        let ui = self.ui.clone();
+        load_images(self.images.clone(), vec![job], move |_, loaded| {
+            let Some(pixels) = loaded.map(|l| l.first()) else { return };
+            let id = id.clone();
+            on_ui(&ui, move |ui| {
+                let model = ui.get_guilds();
+                if let Some(row) = model.iter().position(|g| g.id == id) {
+                    update_row(model, row, |g| {
+                        g.icon = Image::from_rgba8(pixels);
+                        g.has_icon = true;
+                    });
+                }
+                sync_rail(&ui);
+            });
+        });
+    }
+
+    /// A server we are out of, by our own click or from elsewhere, leaves the rail.
+    async fn guild_gone(&mut self, guild: String) -> Result<(), String> {
         if let Some(list) = self.ready["guilds"].as_array_mut() {
             list.retain(|g| g["id"].as_str() != Some(guild.as_str()));
         }
@@ -8577,7 +8642,7 @@ impl Worker {
         });
     }
 
-    /// A server just joined goes into the server list (the gateway doesn't tell this client).
+    /// A server just joined here goes into the server list right away.
     fn add_joined_guild(&mut self, p: &invite::Preview) {
         if self.guild_names.contains_key(&p.guild_id) {
             return;
@@ -11711,6 +11776,15 @@ fn main() -> Result<(), slint::PlatformError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_new_server_is_read_from_the_gateway() {
+        let nested = json!({ "id": "1", "properties": { "name": "Basement", "icon": "abc" } });
+        assert_eq!(new_guild(&nested), Some(("1".to_string(), "Basement".to_string(), Some("abc".to_string()))));
+        let flat = json!({ "id": "2", "name": "Flat", "icon": null });
+        assert_eq!(new_guild(&flat), Some(("2".to_string(), "Flat".to_string(), None)));
+        assert_eq!(new_guild(&json!({ "id": "3", "unavailable": true })), None);
+    }
 
     #[test]
     fn typing_shows_part_of_the_text_then_all_of_it() {

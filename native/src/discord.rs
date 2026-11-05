@@ -570,7 +570,7 @@ async fn session(token: &str, events: &UnboundedSender<Event>, outgoing: &mut Un
                                 t @ ("READY_SUPPLEMENTAL" | "PRESENCE_UPDATE" | "CHANNEL_CREATE" | "CHANNEL_UPDATE" | "CHANNEL_DELETE"
                                 | "GUILD_MEMBER_UPDATE" | "GUILD_ROLE_CREATE" | "GUILD_ROLE_UPDATE" | "GUILD_ROLE_DELETE"
                                 | "SESSIONS_REPLACE" | "RELATIONSHIP_ADD" | "RELATIONSHIP_UPDATE" | "RELATIONSHIP_REMOVE" | "MESSAGE_ACK" | "CALL_CREATE" | "CALL_UPDATE" | "CALL_DELETE"
-                                | "USER_GUILD_SETTINGS_UPDATE" | "CHANNEL_RECIPIENT_ADD" | "CHANNEL_RECIPIENT_REMOVE"),
+                                | "USER_GUILD_SETTINGS_UPDATE" | "CHANNEL_RECIPIENT_ADD" | "CHANNEL_RECIPIENT_REMOVE" | "GUILD_CREATE" | "GUILD_DELETE"),
                             ) => Some(Event::Home(t.to_string(), data)),
                             Some(
                                 t @ ("TYPING_START" | "MESSAGE_UPDATE" | "MESSAGE_DELETE" | "MESSAGE_DELETE_BULK" | "MESSAGE_REACTION_ADD"
