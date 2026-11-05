@@ -8773,33 +8773,33 @@ export component AppWindow inherits Window {
                                 MenuItem {
                                     text: @tr("" => "Пригласить на сервер");
                                     clicked => {
-                                        server-menu.close();
                                         root.made-invite-place = root.sidebar-title;
                                         root.made-invite-state = 1;
                                         root.create-invite(root.selected-channel);
+                                        server-menu.close();
                                     }
                                 }
                                 MenuItem {
                                     text: @tr("" => "Мероприятия");
                                     clicked => {
-                                        server-menu.close();
                                         root.events-open = true;
                                         root.events-opened();
+                                        server-menu.close();
                                     }
                                 }
                                 MenuItem {
                                     text: @tr("" => "Параметры уведомлений");
                                     clicked => {
-                                        server-menu.close();
                                         root.open-notify-menu(root.selected-guild, "", 90px, 90px);
+                                        server-menu.close();
                                     }
                                 }
                                 MenuLine {}
                                 MenuItem {
                                     text: @tr("" => "Копировать ID сервера");
                                     clicked => {
-                                        server-menu.close();
                                         root.copy-text(root.selected-guild);
+                                        server-menu.close();
                                     }
                                 }
                             }
@@ -10766,22 +10766,23 @@ export component AppWindow inherits Window {
                 if root.notify-menu.channel != "": MenuItem {
                     text: @tr("" => "Пригласить");
                     clicked => {
-                        notify-menu-popup.close();
                         root.made-invite-place = root.notify-menu.name;
                         root.made-invite-state = 1;
                         root.create-invite(root.notify-menu.channel);
+                        notify-menu-popup.close();
                     }
                 }
                 // A new invite to the server, with its friends to send it to.
                 if root.notify-menu.channel == "": MenuItem {
                     text: @tr("" => "Пригласить на сервер");
                     clicked => {
-                        notify-menu-popup.close();
                         root.invite-query = "";
                         root.invite-rich = true;
                         root.made-invite-place = root.notify-menu.name;
                         root.made-invite-state = 1;
                         root.invite-to-guild(root.notify-menu.guild);
+                        // Last: nothing after closing the popup runs in an item of it.
+                        notify-menu-popup.close();
                     }
                 }
                 MenuLine {}
@@ -10845,10 +10846,10 @@ export component AppWindow inherits Window {
                     text: @tr("" => "Покинуть сервер");
                     danger: true;
                     clicked => {
-                        notify-menu-popup.close();
                         root.confirm-user = root.notify-menu.guild;
                         root.confirm-name = root.notify-menu.name;
                         root.confirm-action = "leave-server";
+                        notify-menu-popup.close();
                     }
                 }
             }
