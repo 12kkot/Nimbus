@@ -396,6 +396,11 @@ impl Api {
         self.post(&path, body).await
     }
 
+    /// Leaves a server. Discord refuses its owner.
+    pub async fn leave_guild(&self, guild: &str) -> Result<Value> {
+        self.request(reqwest::Method::DELETE, &format!("/users/@me/guilds/{guild}"), Some(json!({ "lease": false }))).await
+    }
+
     /// A thread started from a message; Discord answers with the thread.
     pub async fn create_thread(&self, channel: &str, message: &str, name: &str) -> Result<Value> {
         let (path, body) = crate::forum::thread_request(channel, message, name)?;
