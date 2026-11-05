@@ -10675,8 +10675,8 @@ export component AppWindow inherits Window {
                 if !root.channel-is-dm && !root.channel-is-thread: MenuItem {
                     text: @tr("" => "Создать ветку");
                     clicked => {
-                        message-menu-popup.close();
                         root.open-thread-dialog(1, root.msg-menu-id);
+                        message-menu-popup.close();
                     }
                 }
                 MenuItem {
@@ -10695,18 +10695,18 @@ export component AppWindow inherits Window {
                 if root.msg-menu-author == root.me-id: MenuItem {
                     text: @tr("" => "Редактировать");
                     clicked => {
-                        message-menu-popup.close();
                         root.begin-edit(root.msg-menu-id);
+                        message-menu-popup.close();
                     }
                 }
                 if root.msg-menu-author == root.me-id: MenuItem {
                     text: @tr("" => "Удалить");
                     danger: true;
                     clicked => {
-                        message-menu-popup.close();
                         root.confirm-user = root.msg-menu-id;
                         root.confirm-name = @tr("" => "сообщение");
                         root.confirm-action = "delete-message";
+                        message-menu-popup.close();
                     }
                 }
             }
